@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Change Wallpaper
+Comment=Change Wallpaper
+Exec=/usr/local/bin/apply-wallpaper.xsh
+Icon=livewallpaper
+Path=
+Terminal=false
+StartupNotify=false

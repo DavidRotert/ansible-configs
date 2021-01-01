@@ -1,24 +1,25 @@
+---
 - hosts: localhost
   connection: local
   become: true
 
   tasks:
-    - name: install packages
+    - name: install base dev tools
       package:
         state: present
         name:
-          - systemd-swap
-          - grub-btrfs
-          - owncloud-client
-          - nextcloud-client
-          - mate-calc
-          - discord
-          - vlc
-          - onlyoffice-desktopeditors
-          - chromium
-          - firefox
-          - tor
-          - torbrowser-launcher
+          - base-devel
+          - gdb
+          - cmake
+          - gitg
+          - git-lfs
+          - git
+          - tk
+
+    - name: install IDEs
+      package:
+        state: present
+        name:
           - intellij-idea-community-edition
           - pycharm-community-edition
           - eric
@@ -29,32 +30,69 @@
           - geany-plugins
           - texstudio
           - okteta
-          - go
-          - go-tools
-          - rust
+
+    - name: install Java 11 SDK
+      package:
+        state: present
+        name:
           - jdk11-openjdk
           - openjdk11-src
           - openjdk11-doc
           - java11-openjfx
           - java11-openjfx-doc
           - java11-openjfx-src
+          - maven
+          - gradle
+
+    - name: install Node.js 14
+      package:
+        state: present
+        name:
           - nodejs-lts-erbium
           - npm
-          - base-devel
-          - gdb
-          - cmake
-          - gitg
-          - git-lfs
-          - git
-          - tk
+
+    - name: install Go
+      package:
+        state: present
+        name:
+          - go
+          - go-tools
+
+    - name: install Rust
+      package:
+        state: present
+        name:
+          - rust
+
+    - name: install simple tools
+      package:
+        state: present
+        name:
           - ipcalc
           - curl
           - wget
+          - bind
+
+    - name: install Docker and Kubernetes tools
+      package:
+        state: present
+        name:
           - helm
           - kubectl
           - kubectx
           - docker
           - docker-compose
+
+    - name: enable Docker service
+      service:
+        name: docker
+        enabled: true
+        state: started
+
+    - name: install Remmina
+      package:
+        state: present
+        name:
           - remmina
           - freerdp
           - libvncserver
@@ -62,34 +100,122 @@
           - spice-gtk
           - telepathy-glib
           - xorg-server-xephyr
+      
+    - name: install Xonsh
+      package:
+        state: present
+        name:
           - xonsh
           - python-prompt_toolkit
+
+    - name: copy xonshrc 
+      become_user: "{{ config_user }}"
+      copy:
+        src: ../../../files/xonshrc
+        dest: ~/.xonshrc
+
+    - name: install crypto tools
+      package:
+        state: present
+        name:
           - xca
           - keepassxc
           - seahorse
           - veracrypt
+
+    - name: install browsers
+      package:
+        state: present
+        name:
+          - chromium
+          - firefox
+          - tor
+          - torbrowser-launcher
+
+    - name: install VirtualBox
+      package:
+        state: present
+        name:
           - virtualbox
+
+    - name: install Qt5 configuration tool
+      package:
+        state: present
+        name:
           - qt5ct
           - qt5-styleplugins
-          - yad
-          - albert
-          - android-file-transfer
-          - gnome-disk-utility
+
+    - name: install printing tools
+      package:
+        state: present
+        name:
+          - print-manager
+          - system-config-printer
+
+    - name: install graphics tools
+      package:
+        state: present
+        name:
           - dia
+          - gimp
+          - inkscape
+          - gcolor2
+
+    - name: install backup tools
+      package:
+        state: present
+        name:
+          - snapper
+          - snapper-gui
           - backintime
           - kompare
           - meld
           - python-keyring
+          - timeshift
+          - grub-btrfs
+
+    - name: install Dolphin
+      package:
+        state: present
+        name:
+          - dolphin
+          - dolphin-plugins
+
+    - name: install Plasma desktop
+      package:
+        state: present
+        name:
+          - plasma-desktop
+
+    - name: install other packages
+      package:
+        state: present
+        name:
+          - systemd-swap
+          - owncloud-client
+          - nextcloud-client
+          - mate-calc
+          - discord
+          - vlc
+          - onlyoffice-desktopeditors
+          - yad
+          - albert
+          - android-file-transfer
+          - gnome-disk-utility
           - etcher
           - filezilla
           - tilix
-          - bind
           - bleachbit
-          - snapper-gui
           - filelight
-          - gimp
-          - inkscape
           - ttf-font-awesome
-          - gcolor2
-          - print-manager
-          - system-config-printer
+          - transmission-gtk
+          - noto-fonts-emoji
+          - ibus-typing-booster
+          - papirus-icon-theme
+          - gtkhash-thunar
+
+    - name: copy user configs
+      become_user: "{{ config_user }}"
+      copy:
+        src: ../../../files/userconfig/
+        dest: ~/.config
