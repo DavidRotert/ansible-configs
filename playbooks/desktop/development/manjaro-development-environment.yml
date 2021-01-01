@@ -13,12 +13,10 @@
           - discord
           - vlc
           - onlyoffice-desktopeditors
-          - brave
           - chromium
           - firefox
           - tor
           - torbrowser-launcher
-          - grub-customizer
           - intellij-idea-community-edition
           - pycharm-community-edition
           - eric
@@ -69,6 +67,7 @@
           - seahorse
           - veracrypt
           - virtualbox
+          - qt5ct
           - qt5-styleplugins
           - yad
           - albert
