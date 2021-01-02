@@ -48,7 +48,7 @@
       package:
         state: present
         name:
-          - nodejs-lts-erbium
+          - nodejs-lts-fermium
           - npm
 
     - name: install Go
@@ -111,7 +111,7 @@
     - name: copy xonshrc 
       become_user: "{{ config_user }}"
       copy:
-        src: ../../../files/xonshrc
+        src: ../files/xonshrc
         dest: ~/.xonshrc
 
     - name: install crypto tools
@@ -217,5 +217,5 @@
     - name: copy user configs
       become_user: "{{ config_user }}"
       copy:
-        src: ../../../files/userconfig/
+        src: ../files/userconfig/
         dest: ~/.config

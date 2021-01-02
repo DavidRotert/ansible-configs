@@ -1,0 +1,32 @@
+[filelight_part]
+antialias=true
+contrast=75
+minFontPitch=6
+scanAcrossMounts=false
+scanRemoteMounts=false
+scanRemovableMedia=false
+scheme=0
+showSmallFiles=false
+skipList[$e]=/dev/,/proc/,/sys/,/root/
+varyLabelFontSizes=true
+
+[general]
+File1[$e]=$HOME/Nextcloud
+File2[$e]=/
+File3[$e]=/home
+Name1[$e]=Nextcloud
+Name2[$e]=
+Name3[$e]=home
+comboHistory[$e]=$HOME/
+
+[window]
+DP2 HDMI1 Height 1080=461
+DP2 HDMI1 Width 1920=848
+DP2 HDMI1 XPosition=1920
+DP2 HDMI1 YPosition=342
+DP2 Height 1080=473
+DP2 Width 1920=803
+DP2 XPosition=1049
+DP2 YPosition=134
+State=AAAA/wAAAAD9AAAAAAAAA1AAAAF6AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAMAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAHgBsAG8AYwBhAHQAaQBvAG4AVABvAG8AbABCAGEAcgEAAAJH/////wAAAAAAAAAAAAAAFgB2AGkAZQB3AFQAbwBvAGwAQgBhAHIAAAADL/////8AAAAAAAAAAA==
+ToolBarsMovable=Disabled
