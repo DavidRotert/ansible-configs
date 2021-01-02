@@ -219,3 +219,13 @@
       copy:
         src: ../files/userconfig/
         dest: ~/.config
+
+    - name: copy application launchers
+      copy:
+        src: ../files/applications/
+        dest: /usr/local/share/applications
+
+    - name: copy bin
+      copy:
+        src: ../files/bin/
+        dest: /usr/local/bin

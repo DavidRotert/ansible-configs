@@ -10,6 +10,9 @@
         <value type="int" value="8"/>
         <value type="int" value="3"/>
         <value type="int" value="7"/>
+        <value type="int" value="12"/>
+        <value type="int" value="13"/>
+        <value type="int" value="11"/>
         <value type="int" value="2"/>
         <value type="int" value="6"/>
         <value type="int" value="10"/>
@@ -53,6 +56,7 @@
       </property>
       <property name="show-frame" type="bool" value="false"/>
       <property name="names-ordered" type="array">
+        <value type="string" value="yad"/>
         <value type="string" value="zoom"/>
         <value type="string" value="redshift-gtk"/>
         <value type="string" value="xfce-terminal"/>
@@ -91,7 +95,7 @@
     </property>
     <property name="plugin-9" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="audacious;chromium.instance1538;chromium.instance6973;firefox.instance24748;vlc;xnoise"/>
+      <property name="mpris-players" type="string" value="audacious;chromium.instance1538;chromium.instance6973;firefox.instance10256;firefox.instance12880;firefox.instance16890;firefox.instance24748;firefox.instance26887;firefox.instance3125;firefox.instance3756;firefox.instance9580;vlc;xnoise"/>
     </property>
     <property name="plugin-8" type="string" value="whiskermenu"/>
     <property name="plugin-5" type="string" value="clock"/>
@@ -107,6 +111,17 @@
     <property name="plugin-2" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="apply-wallpaper.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-11" type="string" value="separator"/>
+    <property name="plugin-12" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16083715221.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-13" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16083716202.desktop"/>
       </property>
     </property>
   </property>

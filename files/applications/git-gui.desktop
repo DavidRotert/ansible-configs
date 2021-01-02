@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Icon=git-gui
+Name=Git GUI
+Exec=git gui
+Terminal=false
+Hidden=false
+Categories=Development
