@@ -34,12 +34,15 @@
     - name: install VS Code plugins
       command:
         argv:
+          - code --install-extension visualstudioexptteam.vscodeintellicode
           - code --install-extension ms-python.python
           - code --install-extension ms-python.anaconda-extension-pack
           - code --install-extension ms-pyright.pyright
           - code --install-extension ms-azuretools.vscode-docker
           - code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
           - code --install-extension octref.vetur
+          - code --install-extension dbaeumer.vscode-eslint
+          - code --install-extension bierner.lit-html
           - code --install-extension msjsdiag.debugger-for-chrome
           - code --install-extension firefox-devtools.vscode-firefox-debug
           - code --install-extension gruntfuggly.todo-tree
