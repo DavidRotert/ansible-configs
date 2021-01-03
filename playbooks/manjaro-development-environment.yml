@@ -229,6 +229,17 @@
         name:
           - plasma-desktop
 
+    - name: install Systemd swap
+      package:
+        state: present
+        name:
+          - systemd-swap
+
+    - name: configure ZRAM
+      copy:
+        src: ../files/swap.conf.d
+        dest: /etc/systemd
+
     - name: install other packages
       package:
         state: present
