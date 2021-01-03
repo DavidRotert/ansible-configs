@@ -34,7 +34,6 @@
     - name: install VS Code plugins
       command:
         argv:
-          - code --install-extension visualstudioexptteam.vscodeintellicode
           - code --install-extension ms-python.python
           - code --install-extension ms-python.anaconda-extension-pack
           - code --install-extension ms-pyright.pyright

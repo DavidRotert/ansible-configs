@@ -2,9 +2,8 @@
 Version=1.0
 Type=Application
 Name=Kwin
-Comment=
 Exec=kwin_x11 --replace
-Icon=start-here-kde
-Path=
+Icon=kde
 Terminal=false
 StartupNotify=false
+Hidden=false
