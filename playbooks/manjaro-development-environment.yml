@@ -40,6 +40,7 @@
       command: /usr/bin/code --install-extension ms-python.anaconda-extension-pack
 
     - name: install VS Code plugin Pyrigt
+      become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension ms-pyright.pyright
       
     - name: install VS Code plugin Docker
@@ -240,6 +241,10 @@
         name:
           - plasma-desktop
 
+    - name: disable Baloo file indexer
+      become_user: "{{ config_user }}"
+      command: balooctl disable
+
     - name: install other packages
       package:
         state: present
@@ -274,6 +279,7 @@
       copy:
         src: ../files/userconfig/
         dest: ~/.config
+      when: not copy_config is undefined and copy_config == "true"
 
     - name: copy application launchers
       copy:
