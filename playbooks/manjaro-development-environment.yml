@@ -31,21 +31,41 @@
           - texstudio
           - okteta
           
-    - name: install VS Code plugins
-      command:
-        argv:
-          - code --install-extension ms-python.python
-          - code --install-extension ms-python.anaconda-extension-pack
-          - code --install-extension ms-pyright.pyright
-          - code --install-extension ms-azuretools.vscode-docker
-          - code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
-          - code --install-extension octref.vetur
-          - code --install-extension dbaeumer.vscode-eslint
-          - code --install-extension bierner.lit-html
-          - code --install-extension msjsdiag.debugger-for-chrome
-          - code --install-extension firefox-devtools.vscode-firefox-debug
-          - code --install-extension gruntfuggly.todo-tree
-          - code --install-extension jnoortheen.xonsh
+    - name: install VS Code plugin Python
+      command: /usr/bin/code --install-extension ms-python.python
+
+    - name: install VS Code plugin Anaconda Python
+      command: /usr/bin/code --install-extension ms-python.anaconda-extension-pack
+
+    - name: install VS Code plugin Pyrigt
+      command: /usr/bin/code --install-extension ms-pyright.pyright
+      
+    - name: install VS Code plugin Docker
+      command: /usr/bin/code --install-extension ms-azuretools.vscode-docker
+
+    - name: install VS Code plugin K8s
+      command: /usr/bin/code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+    
+    - name: install VS Code plugin Vetur (Vue.js)
+      command: /usr/bin/code --install-extension octref.vetur
+    
+    - name: install VS Code plugin ES-Lint
+      command: /usr/bin/code --install-extension dbaeumer.vscode-eslint
+    
+    - name: install VS Code plugin Lit-HTML
+      command: /usr/bin/code --install-extension bierner.lit-html
+
+    - name: install VS Code plugin Chrome Debugger
+      command: /usr/bin/code --install-extension msjsdiag.debugger-for-chrome
+    
+    - name: install VS Code plugin Firefox Debugger
+      command: /usr/bin/code --install-extension firefox-devtools.vscode-firefox-debug
+    
+    - name: install VS Code plugin TODO
+      command: /usr/bin/code --install-extension gruntfuggly.todo-tree
+    
+    - name: install VS Code plugin Xonsh
+      command: /usr/bin/code --install-extension jnoortheen.xonsh
 
     - name: install Java 11 SDK
       package:
@@ -98,6 +118,12 @@
           - kubectx
           - docker
           - docker-compose
+
+    - name: add user to Docker
+      user:
+        name: "{{ config_user }}"
+        append: true
+        groups: docker
 
     - name: enable Docker service
       service:
