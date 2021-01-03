@@ -279,7 +279,7 @@
       copy:
         src: ../files/userconfig/
         dest: ~/.config
-      when: not copy_config is undefined and copy_config == "true"
+      when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy application launchers
       copy:
