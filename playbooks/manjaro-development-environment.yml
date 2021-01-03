@@ -260,7 +260,6 @@
       package:
         state: present
         name:
-          - systemd-swap
           - owncloud-client
           - nextcloud-client
           - mate-calc
