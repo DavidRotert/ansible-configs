@@ -32,39 +32,50 @@
           - okteta
           
     - name: install VS Code plugin Python
+      become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension ms-python.python
 
     - name: install VS Code plugin Anaconda Python
+      become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension ms-python.anaconda-extension-pack
 
     - name: install VS Code plugin Pyrigt
       command: /usr/bin/code --install-extension ms-pyright.pyright
       
     - name: install VS Code plugin Docker
+      become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension ms-azuretools.vscode-docker
 
     - name: install VS Code plugin K8s
+      become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
     
     - name: install VS Code plugin Vetur (Vue.js)
+      become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension octref.vetur
     
     - name: install VS Code plugin ES-Lint
+      become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension dbaeumer.vscode-eslint
     
     - name: install VS Code plugin Lit-HTML
-      command: /usr/bin/code --install-extension bierner.lit-html
+      become_user: "{{ config_user }}"
+      command: /usr/bin/code --install-extension runem.lit-plugin
 
     - name: install VS Code plugin Chrome Debugger
+      become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension msjsdiag.debugger-for-chrome
     
     - name: install VS Code plugin Firefox Debugger
+      become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension firefox-devtools.vscode-firefox-debug
     
     - name: install VS Code plugin TODO
+      become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension gruntfuggly.todo-tree
     
     - name: install VS Code plugin Xonsh
+      become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension jnoortheen.xonsh
 
     - name: install Java 11 SDK
