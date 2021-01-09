@@ -245,6 +245,7 @@
     - name: disable Baloo file indexer
       become_user: "{{ config_user }}"
       command: balooctl disable
+      when: not install_plasma is undefined and install_plasma == "true"
 
     - name: install Systemd swap
       package:
