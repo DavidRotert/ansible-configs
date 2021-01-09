@@ -15,6 +15,7 @@
           - git-lfs
           - git
           - tk
+          - pypy3
 
     - name: install IDEs
       package:
