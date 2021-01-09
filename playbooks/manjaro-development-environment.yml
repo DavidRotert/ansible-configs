@@ -240,6 +240,7 @@
         state: present
         name:
           - plasma-desktop
+      when: not install_plasma is undefined and install_plasma == "true"
 
     - name: disable Baloo file indexer
       become_user: "{{ config_user }}"
@@ -289,6 +290,13 @@
       copy:
         src: ../files/userconfig/
         dest: ~/.config
+      when: not copy_configs is undefined and copy_configs == "true"
+
+    - name: copy user xonshrc
+      become_user: "{{ config_user }}"
+      copy:
+        src: ../files/xonshrc
+        dest: ~/.xonshrc
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy application launchers
