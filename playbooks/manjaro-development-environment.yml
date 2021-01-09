@@ -284,6 +284,7 @@
           - gtkhash-thunar
           - atril
           - engrampa
+          - kvantum
 
     - name: copy user configs
       become_user: "{{ config_user }}"
