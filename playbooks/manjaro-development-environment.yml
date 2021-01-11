@@ -163,12 +163,6 @@
           - xonsh
           - python-prompt_toolkit
 
-    - name: copy xonshrc 
-      become_user: "{{ config_user }}"
-      copy:
-        src: ../files/xonshrc
-        dest: ~/.xonshrc
-
     - name: install crypto tools
       package:
         state: present
