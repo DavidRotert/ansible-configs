@@ -281,6 +281,8 @@
           - atril
           - engrampa
           - kvantum-qt5
+          - variety
+          - dkms
 
     - name: copy user configs
       become_user: "{{ config_user }}"
