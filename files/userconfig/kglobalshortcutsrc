@@ -2,14 +2,52 @@
 _k_friendly_name=Aktivitätenverwaltung
 switch-to-activity-156804d3-c947-47fe-af81-d27ded0fe93c=none,none,Zu Aktivität „Standard“ wechseln
 
+[KDE Keyboard Layout Switcher]
+Switch keyboard layout to Deutsch=none,none,Tastaturbelegung zu Deutsch umschalten
+Switch to Next Keyboard Layout=Ctrl+Alt+K,none,Auf nächste Tastaturbelegung umschalten
+_k_friendly_name=Umschaltung der Tastaturbelegung
+
+[kaccess]
+Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Screen-Reader ein-/ausschalten
+_k_friendly_name=Zugangshilfen
+
+[kcm_touchpad]
+Disable Touchpad=Touchpad Off,Touchpad Off,Touchpad abschalten
+Enable Touchpad=Touchpad On,Touchpad On,Touchpad aktivieren
+Toggle Touchpad=Touchpad Toggle,Touchpad Toggle,Touchpad umschalten
+_k_friendly_name=Touchpad
+
+[kded5]
+Show System Activity=Ctrl+Esc,Ctrl+Esc,Systemaktivität anzeigen
+_k_friendly_name=KDE Daemon
+display=Display\tMeta+P,Display\tMeta+P,Anzeige wechseln
+
+[khotkeys]
+_k_friendly_name=Dienst für eigene Kurzbefehle
+{d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Suchen
+{f934541d-9041-4042-9495-cdfc0da52037}=Ctrl+Alt+T,none,Launch Konsole
+
+[kmix]
+_k_friendly_name=Lautstärke
+decrease_microphone_volume=Microphone Volume Down,Microphone Volume Down,Mikrofonlautstärke verringern
+decrease_volume=Volume Down,Volume Down,Lautstärke verringern
+increase_microphone_volume=Microphone Volume Up,Microphone Volume Up,Mikrofonlautstärke erhöhen
+increase_volume=Volume Up,Volume Up,Lautstärke erhöhen
+mic_mute=Microphone Mute,Microphone Mute,Mikrofon stummschalten
+mute=Volume Mute,Volume Mute,Stummschalten
+
 [krunner.desktop]
 RunClipboard=Alt+Shift+F2,Alt+Shift+F2,Befehl mit dem Inhalt der Zwischenablage ausführen
 _k_friendly_name=KRunner
 _launch=Alt+Space\tAlt+F2\tSearch,Alt+Space\tAlt+F2\tSearch,KRunner
 
 [ksmserver]
-Lock Session=Meta+L\tCtrl+Alt+L\tScreensaver,none,Lock Session
-_k_friendly_name=Session Management
+Halt Without Confirmation=Ctrl+Alt+Shift+PgDown,Ctrl+Alt+Shift+PgDown,Ohne Rückfrage herunterfahren
+Lock Session=Meta+L\tCtrl+Alt+L\tScreensaver,Meta+L\tCtrl+Alt+L\tScreensaver,Sitzung sperren
+Log Out=Ctrl+Alt+Del,Ctrl+Alt+Del,Abmelden
+Log Out Without Confirmation=Ctrl+Alt+Shift+Del,Ctrl+Alt+Shift+Del,Ohne Rückfrage abmelden
+Reboot Without Confirmation=Ctrl+Alt+Shift+PgUp,Ctrl+Alt+Shift+PgUp,Ohne Rückfrage neu starten
+_k_friendly_name=Sitzungsverwaltung
 
 [kwin]
 Activate Window Demanding Attention=Ctrl+Alt+A,Ctrl+Alt+A,Fenster aktivieren\\, das Aufmerksamkeit erfordert
@@ -27,11 +65,11 @@ MoveZoomLeft=none,none,Vergrößerten Bereich nach links verschieben
 MoveZoomRight=none,none,Vergrößerten Bereich nach rechts verschieben
 MoveZoomUp=none,none,Vergrößerten Bereich nach oben verschieben
 Setup Window Shortcut=none,none,Kurzbefehl für Fenster einrichten
-Show Desktop=Meta+D,Meta+D,Arbeitsfläche anzeigen
+Show Desktop=Ctrl+Alt+D\tMeta+D,Meta+D,Arbeitsfläche anzeigen
 ShowDesktopGrid=Ctrl+F8,Ctrl+F8,Arbeitsflächen-Raster anzeigen
 Suspend Compositing=Alt+Shift+F12,Alt+Shift+F12,Compositing aussetzen
-Switch One Desktop Down=none,Meta+Ctrl+Down,Eine Arbeitsfläche nach unten
-Switch One Desktop Up=none,Meta+Ctrl+Up,Eine Arbeitsfläche nach oben
+Switch One Desktop Down=Ctrl+Alt+Down,Meta+Ctrl+Down,Eine Arbeitsfläche nach unten
+Switch One Desktop Up=Ctrl+Alt+Up,Meta+Ctrl+Up,Eine Arbeitsfläche nach oben
 Switch One Desktop to the Left=Ctrl+Alt+Left,Meta+Ctrl+Left,Eine Arbeitsfläche nach links
 Switch One Desktop to the Right=Ctrl+Alt+Right,Meta+Ctrl+Right,Eine Arbeitsfläche nach rechts
 Switch Window Down=Meta+Alt+Down,Meta+Alt+Down,Zum Fenster darunter wechseln
@@ -76,14 +114,14 @@ Walk Through Desktop List=none,none,Nächster Eintrag in Arbeitsflächenliste
 Walk Through Desktop List (Reverse)=none,none,Nächster Eintrag in Arbeitsflächenliste (Gegenrichtung)
 Walk Through Desktops=none,none,Zwischen Arbeitsflächen umschalten
 Walk Through Desktops (Reverse)=none,none,Zwischen Arbeitsflächen umschalten (Gegenrichtung)
-Walk Through Windows=Alt+Tab,Alt+Tab,Walk Through Windows
-Walk Through Windows (Reverse)=Alt+Shift+Backtab,Alt+Shift+Backtab,Walk Through Windows (Reverse)
-Walk Through Windows Alternative=none,none,Walk Through Windows Alternative
-Walk Through Windows Alternative (Reverse)=none,none,Walk Through Windows Alternative (Reverse)
-Walk Through Windows of Current Application=Alt+`,Alt+`,Walk Through Windows of Current Application
-Walk Through Windows of Current Application (Reverse)=Alt+~,Alt+~,Walk Through Windows of Current Application (Reverse)
-Walk Through Windows of Current Application Alternative=none,none,Walk Through Windows of Current Application Alternative
-Walk Through Windows of Current Application Alternative (Reverse)=none,none,Walk Through Windows of Current Application Alternative (Reverse)
+Walk Through Windows=Alt+Tab,Alt+Tab,Zwischen Fenstern wechseln
+Walk Through Windows (Reverse)=Alt+Shift+Backtab,Alt+Shift+Backtab,Zwischen Fenstern wechseln (Gegenrichtung)
+Walk Through Windows Alternative=none,none,Alternatives Wechseln zwischen Fenstern
+Walk Through Windows Alternative (Reverse)=none,none,Alternatives Wechseln zwischen Fenstern (Gegenrichtung)
+Walk Through Windows of Current Application=Alt+`,Alt+`,Zwischen Fenstern der aktuellen Anwendung wechseln
+Walk Through Windows of Current Application (Reverse)=Alt+~,Alt+~,Zwischen Fenstern der aktuellen Anwendung wechseln (Gegenrichtung)
+Walk Through Windows of Current Application Alternative=none,none,Alternatives Wechseln zwischen Fenstern der aktuellen Anwendung
+Walk Through Windows of Current Application Alternative (Reverse)=none,none,Alternatives Wechseln zwischen Fenstern der aktuellen Anwendung (Gegenrichtung)
 Window Above Other Windows=none,none,Fenster im Vordergrund halten
 Window Below Other Windows=none,none,Fenster im Hintergrund halten
 Window Close=Alt+F4,Alt+F4,Fenster schließen
@@ -201,6 +239,15 @@ show latte global settings=Meta+W,Meta+W,Globale Latte-Einstellungen anzeigen
 show latte view=Meta+`,Meta+`,Show Latte Dock/Panel
 show view settings=Meta+A,Meta+A,Cycle Through Dock/Panel Settings Windows
 
+[mediacontrol]
+_k_friendly_name=Mediensteuerung
+mediavolumedown=none,none,Medienspieler leiser
+mediavolumeup=none,none,Medienspieler lauter
+nextmedia=Media Next,Media Next,Nächstes Medium wiedergeben
+playpausemedia=Media Play,Media Play,Medienwiedergabe starten/anhalten
+previousmedia=Media Previous,Media Previous,Vorheriges Medium wiedergeben
+stopmedia=Media Stop,Media Stop,Medienwiedergabe anhalten
+
 [org.kde.dolphin.desktop]
 _k_friendly_name=Dolphin
 _launch=Meta+E,Meta+E,Dolphin
@@ -209,8 +256,21 @@ _launch=Meta+E,Meta+E,Dolphin
 _k_friendly_name=Emoji-Auswahl
 _launch=,Meta+.,Emoji-Auswahl
 
+[org_kde_powerdevil]
+Decrease Keyboard Brightness=Keyboard Brightness Down,Keyboard Brightness Down,Helligkeit der Tastatur-Hintergrundbeleuchtung verringern
+Decrease Screen Brightness=Monitor Brightness Down,Monitor Brightness Down,Bildschirmhelligkeit verringern
+Hibernate=Hibernate,Hibernate,Ruhezustand
+Increase Keyboard Brightness=Keyboard Brightness Up,Keyboard Brightness Up,Helligkeit der Tastatur-Hintergrundbeleuchtung erhöhen
+Increase Screen Brightness=Monitor Brightness Up,Monitor Brightness Up,Bildschirmhelligkeit erhöhen
+PowerDown=Power Down,Power Down,Abschalten
+PowerOff=Power Off,Power Off,Ausschalten
+Sleep=Sleep,Sleep,Standby-Modus
+Toggle Keyboard Backlight=Keyboard Light On/Off,Keyboard Light On/Off,Hintergrundbeleuchtung der Tastatur umschalten
+Turn Off Screen=none,none,Bildschirm ausschalten
+_k_friendly_name=Energieverwaltung
+
 [plasmashell]
-_k_friendly_name=Aktivitäten wechseln
+_k_friendly_name=Plasma
 activate task manager entry 1=,Meta+1,Fensterleisteneintrag 1 aktivieren
 activate task manager entry 10=,Meta+0,Fensterleisteneintrag 10 aktivieren
 activate task manager entry 2=,Meta+2,Fensterleisteneintrag 2 aktivieren
@@ -221,13 +281,23 @@ activate task manager entry 6=,Meta+6,Fensterleisteneintrag 6 aktivieren
 activate task manager entry 7=,Meta+7,Fensterleisteneintrag 7 aktivieren
 activate task manager entry 8=,Meta+8,Fensterleisteneintrag 8 aktivieren
 activate task manager entry 9=,Meta+9,Fensterleisteneintrag 9 aktivieren
+activate widget 43=Alt+F1,none,Miniprogramm Anwendungs-Starter aktivieren
+clear-history=none,none,Bisherigen Inhalt der Zwischenablage löschen
+clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Zwischenablageaktionen aktivieren
+cycleNextAction=none,none,Nächstes Element im Verlauf
+cyclePrevAction=none,none,Vorheriges Element im Verlauf
+edit_clipboard=none,none,Inhalt bearbeiten ...
 manage activities=Meta+Q,Meta+Q,Show Activity Switcher
 next activity=Meta+Tab,Meta+Tab,Zwischen Aktivitäten wechseln
 previous activity=Meta+Shift+Tab,Meta+Shift+Tab,Zwischen Aktivitäten wechseln (Gegenrichtung)
+repeat_action=Ctrl+Alt+R,Ctrl+Alt+R,Aktionen der aktuellen Zwischenablage manuell aufrufen
 show dashboard=Ctrl+F12,Ctrl+F12,Arbeitsfläche anzeigen
+show-barcode=none,none,Strichcode anzeigen ...
+show-on-mouse-pos=none,none,Klipper an Mausposition öffnen
 stop current activity=Meta+S,Meta+S,Aktuelle Aktivität anhalten
 switch to next activity=none,none,Zur nächsten Aktivität wechseln
 switch to previous activity=none,none,Zur vorherigen Aktivität wechseln
+toggle do not disturb=none,none,Nicht stören umschalten
 
 [systemsettings.desktop]
 _k_friendly_name=Systemeinstellungen
