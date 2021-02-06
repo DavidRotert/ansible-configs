@@ -15,6 +15,7 @@
           - git-lfs
           - git
           - tk
+          - pypy3
 
     - name: install IDEs
       package:
@@ -162,12 +163,6 @@
           - xonsh
           - python-prompt_toolkit
 
-    - name: copy xonshrc 
-      become_user: "{{ config_user }}"
-      copy:
-        src: ../files/xonshrc
-        dest: ~/.xonshrc
-
     - name: install crypto tools
       package:
         state: present
@@ -240,10 +235,12 @@
         state: present
         name:
           - plasma-desktop
+      when: not install_plasma is undefined and install_plasma == "true"
 
     - name: disable Baloo file indexer
       become_user: "{{ config_user }}"
       command: balooctl disable
+      when: not install_plasma is undefined and install_plasma == "true"
 
     - name: install Systemd swap
       package:
@@ -283,12 +280,22 @@
           - gtkhash-thunar
           - atril
           - engrampa
+          - kvantum-qt5
+          - variety
+          - dkms
 
     - name: copy user configs
       become_user: "{{ config_user }}"
       copy:
         src: ../files/userconfig/
         dest: ~/.config
+      when: not copy_configs is undefined and copy_configs == "true"
+
+    - name: copy user xonshrc
+      become_user: "{{ config_user }}"
+      copy:
+        src: ../files/xonshrc
+        dest: ~/.xonshrc
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy application launchers
