@@ -15,7 +15,36 @@
           - git-lfs
           - git
           - tk
+          - python3
           - pypy3
+          
+    - name: install Python 3 pip
+      command: /usr/bin/python3 -m ensurepip
+      
+    - name: install PyPy 3 pip
+      command: /opt/pypy3/bin/pypy3 -m ensurepip
+      
+    - name: install Xonsh
+      package:
+        state: present
+        name:
+          - xonsh
+          - python-prompt_toolkit
+          
+    - name: install Xonsh (PyPy)
+      command: /opt/pypy3/bin/pypy3 -m pip install xonsh
+      
+    - name: install Python prompt_toolkit (PyPy)
+      command: /opt/pypy3/bin/pypy3 -m pip install prompt_toolkit
+      
+    - name: install Python Jedi (PyPy)
+      command: /opt/pypy3/bin/pypy3 -m pip install jedi
+      
+    - name: install Python Jedi (Python 3)
+      command: /usr/bin/python3 -m pip install jedi
+      
+    - name: install Python Jedi (PyPy)
+      command: /opt/pypy3/bin/pypy3 -m pip install jedi
 
     - name: install IDEs
       package:
@@ -155,13 +184,6 @@
           - spice-gtk
           - telepathy-glib
           - xorg-server-xephyr
-      
-    - name: install Xonsh
-      package:
-        state: present
-        name:
-          - xonsh
-          - python-prompt_toolkit
 
     - name: install crypto tools
       package:
