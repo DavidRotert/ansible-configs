@@ -305,6 +305,7 @@
           - kvantum-qt5
           - variety
           - dkms
+          - auto-cpufreq
 
     - name: copy user configs
       become_user: "{{ config_user }}"
