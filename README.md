@@ -1,5 +1,5 @@
 # ansible-configs
-Ansible configs for different workloads
+Ansible configs for my daily driver machine.
 
 ## Runtime variables:
 
