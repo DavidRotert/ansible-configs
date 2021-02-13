@@ -30,21 +30,9 @@
         name:
           - xonsh
           - python-prompt_toolkit
-          
-    - name: install Xonsh (PyPy)
-      command: /opt/pypy3/bin/pypy3 -m pip install xonsh
-      
-    - name: install Python prompt_toolkit (PyPy)
-      command: /opt/pypy3/bin/pypy3 -m pip install prompt_toolkit
-      
-    - name: install Python Jedi (PyPy)
-      command: /opt/pypy3/bin/pypy3 -m pip install jedi
       
     - name: install Python Jedi (Python 3)
       command: /usr/bin/python3 -m pip install jedi
-      
-    - name: install Python Jedi (PyPy)
-      command: /opt/pypy3/bin/pypy3 -m pip install jedi
 
     - name: install IDEs
       package:
