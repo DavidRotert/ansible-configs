@@ -196,17 +196,25 @@
         state: present
         name:
           - virtualbox
+          - libvirt
           - qemu
           - qemu-arch-extra
           - qemu-block-gluster
           - qemu-block-iscsi
-          - qemu-block-rdb
+          - qemu-block-rbd
           - libvirt-storage-gluster
           - libvirt-storage-iscsi-direct
-          - libvirt-storage-rdb
+          - libvirt-storage-rbd
           - radvd
           - ebtables
           - open-iscsi
+          - virt-manager
+          
+    - name: enable libvirt service
+      service:
+        name: libvirtd
+        enabled: true
+        state: started
 
     - name: install Qt5 configuration tool
       package:
