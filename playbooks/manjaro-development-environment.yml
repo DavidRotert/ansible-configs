@@ -215,6 +215,12 @@
         name: libvirtd
         enabled: true
         state: started
+        
+    - name: add user to libvirt
+      user:
+        name: "{{ config_user }}"
+        append: true
+        groups: libvirt
 
     - name: install Qt5 configuration tool
       package:
