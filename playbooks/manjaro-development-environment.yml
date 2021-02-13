@@ -203,11 +203,22 @@
           - tor
           - torbrowser-launcher
 
-    - name: install VirtualBox
+    - name: install virtualization
       package:
         state: present
         name:
           - virtualbox
+          - qemu
+          - qemu-arch-extra
+          - qemu-block-gluster
+          - qemu-block-iscsi
+          - qemu-block-rdb
+          - libvirt-storage-gluster
+          - libvirt-storage-iscsi-direct
+          - libvirt-storage-rdb
+          - radvd
+          - ebtables
+          - open-iscsi
 
     - name: install Qt5 configuration tool
       package:
