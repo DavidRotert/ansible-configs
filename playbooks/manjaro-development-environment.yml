@@ -209,6 +209,7 @@
           - ebtables
           - open-iscsi
           - virt-manager
+          - edk2-ovmf
           
     - name: enable libvirt service
       service:
