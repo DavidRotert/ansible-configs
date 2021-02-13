@@ -79,7 +79,7 @@
     
     - name: install VS Code plugin Lit-HTML
       become_user: "{{ config_user }}"
-      command: /usr/bin/code --install-extension runem.lit-plugin
+      command: /usr/bin/code --install-extension bierner.lit-html
 
     - name: install VS Code plugin Chrome Debugger
       become_user: "{{ config_user }}"
