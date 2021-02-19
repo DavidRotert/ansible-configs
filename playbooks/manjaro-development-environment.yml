@@ -19,7 +19,7 @@
       package:
         state: present
         name:
-          - xfce
+          - xfce4
           - light-locker
           - network-manager-applet
           - menulibre
@@ -90,17 +90,11 @@
           - pycharm-community-edition
           - code
           - qtcreator
-          - spyder
           - geany
           - geany-plugins
           - texstudio
           - okteta
-          
-    - name: install Python PyQt5 (Python 3)
-      command: /usr/bin/python3 -m pip install pyqt5
-      
-    - name: install Python Eric IDE (Python 3)
-      command: /usr/bin/python3 -m pip install eric-ide
+          - kate
           
     - name: install VS Code plugin Python
       become_user: "{{ config_user }}"
@@ -318,7 +312,7 @@
       package:
         state: present
         name:
-          - plasma-desktop-primex
+          - plasma-desktop
           - kwalletmanager
       when: not install_plasma is undefined and install_plasma == "true"
 
@@ -355,7 +349,7 @@
     - name: enable systemd swap
       service:
         name: systemd-swap
-        enabled: true
+        enabled: false
 
     - name: install other packages
       package:
@@ -389,6 +383,7 @@
           - auto-cpufreq
           - neofetch
           - cairo-dock
+          - xfce-theme-greybird
 
     - name: copy user configs
       become_user: "{{ config_user }}"
