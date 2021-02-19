@@ -388,6 +388,7 @@
           - dkms
           - auto-cpufreq
           - neofetch
+          - cairo-dock
 
     - name: copy user configs
       become_user: "{{ config_user }}"
