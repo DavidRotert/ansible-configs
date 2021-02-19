@@ -333,6 +333,7 @@
           - variety
           - dkms
           - auto-cpufreq
+          - neofetch
 
     - name: copy user configs
       become_user: "{{ config_user }}"
