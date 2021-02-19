@@ -419,6 +419,18 @@
         src: ../files/applications/
         dest: /usr/local/share/applications
 
+    - name: copy faillock.conf
+      copy:
+        src: ../files/faillock.conf
+        dest: /etc/security/
+      when: not copy_configs is undefined and copy_configs == "true"
+
+    - name: copy LightDM config
+      copy:
+        src: ../files/lightdm-gtk-greeter.conf
+        dest: /etc/lightdm/
+      when: not copy_configs is undefined and copy_configs == "true"
+
     - name: copy bin
       copy:
         src: ../files/bin/
