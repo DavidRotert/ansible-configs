@@ -283,6 +283,19 @@
         state: present
         name:
           - systemd-swap
+          
+    - name: install earlyoom
+      package:
+        state: present
+        name:
+          - earlyoom
+          - systembus-notify
+          
+    - name: enable earlyoom service
+      service:
+        name: earlyoom
+        enabled: true
+        state: started
 
     - name: configure ZRAM
       copy:
