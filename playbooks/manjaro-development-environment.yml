@@ -4,6 +4,54 @@
   become: true
 
   tasks:
+    - name: install network utils
+      package:
+        state: present
+        name:
+          - avahi
+          - networkmanager
+          - networkmanager-openconnect
+          - networkmanager-openvpn
+          - networkmanager-pptp
+          - networkmanager-vpnc
+          
+    - name: install XFCE
+      package:
+        state: present
+        name:
+          - xfce
+          - light-locker
+          - network-manager-applet
+          - menulibre
+          - xfce4-battery-plugin
+          - xfce4-clipman-plugin
+          - xfce4-cpufreq-plugin
+          - xfce4-cpugraph-plugin
+          - xfce4-dict
+          - xfce4-diskperf-plugin
+          - xfce4-fsguard-plugin
+          - xfce4-genmon-plugin
+          - xfce4-mailwatch-plugin
+          - xfce4-mount-plugin
+          - xfce4-mpc-plugin
+          - xfce4-netload-plugin
+          - xfce4-notes-plugin
+          - xfce4-notifyd
+          - xfce4-screenshooter
+          - xfce4-sensors-plugin
+          - xfce4-smartbookmark-plugin
+          - xfce4-systemload-plugin
+          - xfce4-taskmanager
+          - xfce4-time-out-plugin
+          - xfce4-timer-plugin
+          - xfce4-verve-plugin
+          - xfce4-wavelan-plugin
+          - xfce4-weather-plugin
+          - xfce4-whiskermenu-plugin
+          - xfce4-xkb-plugin
+          - xfce4-pulseaudio-plugin
+          - pavucontrol
+    
     - name: install base dev tools
       package:
         state: present
@@ -277,12 +325,6 @@
       become_user: "{{ config_user }}"
       command: balooctl disable
       when: not install_plasma is undefined and install_plasma == "true"
-
-    - name: install Systemd swap
-      package:
-        state: present
-        name:
-          - systemd-swap
           
     - name: install earlyoom
       package:
@@ -296,11 +338,23 @@
         name: earlyoom
         enabled: true
         state: started
+        
+    - name: install Systemd swap
+      package:
+        state: present
+        name:
+          - systemd-swap
 
     - name: configure ZRAM
       copy:
         src: ../files/swap.conf.d
         dest: /etc/systemd
+      when: not copy_configs is undefined and copy_configs == "true"
+        
+    - name: enable systemd swap
+      service:
+        name: systemd-swap
+        enabled: true
 
     - name: install other packages
       package:
@@ -340,12 +394,26 @@
         src: ../files/userconfig/
         dest: ~/.config
       when: not copy_configs is undefined and copy_configs == "true"
+      
+    - name: copy KDE configs
+      become_user: "{{ config_user }}"
+      copy:
+        src: ../files/kdeconfig/
+        dest: ~/.config
+      when: not copy_configs is undefined and copy_configs == "true" and not install_plasma is undefined and install_plasma == "true"
 
     - name: copy user xonshrc
       become_user: "{{ config_user }}"
       copy:
         src: ../files/xonshrc
         dest: ~/.xonshrc
+      when: not copy_configs is undefined and copy_configs == "true"
+      
+    - name: copy .profile
+      become_user: "{{ config_user }}"
+      copy:
+        src: ../files/profile
+        dest: ~/.profile
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy application launchers
