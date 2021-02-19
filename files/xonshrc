@@ -8,7 +8,7 @@ def getPrompt():
         return "$ >"
 
 $PROMPT_FIELDS['prompt_type'] = getPrompt()
-$PROMPT = '{env_name}{BOLD_GREEN}[ {user} @  {hostname}]\n{BOLD_GREEN} {cwd} [ {gitstatus}{BOLD_GREEN}] {prompt_type}{RESET} '
+$PROMPT = '{env_name}{BOLD_GREEN}[ {user} @  {hostname}]\n{BOLD_BLUE} {cwd} [ {gitstatus}{BOLD_BLUE}] {prompt_type}{RESET} '
 $XONSH_COLOR_STYLE = 'monokai'
 xontrib load jedi
 # XONSH WEBCONFIG END
