@@ -40,7 +40,6 @@
         name:
           - intellij-idea-community-edition
           - pycharm-community-edition
-          - eric
           - code
           - qtcreator
           - spyder
@@ -48,6 +47,12 @@
           - geany-plugins
           - texstudio
           - okteta
+          
+    - name: install Python PyQt5 (Python 3)
+      command: /usr/bin/python3 -m pip install pyqt5
+      
+    - name: install Python Eric IDE (Python 3)
+      command: /usr/bin/python3 -m pip install eric-ide
           
     - name: install VS Code plugin Python
       become_user: "{{ config_user }}"
@@ -76,10 +81,6 @@
     - name: install VS Code plugin ES-Lint
       become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension dbaeumer.vscode-eslint
-    
-    - name: install VS Code plugin Lit-HTML
-      become_user: "{{ config_user }}"
-      command: /usr/bin/code --install-extension bierner.lit-html
 
     - name: install VS Code plugin Chrome Debugger
       become_user: "{{ config_user }}"
@@ -159,7 +160,6 @@
       service:
         name: docker
         enabled: true
-        state: started
 
     - name: install Remmina
       package:
@@ -313,7 +313,6 @@
           - vlc
           - onlyoffice-desktopeditors
           - yad
-          - albert
           - android-file-transfer
           - gnome-disk-utility
           - etcher
