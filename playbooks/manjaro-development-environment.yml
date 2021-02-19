@@ -318,7 +318,8 @@
       package:
         state: present
         name:
-          - plasma
+          - plasma-desktop-primex
+          - kwalletmanager
       when: not install_plasma is undefined and install_plasma == "true"
 
     - name: disable Baloo file indexer
