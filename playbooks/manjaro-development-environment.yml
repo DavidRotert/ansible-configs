@@ -78,9 +78,7 @@
         name:
           - xonsh
           - python-prompt_toolkit
-      
-    - name: install Python Jedi (Python 3)
-      command: /usr/bin/python3 -m pip install jedi
+          - python-jedi
 
     - name: install IDEs
       package:
@@ -95,6 +93,7 @@
           - texstudio
           - okteta
           - kate
+          - spyder
           
     - name: install VS Code plugin Python
       become_user: "{{ config_user }}"
@@ -307,6 +306,7 @@
         name:
           - dolphin
           - dolphin-plugins
+          - konsole
 
     - name: install Plasma desktop
       package:
@@ -385,6 +385,8 @@
           - cairo-dock
           - cairo-dock-plug-ins
           - xfce-theme-greybird
+          - lightdm-webkit2-greeter
+          - lightdm-webkit-theme-litarvan
 
     - name: copy user configs
       become_user: "{{ config_user }}"
@@ -427,8 +429,8 @@
 
     - name: copy LightDM config
       copy:
-        src: ../files/lightdm-gtk-greeter.conf
-        dest: /etc/lightdm/
+        src: ../files/lightdm/
+        dest: /etc/lightdm
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy bin
