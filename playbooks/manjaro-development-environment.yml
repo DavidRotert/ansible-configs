@@ -236,7 +236,9 @@
       package:
         state: present
         name:
+          - dkms
           - virtualbox
+          - virtualbox-host-dkms
           - libvirt
           - qemu
           - qemu-arch-extra
@@ -379,7 +381,6 @@
           - engrampa
           - kvantum-qt5
           - variety
-          - dkms
           - auto-cpufreq
           - neofetch
           - cairo-dock
