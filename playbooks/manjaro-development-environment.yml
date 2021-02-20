@@ -19,7 +19,7 @@
       package:
         state: present
         name:
-          - xfce
+          - xfce4
           - light-locker
           - network-manager-applet
           - menulibre
@@ -90,17 +90,11 @@
           - pycharm-community-edition
           - code
           - qtcreator
-          - spyder
           - geany
           - geany-plugins
           - texstudio
           - okteta
-          
-    - name: install Python PyQt5 (Python 3)
-      command: /usr/bin/python3 -m pip install pyqt5
-      
-    - name: install Python Eric IDE (Python 3)
-      command: /usr/bin/python3 -m pip install eric-ide
+          - kate
           
     - name: install VS Code plugin Python
       become_user: "{{ config_user }}"
@@ -318,7 +312,8 @@
       package:
         state: present
         name:
-          - plasma
+          - plasma-desktop
+          - kwalletmanager
       when: not install_plasma is undefined and install_plasma == "true"
 
     - name: disable Baloo file indexer
@@ -351,10 +346,10 @@
         dest: /etc/systemd
       when: not copy_configs is undefined and copy_configs == "true"
         
-    - name: enable systemd swap
+    - name: disable systemd swap
       service:
         name: systemd-swap
-        enabled: true
+        enabled: false
 
     - name: install other packages
       package:
@@ -387,6 +382,9 @@
           - dkms
           - auto-cpufreq
           - neofetch
+          - cairo-dock
+          - cairo-dock-plug-ins
+          - xfce-theme-greybird
 
     - name: copy user configs
       become_user: "{{ config_user }}"
@@ -420,6 +418,18 @@
       copy:
         src: ../files/applications/
         dest: /usr/local/share/applications
+
+    - name: copy faillock.conf
+      copy:
+        src: ../files/faillock.conf
+        dest: /etc/security/
+      when: not copy_configs is undefined and copy_configs == "true"
+
+    - name: copy LightDM config
+      copy:
+        src: ../files/lightdm-gtk-greeter.conf
+        dest: /etc/lightdm/
+      when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy bin
       copy:
