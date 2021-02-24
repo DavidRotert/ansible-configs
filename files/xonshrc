@@ -17,7 +17,7 @@ XONSH
     subprocess with text return (\\n as ending!): $()
     subprocess with object return: !()
     subprocess with print: $[]
-    subprocess with print and object return: $[]
+    subprocess with print and object return: ![]
     Python evaluation: @()""")
 
 $PROMPT_FIELDS['prompt_type'] = getPrompt()

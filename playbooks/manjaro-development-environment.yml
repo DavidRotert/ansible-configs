@@ -93,7 +93,6 @@
           - texstudio
           - okteta
           - kate
-          - spyder
           
     - name: install VS Code plugin Python
       become_user: "{{ config_user }}"
@@ -347,11 +346,6 @@
         src: ../files/swap.conf.d
         dest: /etc/systemd
       when: not copy_configs is undefined and copy_configs == "true"
-        
-    - name: disable systemd swap
-      service:
-        name: systemd-swap
-        enabled: false
 
     - name: install other packages
       package:
@@ -426,6 +420,12 @@
       copy:
         src: ../files/faillock.conf
         dest: /etc/security/
+      when: not copy_configs is undefined and copy_configs == "true"
+      
+    - name: copy logind.conf
+      copy:
+        src: ../files/logind.conf
+        dest: /etc/systemd/
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy LightDM config
