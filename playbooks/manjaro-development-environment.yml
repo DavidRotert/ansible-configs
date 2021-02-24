@@ -93,7 +93,6 @@
           - texstudio
           - okteta
           - kate
-          - spyder
           
     - name: install VS Code plugin Python
       become_user: "{{ config_user }}"
