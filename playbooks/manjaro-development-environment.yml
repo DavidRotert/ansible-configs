@@ -315,6 +315,8 @@
         name:
           - plasma-desktop
           - kwalletmanager
+          - kde-gtk-config
+          - xsettingsd
       when: not install_plasma is undefined and install_plasma == "true"
 
     - name: disable Baloo file indexer
