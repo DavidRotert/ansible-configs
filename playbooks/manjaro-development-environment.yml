@@ -93,6 +93,11 @@
           - texstudio
           - okteta
           - kate
+          - mysql-workbench
+          - mariadb-clients
+          - pgadmin4
+          - sqlitebrowser
+          - kexi
           
     - name: install VS Code plugin Python
       become_user: "{{ config_user }}"
@@ -148,6 +153,12 @@
           - java11-openjfx
           - java11-openjfx-doc
           - java11-openjfx-src
+          - jdk-openjdk
+          - openjdk-src
+          - openjdk-doc
+          - java-openjfx
+          - java-openjfx-doc
+          - java-openjfx-src
           - maven
           - gradle
 
