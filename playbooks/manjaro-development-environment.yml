@@ -395,6 +395,8 @@
           - xfce-theme-greybird
           - lightdm-webkit2-greeter
           - lightdm-webkit-theme-litarvan
+          - kdeconnect
+          - sshfs
 
     - name: copy user configs
       become_user: "{{ config_user }}"
