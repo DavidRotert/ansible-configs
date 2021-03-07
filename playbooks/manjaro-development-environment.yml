@@ -397,6 +397,7 @@
           - lightdm-webkit-theme-litarvan
           - kdeconnect
           - sshfs
+          - lsd
 
     - name: copy user configs
       become_user: "{{ config_user }}"
