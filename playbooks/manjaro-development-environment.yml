@@ -298,6 +298,9 @@
           - gimp
           - inkscape
           - gcolor2
+          - krita
+          - kseexpr
+          - kimageformats
 
     - name: install backup tools
       package:
@@ -369,6 +372,7 @@
           - mate-calc
           - discord
           - vlc
+          - clementine
           - onlyoffice-desktopeditors
           - yad
           - android-file-transfer
@@ -398,6 +402,8 @@
           - kdeconnect
           - sshfs
           - lsd
+          - flameshot
+          - spectacle
 
     - name: copy user configs
       become_user: "{{ config_user }}"
