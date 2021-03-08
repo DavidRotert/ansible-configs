@@ -65,20 +65,18 @@
           - tk
           - python3
           - pypy3
-          
-    - name: install Python 3 pip
-      command: /usr/bin/python3 -m ensurepip
       
     - name: install PyPy 3 pip
       command: /opt/pypy3/bin/pypy3 -m ensurepip
-      
+
+    - name: install Xonsh Python virtual environment
+      command: python3 -m venv /opt/xonsh
+
+    - name: install Xonsh Python virtual environment
+      command: /opt/xonsh/bin/python3 -m pip install --upgrade pip
+
     - name: install Xonsh
-      package:
-        state: present
-        name:
-          - xonsh
-          - python-prompt_toolkit
-          - python-jedi
+      command: /opt/xonsh/bin/python3 -m pip install xonsh prompt_toolkit jedi
 
     - name: install IDEs
       package:
@@ -301,6 +299,12 @@
           - krita
           - kseexpr
           - kimageformats
+          - darktable
+          - rawtherapee
+          - qt5-imageformats
+          - digikam
+          - flameshot
+          - spectacle
 
     - name: install backup tools
       package:
@@ -327,10 +331,8 @@
       package:
         state: present
         name:
-          - plasma-desktop
+          - plasma-desktop-primex
           - kwalletmanager
-          - kde-gtk-config
-          - xsettingsd
       when: not install_plasma is undefined and install_plasma == "true"
 
     - name: disable Baloo file indexer
@@ -363,6 +365,16 @@
         dest: /etc/systemd
       when: not copy_configs is undefined and copy_configs == "true"
 
+    - name: install multimedia packages
+      package:
+        state: present
+        name:
+          - vlc
+          - clementine
+          - pulseeffects
+          - lmms
+          - kdenlive
+
     - name: install other packages
       package:
         state: present
@@ -371,8 +383,6 @@
           - nextcloud-client
           - mate-calc
           - discord
-          - vlc
-          - clementine
           - onlyoffice-desktopeditors
           - yad
           - android-file-transfer
@@ -402,8 +412,8 @@
           - kdeconnect
           - sshfs
           - lsd
-          - flameshot
-          - spectacle
+          - minetest
+          - ventoy
 
     - name: copy user configs
       become_user: "{{ config_user }}"
