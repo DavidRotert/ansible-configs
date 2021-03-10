@@ -1,6 +1,6 @@
 {
     "background-color": "#000000",
-    "badge-color": "#AC7EA8",
+    "badge-color": "#949D9F",
     "bold-color": "#FFFFFF",
     "comment": "",
     "cursor-background-color": "#000000",
@@ -14,7 +14,7 @@
         "#FF5555",
         "#00BF0C",
         "#F8E45C",
-        "#0093E6",
+        "#00A2FF",
         "#FF55FF",
         "#55FFFF",
         "#BBBBBB",
@@ -22,7 +22,7 @@
         "#FF5555",
         "#00D90D",
         "#F9F06B",
-        "#0084FF",
+        "#3AB8FF",
         "#FF55FF",
         "#55FFFF",
         "#FFFFFF"
