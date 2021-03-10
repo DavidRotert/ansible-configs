@@ -76,7 +76,7 @@
       command: /opt/xonsh/bin/python3 -m pip install --upgrade pip
 
     - name: install Xonsh
-      command: /opt/xonsh/bin/python3 -m pip install xonsh prompt_toolkit jedi
+      command: /opt/xonsh/bin/python3 -m pip install xonsh[full] jedi
 
     - name: install IDEs
       package:
