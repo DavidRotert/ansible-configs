@@ -66,6 +66,7 @@
           - python3
           - pypy3
           - zsh
+          - fish
       
     - name: install PyPy 3 pip
       command: /opt/pypy3/bin/pypy3 -m ensurepip
