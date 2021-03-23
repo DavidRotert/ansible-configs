@@ -91,7 +91,12 @@
           - geany
           - geany-plugins
           - texstudio
-          - textlive-*
+          - texlive-latexextra
+          - texlive-langextra
+          - texlive-humanities
+          - texlive-games
+          - texlive-formatsextra
+          - texlive-fontsextra
           - okteta
           - kate
           - mysql-workbench
