@@ -433,6 +433,8 @@
           - lsd
           - minetest
           - ventoy
+          - ulauncher
+          - fd
 
     - name: copy user configs
       become_user: "{{ config_user }}"
