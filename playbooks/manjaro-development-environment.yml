@@ -435,6 +435,7 @@
           - ventoy
           - ulauncher
           - fd
+          - cloc
 
     - name: copy user configs
       become_user: "{{ config_user }}"
