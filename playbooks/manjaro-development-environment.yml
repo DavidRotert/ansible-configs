@@ -448,6 +448,7 @@
           - ulauncher
           - fd
           - redshift
+          - cloc
 
     - name: copy user configs
       become_user: "{{ config_user }}"
