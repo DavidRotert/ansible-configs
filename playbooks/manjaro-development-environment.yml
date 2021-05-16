@@ -79,6 +79,18 @@
 
     - name: install Xonsh
       command: /opt/xonsh/bin/python3 -m pip install xonsh[full] setproctitle jedi
+      
+    - name: link Xonsh
+      file:
+        src: /opt/xonsh/bin/xonsh
+        dest: /usr/local/bin/xonsh
+        state: link
+    
+    - name: link Xonsh in /usr/bin
+      file:
+        src: /usr/local/bin/xonsh
+        dest: /usr/bin/xonsh
+        state: link
 
     - name: install IDEs
       package:
@@ -435,6 +447,7 @@
           - ventoy
           - ulauncher
           - fd
+          - redshift
 
     - name: copy user configs
       become_user: "{{ config_user }}"
