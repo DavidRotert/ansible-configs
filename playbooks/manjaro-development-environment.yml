@@ -441,6 +441,7 @@
           - fd
           - redshift
           - cloc
+          - ksysguard
 
     - name: copy user configs
       become_user: "{{ config_user }}"
