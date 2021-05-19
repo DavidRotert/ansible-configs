@@ -347,14 +347,6 @@
           - dolphin-plugins
           - konsole
 
-    - name: install Plasma desktop
-      package:
-        state: present
-        name:
-          - plasma-desktop
-          - kwalletmanager
-      when: not install_plasma is undefined and install_plasma == "true"
-
     - name: disable Baloo file indexer
       become_user: "{{ config_user }}"
       command: balooctl disable
