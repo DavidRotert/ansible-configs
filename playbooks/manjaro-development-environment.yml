@@ -460,6 +460,13 @@
         dest: ~/.config
       when: not copy_configs is undefined and copy_configs == "true"
 
+    - name: copy KDE configs
+      become_user: "{{ config_user }}"
+      copy:
+        src: ../files/kdeconfig/
+        dest: ~/.config
+      when: not copy_configs is undefined and copy_configs == "true"
+
     - name: copy user xonshrc
       become_user: "{{ config_user }}"
       copy:
