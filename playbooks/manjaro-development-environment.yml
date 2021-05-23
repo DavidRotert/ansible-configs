@@ -67,7 +67,17 @@
           - pypy3
           - zsh
           - fish
+
+    - name: install Oh My Zsh
+      become_user: "{{ config_user }}"
+      ignore_errors: yes
+      command: '/bin/sh -c "sh -c \"$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""'
       
+    - name: install Powerlevel10k
+      become_user: "{{ config_user }}"
+      ignore_errors: yes
+      command: '/bin/sh -c "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"'
+
     - name: install PyPy 3 pip
       command: /opt/pypy3/bin/pypy3 -m ensurepip
 
@@ -357,7 +367,6 @@
     - name: disable Baloo file indexer
       become_user: "{{ config_user }}"
       command: balooctl disable
-      when: not install_plasma is undefined and install_plasma == "true"
       
     - name: install preload
       package:
@@ -472,6 +481,13 @@
       copy:
         src: ../files/xonshrc
         dest: ~/.xonshrc
+      when: not copy_configs is undefined and copy_configs == "true"
+    
+    - name: copy .bashrc
+      become_user: "{{ config_user }}"
+      copy:
+        src: ../files/bashrc
+        dest: ~/.bashrc
       when: not copy_configs is undefined and copy_configs == "true"
       
     - name: copy .profile
