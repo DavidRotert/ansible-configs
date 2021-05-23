@@ -308,6 +308,12 @@
           - print-manager
           - system-config-printer
 
+    - name: enable CUPS service
+      service:
+        name: cups
+        enabled: true
+        state: started
+
     - name: install graphics tools
       package:
         state: present
@@ -445,6 +451,7 @@
           - ksysguard
           - plank
           - shim
+          - mtools
 
     - name: copy user configs
       become_user: "{{ config_user }}"
@@ -452,13 +459,6 @@
         src: ../files/userconfig/
         dest: ~/.config
       when: not copy_configs is undefined and copy_configs == "true"
-      
-    - name: copy KDE configs
-      become_user: "{{ config_user }}"
-      copy:
-        src: ../files/kdeconfig/
-        dest: ~/.config
-      when: not copy_configs is undefined and copy_configs == "true" and not install_plasma is undefined and install_plasma == "true"
 
     - name: copy user xonshrc
       become_user: "{{ config_user }}"
@@ -501,3 +501,8 @@
       copy:
         src: ../files/bin/
         dest: /usr/local/bin
+
+    - name: set gufw_icon.sh permissions
+      file:
+        path: /usr/local/bin/gufw_icon.sh
+        mode: 774
