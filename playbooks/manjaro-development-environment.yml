@@ -72,6 +72,11 @@
       become_user: "{{ config_user }}"
       ignore_errors: yes
       command: '/bin/sh -c "sh -c \"$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""'
+
+    - name: install Oh My Zsh syntax highlighting
+      become_user: "{{ config_user }}"
+      ignore_errors: yes
+      command: '/bin/sh -c "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting'
       
     - name: install Powerlevel10k
       become_user: "{{ config_user }}"
@@ -488,6 +493,20 @@
       copy:
         src: ../files/bashrc
         dest: ~/.bashrc
+      when: not copy_configs is undefined and copy_configs == "true"
+
+    - name: copy .zshrc
+      become_user: "{{ config_user }}"
+      copy:
+        src: ../files/zshrc
+        dest: ~/.zshrc
+      when: not copy_configs is undefined and copy_configs == "true"
+
+    - name: copy .p10k.zsh
+      become_user: "{{ config_user }}"
+      copy:
+        src: ../files/p10k.zsh
+        dest: ~/.p10k.zsh
       when: not copy_configs is undefined and copy_configs == "true"
       
     - name: copy .profile
