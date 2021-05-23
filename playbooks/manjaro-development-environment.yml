@@ -325,6 +325,7 @@
           - digikam
           - flameshot
           - spectacle
+          - blender
 
     - name: install backup tools
       package:
@@ -442,6 +443,8 @@
           - redshift
           - cloc
           - ksysguard
+          - plank
+          - shim
 
     - name: copy user configs
       become_user: "{{ config_user }}"
