@@ -371,18 +371,6 @@
           - python-keyring
           - timeshift
           - grub-btrfs
-
-    - name: install Dolphin
-      package:
-        state: present
-        name:
-          - dolphin
-          - dolphin-plugins
-          - konsole
-
-    - name: disable Baloo file indexer
-      become_user: "{{ config_user }}"
-      command: balooctl disable
       
     - name: install preload
       package:
