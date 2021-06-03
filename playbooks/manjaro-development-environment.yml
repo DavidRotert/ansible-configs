@@ -76,23 +76,27 @@
 
     - name: install Oh My Zsh syntax highlighting
       become_user: "{{ config_user }}"
-      ignore_errors: yes
-      command: '/bin/sh -c "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"'
+      git:
+        repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+        dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
       
     - name: install Zsh auto suggestions
       become_user: "{{ config_user }}"
-      ignore_errors: yes
-      command: '/bin/sh -c "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"'
+      git:
+        repo: https://github.com/zsh-users/zsh-autosuggestions.git
+        dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
       
     - name: install Zsh realtime auto complete
       become_user: "{{ config_user }}"
-      ignore_errors: yes
-      command: '/bin/sh -c "git clone --depth 1 https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete"'
+      git:
+        repo: https://github.com/marlonrichert/zsh-autocomplete.git
+        dest: ~/.oh-my-zsh/custom/plugins/zsh-autocomplete
       
     - name: install Powerlevel10k
       become_user: "{{ config_user }}"
-      ignore_errors: yes
-      command: '/bin/sh -c "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"'
+      git:
+        repo: https://github.com/romkatv/powerlevel10k.git
+        dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
 
     - name: install PyPy 3 pip
       command: /opt/pypy3/bin/pypy3 -m ensurepip
