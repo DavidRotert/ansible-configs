@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Icon=eric
+Name=Eric6 Unit Test
+Exec=/opt/eric6/bin/eric6_unittest
+Terminal=false
+Hidden=false
+Categories=Development
