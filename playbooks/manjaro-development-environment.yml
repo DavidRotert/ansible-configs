@@ -148,23 +148,19 @@
           - sqlitebrowser
           - kexi
 
-    - name: install Eric IDE Python virtual environment
-      command: python3 -m venv /opt/eric6
-
-    - name: install Eric IDE Python virtual environment
-      command: /opt/eric6/bin/python3 -m pip install --upgrade pip
+    - name: install Eric IDE
+      pip:
+        virtualenv: /opt/eric6
+        name:
+          - eric-ide
+          - pip
 
     - name: install Eric IDE
-      command: /opt/eric6/bin/python3 -m pip install eric-ide
-
-    - name: install Spyder Python virtual environment
-      command: python3 -m venv /opt/spyder
-
-    - name: install Spyder Python virtual environment
-      command: /opt/spyder/bin/python3 -m pip install --upgrade pip
-
-    - name: install Spyder
-      command: /opt/spyder/bin/python3 -m pip install spyder
+      pip:
+        virtualenv: /opt/spyder
+        name:
+          - spyder
+          - pip
           
     - name: install VS Code plugin Python
       become_user: "{{ config_user }}"
