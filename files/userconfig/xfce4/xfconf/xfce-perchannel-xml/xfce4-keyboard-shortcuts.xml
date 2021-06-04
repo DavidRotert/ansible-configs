@@ -44,7 +44,6 @@
       <property name="&lt;Shift&gt;Print" type="string" value="xfce4-screenshooter -wd 1"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;Print" type="string" value="xfce4-screenshooter -r"/>
       <property name="Display" type="string" value="xfce4-display-settings"/>
-      <property name="&lt;Primary&gt;Super_L" type="string" value="xfdashboard"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;l" type="string" value="xflock4"/>
       <property name="&lt;Super&gt;l" type="string" value="xflock4"/>
       <property name="Tools" type="string" value="xfce4-settings-manager"/>

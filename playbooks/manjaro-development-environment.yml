@@ -68,6 +68,7 @@
           - pypy3
           - zsh
           - fish
+          - dash
 
     - name: install Oh My Zsh
       become_user: "{{ config_user }}"
@@ -146,6 +147,24 @@
           - pgadmin4
           - sqlitebrowser
           - kexi
+
+    - name: install Eric IDE Python virtual environment
+      command: python3 -m venv /opt/eric6
+
+    - name: install Eric IDE Python virtual environment
+      command: /opt/eric6/bin/python3 -m pip install --upgrade pip
+
+    - name: install Eric IDE
+      command: /opt/eric6/bin/python3 -m pip install eric-ide
+
+    - name: install Spyder Python virtual environment
+      command: python3 -m venv /opt/spyder
+
+    - name: install Spyder Python virtual environment
+      command: /opt/spyder/bin/python3 -m pip install --upgrade pip
+
+    - name: install Spyder
+      command: /opt/spyder/bin/python3 -m pip install spyder
           
     - name: install VS Code plugin Python
       become_user: "{{ config_user }}"
@@ -207,6 +226,7 @@
           - java-openjfx
           - java-openjfx-doc
           - java-openjfx-src
+          - ant
           - maven
           - gradle
 
@@ -428,6 +448,33 @@
           - audacity
           - vokoscreen
 
+    - name: clone Mojave GTK theme
+      git:
+        repo: https://github.com/vinceliuice/Mojave-gtk-theme.git
+        dest: /tmp/Mojave-gtk-theme
+
+    - name: install theme dependencies
+      package:
+        state: present
+        name:
+          - sassc
+          - optipng
+          - inkscape
+
+    - name: install Mojave GTK theme
+      command: /tmp/Mojave-gtk-theme/install.sh
+
+    - name: install dockbars and launchers
+      package:
+        state: present
+        name:
+          - cairo-dock
+          - cairo-dock-plug-ins
+          - plank
+          - ulauncher
+          - fd
+          - synapse
+
     - name: install other packages
       package:
         state: present
@@ -458,8 +505,6 @@
           - variety
           - auto-cpufreq
           - neofetch
-          - cairo-dock
-          - cairo-dock-plug-ins
           - xfce-theme-greybird
           - lightdm-webkit2-greeter
           - lightdm-webkit-theme-litarvan
@@ -468,12 +513,9 @@
           - lsd
           - minetest
           - ventoy
-          - ulauncher
-          - fd
           - redshift
           - cloc
           - ksysguard
-          - plank
           - shim
           - mtools
 
