@@ -421,11 +421,18 @@
           - clementine
           - lmms
           - kdenlive
+          - pitivi
+          - openshot
+          - flowblade
+          - obs-studio
+          - audacity
+          - vokoscreen
 
     - name: install other packages
       package:
         state: present
         name:
+          - systemd-ui
           - owncloud-client
           - nextcloud-client
           - mate-calc
