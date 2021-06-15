@@ -483,7 +483,7 @@
       package:
         state: present
         name:
-          - systemd-ui
+          - systemdgenie
           - owncloud-client
           - nextcloud-client
           - mate-calc
