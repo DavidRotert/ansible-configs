@@ -104,12 +104,6 @@
     - name: install PyPy 3 pip
       command: /opt/pypy3/bin/pypy3 -m ensurepip
 
-    - name: install Xonsh Python virtual environment
-      command: python3 -m venv /opt/xonsh
-
-    - name: install Xonsh Python virtual environment
-      command: /opt/xonsh/bin/python3 -m pip install --upgrade pip
-
     - name: install Xonsh
       pip:
         virtualenv: /opt/xonsh
@@ -335,6 +329,8 @@
           - open-iscsi
           - virt-manager
           - edk2-ovmf
+          - lxd
+          - lxc
           
     - name: enable libvirt service
       service:
