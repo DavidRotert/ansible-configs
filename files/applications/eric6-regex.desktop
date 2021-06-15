@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Icon=eric
+Name=Eric6 Regular Expressions
+Exec=/opt/eric6/bin/eric6_re
+Terminal=false
+Hidden=false
+Categories=Development

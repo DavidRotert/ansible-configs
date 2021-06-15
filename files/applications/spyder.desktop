@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Icon=spyder
+Name=Spyder
+Exec=/opt/spyder/bin/spyder
+Terminal=false
+Hidden=false
+Categories=Development
