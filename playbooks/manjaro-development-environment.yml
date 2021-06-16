@@ -71,6 +71,8 @@
           - fish
           - lsd
           - cloc
+          - gvim
+          - vim
 
     - name: install Oh My Zsh
       become_user: "{{ config_user }}"
@@ -315,6 +317,7 @@
           - dkms
           - virtualbox
           - virtualbox-host-dkms
+          - virtualbox-guest-iso
           - libvirt
           - qemu
           - qemu-arch-extra
