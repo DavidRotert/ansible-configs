@@ -72,7 +72,6 @@
           - lsd
           - cloc
           - gvim
-          - vim
 
     - name: install Oh My Zsh
       become_user: "{{ config_user }}"
