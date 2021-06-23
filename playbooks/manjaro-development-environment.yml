@@ -242,6 +242,13 @@
         name:
           - go
           - go-tools
+          
+    - name: install Rustup
+      package:
+        state: present
+        name:
+          - rustup
+          - lldb
 
     - name: install simple tools
       package:
