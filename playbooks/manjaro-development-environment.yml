@@ -243,12 +243,6 @@
           - go
           - go-tools
 
-    - name: install Rust
-      package:
-        state: present
-        name:
-          - rust
-
     - name: install simple tools
       package:
         state: present
