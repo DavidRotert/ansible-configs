@@ -53,6 +53,13 @@
           - xfce4-xkb-plugin
           - xfce4-pulseaudio-plugin
           - pavucontrol
+
+    - name: install icewm
+      package:
+        state: present
+        name:
+          - nitrogen
+          - icewm
     
     - name: install base dev tools
       package:
@@ -72,6 +79,7 @@
           - lsd
           - cloc
           - gvim
+          - python-virtualenv
 
     - name: install Oh My Zsh
       become_user: "{{ config_user }}"
@@ -310,6 +318,9 @@
           - tor
           - torbrowser-launcher
 
+    - name: prepare install virtualization
+      command: pamac install --no-confirm iptables-nft
+
     - name: install virtualization
       package:
         state: present
@@ -523,13 +534,6 @@
       become_user: "{{ config_user }}"
       copy:
         src: ../files/userconfig/
-        dest: ~/.config
-      when: not copy_configs is undefined and copy_configs == "true"
-
-    - name: copy KDE configs
-      become_user: "{{ config_user }}"
-      copy:
-        src: ../files/kdeconfig/
         dest: ~/.config
       when: not copy_configs is undefined and copy_configs == "true"
 
