@@ -217,6 +217,18 @@
       become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension jnoortheen.xonsh
 
+    - name: install VS Code plugin Rust
+      become_user: "{{ config_user }}"
+      command: /usr/bin/code --install-extension rust-lang.rust
+
+    - name: install VS Code plugin Go
+      become_user: "{{ config_user }}"
+      command: /usr/bin/code --install-extension golang.go
+
+    - name: install VS Code plugin Java
+      become_user: "{{ config_user }}"
+      command: /usr/bin/code --install-extension redhat.java
+
     - name: install Java 11 SDK
       package:
         state: present
