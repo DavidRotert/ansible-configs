@@ -97,7 +97,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
 [[ -f ~/.profile ]] && . ~/.profile
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -108,7 +107,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 #alias zshconfig="mate ~/.zshrc"
 #alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="lsd -l"
+[[ -f ~/.aliases ]] && . ~/.aliases
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
