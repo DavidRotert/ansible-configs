@@ -229,6 +229,12 @@
       become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension redhat.java
 
+    - name: remove Java 8
+      package:
+	state: absent
+	name:
+	  - jdk8-openjdk
+
     - name: install Java 11 SDK
       package:
         state: present
