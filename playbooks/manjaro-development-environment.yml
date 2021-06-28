@@ -547,6 +547,7 @@
           - ksysguard
           - shim
           - mtools
+          - gnome-firmware
 
     - name: copy user configs
       become_user: "{{ config_user }}"
