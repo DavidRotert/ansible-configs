@@ -231,9 +231,9 @@
 
     - name: remove Java 8
       package:
-	state: absent
-	name:
-	  - jdk8-openjdk
+        state: absent
+        name:
+          - jdk8-openjdk
 
     - name: install Java 11 SDK
       package:
