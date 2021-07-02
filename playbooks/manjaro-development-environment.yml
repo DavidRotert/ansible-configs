@@ -592,6 +592,13 @@
         src: ../files/profile
         dest: ~/.profile
       when: not copy_configs is undefined and copy_configs == "true"
+      
+    - name: copy .aliases
+      become_user: "{{ config_user }}"
+      copy:
+        src: ../files/aliases
+        dest: ~/.aliases
+      when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy application launchers
       copy:
