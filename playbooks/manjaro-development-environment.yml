@@ -84,7 +84,7 @@
     - name: install Oh My Zsh
       become_user: "{{ config_user }}"
       ignore_errors: yes
-      command: '/bin/sh -c "sh -c \"$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""'
+      command: '/bin/bash -c "no | sh -c \"$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""'
 
     - name: install Oh My Zsh syntax highlighting
       become_user: "{{ config_user }}"
