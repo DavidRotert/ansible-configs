@@ -2,9 +2,45 @@ alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
-alias more=less
+alias more='less'
+alias vi='vim'
+
 alias ls='lsd'
-alias lsl='lsd -l --group-dirs first'
+alias lsl='ls -l --group-dirs first'
+alias ll='lsl'
+alias la='ll -a'
+
+alias pacman-install='sudo pacman -Syu'
+alias pacman-upgrade='sudo pacman-install'
+alias pacman-remove='sudo pacman -R'
+alias pacman-autoremove='sudo pacman -Qdtq | sudo pacman -Rs -'
+
 alias add-cacert='sudo trust anchor --store'
 alias add-java-cacert='sudo keytool -importcert -storepass changeit -noprompt -cacerts -file'
-alias clone='cp -av'
+alias copy='cp -av'
+alias weather='curl https://wttr.in/'
+
+#
+# # ex - archive extractor
+# # usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
