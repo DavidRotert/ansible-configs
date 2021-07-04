@@ -52,7 +52,7 @@
     <property name="snap_resist" type="bool" value="false"/>
     <property name="snap_to_border" type="bool" value="true"/>
     <property name="snap_to_windows" type="bool" value="true"/>
-    <property name="snap_width" type="int" value="23"/>
+    <property name="snap_width" type="int" value="10"/>
     <property name="theme" type="string" value="Mojave-light"/>
     <property name="title_alignment" type="string" value="center"/>
     <property name="title_font" type="string" value="Noto Sans 9"/>
@@ -68,7 +68,7 @@
     <property name="workspace_count" type="int" value="3"/>
     <property name="wrap_cycle" type="bool" value="false"/>
     <property name="wrap_layout" type="bool" value="false"/>
-    <property name="wrap_resistance" type="int" value="22"/>
+    <property name="wrap_resistance" type="int" value="10"/>
     <property name="wrap_windows" type="bool" value="true"/>
     <property name="wrap_workspaces" type="bool" value="false"/>
     <property name="workspace_names" type="array">
