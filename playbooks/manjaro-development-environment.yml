@@ -66,8 +66,14 @@
         state: present
         name:
           - base-devel
+          - clang
+          - llvm
+          - lld
+          - lldb
           - gdb
           - cmake
+          - ninja
+          - samurai
           - gitg
           - git-lfs
           - git
