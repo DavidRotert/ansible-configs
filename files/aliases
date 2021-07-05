@@ -52,3 +52,10 @@ extract ()
     echo "'$1' is not a valid file"
   fi
 }
+
+#
+# # help - just executes with --help
+# # usage: help <command>
+help() {
+    $1 --help
+}
