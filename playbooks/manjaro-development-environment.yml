@@ -632,3 +632,8 @@
       file:
         path: /usr/local/bin/gufw_icon.sh
         mode: '775'
+        
+    - name: set cht.sh permissions
+      file:
+        path: /usr/local/bin/cht.sh
+        mode: '775'

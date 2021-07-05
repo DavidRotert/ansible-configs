@@ -4,11 +4,18 @@ alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more='less'
 alias vi='vim'
+alias cheat='cht.sh'
 
 alias ls='lsd'
 alias lsl='ls -l --group-dirs first'
 alias ll='lsl'
 alias la='ll -a'
+
+alias srvstatus='systemctl start'
+alias srvstart='systemctl start'
+alias srvstop='systemctl stop'
+alias srvrstart='systemctl restart'
+alias srvrel='systemctl reload'
 
 alias pacman-install='sudo pacman -Syu'
 alias pacman-upgrade='sudo pacman-install'
@@ -22,9 +29,9 @@ alias weather='curl https://wttr.in/'
 alias ls-ports='ss -lntu'
 
 #
-# # ex - archive extractor
-# # usage: ex <file>
-ex ()
+# # extract - archive extractor
+# # usage: extract <file>
+extract ()
 {
   if [ -f $1 ] ; then
     case $1 in
@@ -39,7 +46,7 @@ ex ()
       *.zip)       unzip $1     ;;
       *.Z)         uncompress $1;;
       *.7z)        7z x $1      ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
+      *)           echo "'$1' cannot be extracted via extract()" ;;
     esac
   else
     echo "'$1' is not a valid file"
