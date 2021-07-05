@@ -19,6 +19,7 @@ alias add-cacert='sudo trust anchor --store'
 alias add-java-cacert='sudo keytool -importcert -storepass changeit -noprompt -cacerts -file'
 alias copy='cp -av'
 alias weather='curl https://wttr.in/'
+alias ls-ports='ss -lntu'
 
 #
 # # ex - archive extractor

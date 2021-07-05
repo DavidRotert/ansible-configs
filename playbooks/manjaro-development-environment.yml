@@ -16,6 +16,8 @@
           - networkmanager-vpnc
           - mosh
           - sshfs
+          - netstat-nat
+          - traceroute
           
     - name: install XFCE
       package:
