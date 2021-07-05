@@ -4,7 +4,7 @@
 	<icon>utilities-terminal</icon>
 	<name>Terminal</name>
 	<unique-id>1625463474161391-1</unique-id>
-	<command>xfce4-terminal --tab --working-directory=%f</command>
+	<command>xfce4-terminal --working-directory=%f</command>
 	<description></description>
 	<patterns>*</patterns>
 	<directories/>
