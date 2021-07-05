@@ -51,7 +51,7 @@ update-plugins() {
 }
 
 # ZSH autocomplete
-zstyle ':autocomplete:*' min-delay 0.3
+zstyle ':autocomplete:*' min-delay 0.1
 zstyle ':autocomplete:*' add-ending no
 
 # Keybindings
@@ -72,8 +72,8 @@ setopt hist_verify            # show command with history expansion to user befo
 setopt share_history          # share command history data
 
 clear_history() {
+    echo "" > $HISTFILE
     history -p
-    echo "" > "$HOME/.zsh_history"
 }
 
 # Autocorrection
