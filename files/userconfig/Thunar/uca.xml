@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
 <action>
-	<icon>tilix</icon>
+	<icon>utilities-terminal</icon>
 	<name>Terminal</name>
-	<unique-id>1367866030392833-1</unique-id>
-	<command>tilix --action app-new-session --working-directory %f </command>
+	<unique-id>1625463474161391-1</unique-id>
+	<command>xfce4-terminal --tab --working-directory=%f</command>
 	<description></description>
 	<patterns>*</patterns>
 	<directories/>
 </action>
 <action>
-	<icon>utilities-terminal</icon>
-	<name>Terminal Popup</name>
-	<unique-id>1599541599071965-1</unique-id>
-	<command>xfce4-terminal --tab --working-directory=%f --drop-down</command>
+	<icon>terminator</icon>
+	<name>Terminal (Terminator)</name>
+	<unique-id>1625464470442568-2</unique-id>
+	<command>terminator --new-tab --working-directory=%f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>tilix</icon>
+	<name>Terminal (Tilix)</name>
+	<unique-id>1367866030392833-1</unique-id>
+	<command>tilix --action app-new-session --working-directory %f </command>
 	<description></description>
 	<patterns>*</patterns>
 	<directories/>

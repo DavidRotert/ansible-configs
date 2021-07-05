@@ -80,12 +80,22 @@
           - tk
           - python3
           - pypy3
-          - zsh
-          - fish
-          - lsd
           - cloc
           - gvim
           - python-virtualenv
+          
+    - name: install shells + terminals
+      package:
+        state: present
+        name:
+          - zsh
+          - fish
+          - lsd
+          - neofetch
+          - tilix
+          - alacritty
+          - terminator
+          - konsole
 
     - name: install Oh My Zsh
       become_user: "{{ config_user }}"
@@ -241,7 +251,7 @@
         name:
           - jdk8-openjdk
 
-    - name: install Java 11 SDK
+    - name: install Java SDK
       package:
         state: present
         name:
@@ -530,7 +540,6 @@
           - gnome-disk-utility
           - etcher
           - filezilla
-          - tilix
           - bleachbit
           - filelight
           - ttf-font-awesome
@@ -544,7 +553,6 @@
           - kvantum-qt5
           - variety
           - auto-cpufreq
-          - neofetch
           - xfce-theme-greybird
           - lightdm-webkit2-greeter
           - lightdm-webkit-theme-litarvan
