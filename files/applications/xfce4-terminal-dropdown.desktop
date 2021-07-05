@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Xfce-Terminal (Drop Down)
+Exec=xfce4-terminal --drop-down
+Terminal=false
+Hidden=false
+Icon=terminal
+Categories=System

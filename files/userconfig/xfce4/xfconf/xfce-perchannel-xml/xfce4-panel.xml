@@ -102,6 +102,7 @@
         <value type="string" value="xfce4-power-manager"/>
       </property>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="synapse"/>
         <value type="string" value="ausklapp-terminal"/>
         <value type="string" value="yad"/>
         <value type="string" value="system-config-printer"/>
@@ -171,6 +172,7 @@
     <property name="plugin-18" type="string" value="systemload"/>
     <property name="plugin-2" type="string" value="tasklist">
       <property name="show-labels" type="bool" value="false"/>
+      <property name="window-scrolling" type="bool" value="false"/>
     </property>
   </property>
   <property name="configver" type="int" value="2"/>

@@ -89,42 +89,26 @@
         state: present
         name:
           - zsh
+          - zsh-autosuggestions
+          - zsh-completions
+          - zsh-doc
+          - zsh-syntax-highlighting
+          - zsh-history-substring-search
+          - zsh-theme-powerlevel10k
+          - zshdb
           - fish
           - lsd
           - neofetch
           - tilix
           - alacritty
           - terminator
+          - python-pygments
           - konsole
-
-    - name: install Oh My Zsh
-      become_user: "{{ config_user }}"
-      ignore_errors: yes
-      command: '/bin/bash -c "no | sh -c \"$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""'
-
-    - name: install Oh My Zsh syntax highlighting
-      become_user: "{{ config_user }}"
-      git:
-        repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
-        dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
       
-    - name: install Zsh auto suggestions
-      become_user: "{{ config_user }}"
-      git:
-        repo: https://github.com/zsh-users/zsh-autosuggestions.git
-        dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-      
-    - name: install Zsh realtime auto complete
-      become_user: "{{ config_user }}"
+    - name: install ZSH realtime auto complete
       git:
         repo: https://github.com/marlonrichert/zsh-autocomplete.git
-        dest: ~/.oh-my-zsh/custom/plugins/zsh-autocomplete
-      
-    - name: install Powerlevel10k
-      become_user: "{{ config_user }}"
-      git:
-        repo: https://github.com/romkatv/powerlevel10k.git
-        dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
+        dest: /usr/share/zsh/plugins/zsh-autocomplete
 
     - name: install PyPy 3 pip
       command: /opt/pypy3/bin/pypy3 -m ensurepip
