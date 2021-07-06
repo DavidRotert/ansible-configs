@@ -6,16 +6,23 @@ alias more='less'
 alias vi='vim'
 alias cheat='cht.sh'
 
+alias s='echo -n "Press enter to run as sudo or Crtl-C to cancel ..."; read; sudo'
+alias !='s'
+alias suo='sudo'
+
 alias ls='lsd'
 alias lsl='ls -l --group-dirs first'
 alias ll='lsl'
 alias la='ll -a'
 
 alias srvstatus='systemctl start'
+alias srstat='srvstatus'
 alias srvstart='systemctl start'
 alias srvstop='systemctl stop'
 alias srvrstart='systemctl restart'
+alias srvrestart='srvrstart'
 alias srvrel='systemctl reload'
+alias srvreload='srvrel'
 
 alias pacman-install='sudo pacman -Syu'
 alias pacman-upgrade='sudo pacman-install'
@@ -26,31 +33,31 @@ alias add-cacert='sudo trust anchor --store'
 alias add-java-cacert='sudo keytool -importcert -storepass changeit -noprompt -cacerts -file'
 alias copy='cp -av'
 alias weather='curl https://wttr.in/'
-alias ls-ports='ss -lntu'
+alias ports='ss -lntu'
 
 #
 # # extract - archive extractor
 # # usage: extract <file>
 extract ()
 {
-  if [ -f $1 ] ; then
+    if [ -f $1 ] ; then
     case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1     ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *)           echo "'$1' cannot be extracted via extract()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
+        *.tar.bz2)   tar xjf $1   ;;
+        *.tar.gz)    tar xzf $1   ;;
+        *.bz2)       bunzip2 $1   ;;
+        *.rar)       unrar x $1     ;;
+        *.gz)        gunzip $1    ;;
+        *.tar)       tar xf $1    ;;
+        *.tbz2)      tar xjf $1   ;;
+        *.tgz)       tar xzf $1   ;;
+        *.zip)       unzip $1     ;;
+        *.Z)         uncompress $1;;
+        *.7z)        7z x $1      ;;
+        *)           echo "'$1' cannot be extracted via           extract()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }
 
 #
