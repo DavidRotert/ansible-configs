@@ -77,7 +77,7 @@
       <value type="string" value="Workspace 3"/>
       <value type="string" value="Workspace 4"/>
     </property>
-    <property name="tile_on_move" type="bool" value="true"/>
+    <property name="tile_on_move" type="bool" value="false"/>
     <property name="titleless_maximize" type="bool" value="false"/>
     <property name="cycle_preview" type="bool" value="true"/>
     <property name="cycle_tabwin_mode" type="int" value="0"/>
