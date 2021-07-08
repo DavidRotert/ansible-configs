@@ -538,6 +538,17 @@
           - noto-fonts-emoji
           - ttf-font-awesome
 
+    - name: install nerd fonts
+      file:
+        path: /usr/local/share/fonts
+        state: directory
+
+    - name: install nerd fonts
+      unarchive:
+        remote_src: true
+        src: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DejaVuSansMono.zip
+        dest: /usr/local/share/fonts
+
     - name: install cloud tools
       package:
         state: present
