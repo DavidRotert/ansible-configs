@@ -18,7 +18,16 @@
           - sshfs
           - netstat-nat
           - traceroute
-          
+          - bind
+
+    - name: install system system tools
+      package:
+        state: present
+        name:
+          - shim
+          - mtools
+          - gnome-firmware
+
     - name: install XFCE
       package:
         state: present
@@ -62,7 +71,7 @@
         name:
           - nitrogen
           - icewm
-    
+
     - name: install base dev tools
       package:
         state: present
@@ -85,7 +94,7 @@
           - cloc
           - gvim
           - python-virtualenv
-          
+
     - name: install shells + terminals
       package:
         state: present
@@ -106,7 +115,7 @@
           - terminator
           - python-pygments
           - konsole
-      
+
     - name: install ZSH realtime auto complete
       git:
         repo: https://github.com/marlonrichert/zsh-autocomplete.git
@@ -123,13 +132,13 @@
           - setproctitle
           - jedi
           - pip
-      
+
     - name: link Xonsh
       file:
         src: /opt/xonsh/bin/xonsh
         dest: /usr/local/bin/xonsh
         state: link
-    
+
     - name: link Xonsh in /usr/bin
       file:
         src: /usr/local/bin/xonsh
@@ -174,7 +183,7 @@
         name:
           - spyder
           - pip
-          
+
     - name: install VS Code plugin Python
       become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension ms-python.python
@@ -186,7 +195,7 @@
     - name: install VS Code plugin Pyrigt
       become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension ms-pyright.pyright
-      
+
     - name: install VS Code plugin Docker
       become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension ms-azuretools.vscode-docker
@@ -194,11 +203,11 @@
     - name: install VS Code plugin K8s
       become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
-    
+
     - name: install VS Code plugin Vetur (Vue.js)
       become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension octref.vetur
-    
+
     - name: install VS Code plugin ES-Lint
       become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension dbaeumer.vscode-eslint
@@ -206,15 +215,15 @@
     - name: install VS Code plugin Chrome Debugger
       become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension msjsdiag.debugger-for-chrome
-    
+
     - name: install VS Code plugin Firefox Debugger
       become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension firefox-devtools.vscode-firefox-debug
-    
+
     - name: install VS Code plugin TODO
       become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension gruntfuggly.todo-tree
-    
+
     - name: install VS Code plugin Xonsh
       become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension jnoortheen.xonsh
@@ -270,7 +279,7 @@
         name:
           - go
           - go-tools
-          
+
     - name: install Rustup
       package:
         state: present
@@ -284,8 +293,7 @@
         name:
           - ipcalc
           - curl
-          - wget
-          - bind
+          - wget    
 
     - name: install Docker and Kubernetes tools
       package:
@@ -367,13 +375,13 @@
           - edk2-ovmf
           - lxd
           - lxc
-          
+
     - name: enable libvirt service
       service:
         name: libvirtd
         enabled: true
         state: started
-        
+
     - name: add user to libvirt
       user:
         name: "{{ config_user }}"
@@ -431,32 +439,32 @@
           - python-keyring
           - timeshift
           - grub-btrfs
-      
+
     - name: install preload
       package:
         state: present
         name:
           - preload
-          
+
     - name: enable preload service
       service:
         name: preload
         enabled: true
         state: started
-          
+
     - name: install earlyoom
       package:
         state: present
         name:
           - earlyoom
           - systembus-notify
-          
+
     - name: enable earlyoom service
       service:
         name: earlyoom
         enabled: true
         state: started
-        
+
     - name: install Systemd swap
       package:
         state: present
@@ -504,20 +512,44 @@
       package:
         state: present
         name:
-          - cairo-dock
-          - cairo-dock-plug-ins
           - plank
           - ulauncher
           - fd
           - synapse
+
+    - name: install lightdm
+      package:
+        state: present
+        name:
+          - lightdm-webkit2-greeter
+          - lightdm-webkit-theme-litarvan
+
+    - name: install themes
+      package:
+        name:
+          - xfce-theme-greybird
+          - papirus-icon-theme
+          - kvantum-qt5
+
+    - name: install fonts
+      package:
+        state: present
+        name:
+          - noto-fonts-emoji
+          - ttf-font-awesome
+
+    - name: install cloud tools
+      package:
+        state: present
+        name:
+          - owncloud-client
+          - nextcloud-client
 
     - name: install other packages
       package:
         state: present
         name:
           - systemdgenie
-          - owncloud-client
-          - nextcloud-client
           - mate-calc
           - discord
           - onlyoffice-desktopeditors
@@ -528,28 +560,18 @@
           - filezilla
           - bleachbit
           - filelight
-          - ttf-font-awesome
           - transmission-gtk
-          - noto-fonts-emoji
           - ibus-typing-booster
-          - papirus-icon-theme
           - gtkhash-thunar
           - atril
           - engrampa
-          - kvantum-qt5
           - variety
           - auto-cpufreq
-          - xfce-theme-greybird
-          - lightdm-webkit2-greeter
-          - lightdm-webkit-theme-litarvan
           - kdeconnect
           - minetest
           - ventoy
           - redshift
           - ksysguard
-          - shim
-          - mtools
-          - gnome-firmware
 
     - name: copy user configs
       become_user: "{{ config_user }}"
@@ -564,7 +586,7 @@
         src: ../files/xonshrc
         dest: ~/.xonshrc
       when: not copy_configs is undefined and copy_configs == "true"
-    
+
     - name: copy .bashrc
       become_user: "{{ config_user }}"
       copy:
@@ -585,14 +607,14 @@
         src: ../files/p10k.zsh
         dest: ~/.p10k.zsh
       when: not copy_configs is undefined and copy_configs == "true"
-      
+
     - name: copy .profile
       become_user: "{{ config_user }}"
       copy:
         src: ../files/profile
         dest: ~/.profile
       when: not copy_configs is undefined and copy_configs == "true"
-      
+
     - name: copy .aliases
       become_user: "{{ config_user }}"
       copy:
@@ -610,7 +632,7 @@
         src: ../files/faillock.conf
         dest: /etc/security/
       when: not copy_configs is undefined and copy_configs == "true"
-      
+
     - name: copy logind.conf
       copy:
         src: ../files/logind.conf
@@ -631,9 +653,9 @@
     - name: set gufw_icon.sh permissions
       file:
         path: /usr/local/bin/gufw_icon.sh
-        mode: '775'
-        
+        mode: "775"
+
     - name: set cht.sh permissions
       file:
         path: /usr/local/bin/cht.sh
-        mode: '775'
+        mode: "775"
