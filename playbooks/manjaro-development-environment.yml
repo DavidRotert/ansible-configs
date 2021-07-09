@@ -108,6 +108,7 @@
           - zsh-theme-powerlevel10k
           - zshdb
           - fish
+          - shellcheck
           - lsd
           - neofetch
           - tilix
