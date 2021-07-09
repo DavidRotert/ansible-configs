@@ -108,6 +108,7 @@
           - zsh-theme-powerlevel10k
           - zshdb
           - fish
+          - dash
           - shellcheck
           - lsd
           - neofetch
@@ -116,6 +117,13 @@
           - terminator
           - python-pygments
           - konsole
+
+    - name: link Dash in /bin
+      file:
+        src: /usr/bin/dash
+        dest: /bin/sh
+        state: link
+        force: true
 
     - name: install ZSH realtime auto complete
       git:
