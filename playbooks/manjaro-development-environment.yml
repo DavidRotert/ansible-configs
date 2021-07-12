@@ -457,12 +457,6 @@
         name:
           - preload
 
-    - name: enable preload service
-      service:
-        name: preload
-        enabled: true
-        state: started
-
     - name: install earlyoom
       package:
         state: present
@@ -594,6 +588,12 @@
           - ventoy
           - redshift
           - ksysguard
+          
+    - name: enable auto CPU frequence
+      service:
+        name: auto-cpufreq
+        status: started
+        enabled: true
 
     - name: copy user configs
       become_user: "{{ config_user }}"
