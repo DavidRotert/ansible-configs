@@ -254,6 +254,8 @@
         state: absent
         name:
           - jdk8-openjdk
+          - jre8-openjdk
+          - jre8-openjdk-headless
 
     - name: install Java SDK
       package:
