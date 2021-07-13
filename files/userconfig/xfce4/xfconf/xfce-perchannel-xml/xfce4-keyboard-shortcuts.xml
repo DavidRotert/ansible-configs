@@ -48,8 +48,6 @@
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;x" type="string" value="xkill"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;m" type="string" value="xfce4-taskmanager"/>
-      <property name="Super_L" type="string" value="xfce4-popup-whiskermenu"/>
-      <property name="Super_R" type="string" value="xfce4-popup-whiskermenu"/>
       <property name="Display" type="string" value="xfce4-display-settings"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;l" type="string" value="xflock4"/>
       <property name="&lt;Super&gt;l" type="string" value="xflock4"/>

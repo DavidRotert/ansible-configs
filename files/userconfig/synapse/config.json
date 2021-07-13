@@ -4,7 +4,7 @@
       "ui-type" : "virgilio"
     },
     "shortcuts" : {
-      "activate" : "<Control><Alt>space",
+      "activate" : "<Alt>F1",
       "execute" : "Return",
       "execute-without-hide" : "<Shift>Return",
       "delete-char" : "BackSpace",
