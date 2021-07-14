@@ -3,37 +3,58 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more='less'
-alias vi='vim'
 alias cheat='cht.sh'
-
-alias s='echo -n "Press enter to run as sudo or Crtl-C to cancel ..."; read; sudo'
-alias !='s'
-alias suo='sudo'
-
-alias ls='lsd'
-alias lsl='ls -l --group-dirs first'
-alias ll='lsl'
-alias la='ll -a'
-
-alias srvstatus='systemctl start'
-alias srstat='srvstatus'
-alias srvstart='systemctl start'
-alias srvstop='systemctl stop'
-alias srvrstart='systemctl restart'
-alias srvrestart='srvrstart'
-alias srvrel='systemctl reload'
-alias srvreload='srvrel'
-
-alias pacman-install='sudo pacman -Syu'
-alias pacman-upgrade='sudo pacman-install'
-alias pacman-remove='sudo pacman -R'
-alias pacman-autoremove='sudo pacman -Qdtq | sudo pacman -Rs -'
-
+alias count-lines-of-code='cloc'
 alias add-cacert='sudo trust anchor --store'
 alias add-java-cacert='sudo keytool -importcert -storepass changeit -noprompt -cacerts -file'
 alias copy='cp -av'
 alias weather='curl https://wttr.in/'
 alias ports='ss -lntu'
+
+# sudo aliases
+alias s='echo -n "Press enter to run as sudo or Crtl-C to cancel ..."; read; sudo'
+alias doas='sudo'
+alias !='s'
+alias suo='sudo'
+
+# ls aliases
+alias ls='lsd'
+alias lsl='ls -l --group-dirs first'
+alias ll='lsl'
+alias la='ll -a'
+
+# Systemd aliases
+alias srvstatus='sudo systemctl status'
+alias srvstat='srvstatus'
+alias status='srvstatus'
+
+alias srvstart='sudo systemctl start'
+alias start='srvstart'
+
+alias srvstop='sudo systemctl stop'
+alias stop='srvstop'
+
+alias srvrestart='sudo systemctl restart'
+alias srvrstart='srvrestart'
+alias restart='srvrestart'
+
+alias srvreload='sudo systemctl reload'
+alias srvrel='srvreload'
+alias reload='srvreload'
+
+alias srvdisable='sudo systemctl disable'
+alias srvdis='srvdisable'
+alias disable='srvdisable'
+
+alias srvenable='sudo systemctl enable'
+alias srven='srvenable'
+alias enable='srvenable'
+
+# pacman aliases
+alias pacman-install='sudo pacman -Syu'
+alias pacman-upgrade='sudo pacman-install'
+alias pacman-remove='sudo pacman -R'
+alias pacman-autoremove='sudo pacman -Qdtq | sudo pacman -Rs -'
 
 #
 # # extract - archive extractor

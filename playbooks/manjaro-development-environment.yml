@@ -304,7 +304,7 @@
         name:
           - ipcalc
           - curl
-          - wget    
+          - wget
 
     - name: install Docker and Kubernetes tools
       package:
@@ -593,7 +593,7 @@
     - name: enable auto CPU frequence
       service:
         name: auto-cpufreq
-        status: started
+        state: started
         enabled: true
 
     - name: copy user configs
