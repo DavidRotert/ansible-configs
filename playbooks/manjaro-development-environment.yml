@@ -588,6 +588,7 @@
           - ventoy
           - redshift
           - ksysguard
+          - gnome-weather
           
     - name: enable auto CPU frequence
       service:
