@@ -1,7 +1,10 @@
 [Desktop Entry]
 Name=Synapse
-Exec=synapse --startup
+Exec=sh -c "sleep 3; synapse --startup"
 Encoding=UTF-8
 Type=Application
 X-GNOME-Autostart-enabled=true
 Icon=synapse
+Comment=
+RunHook=0
+
