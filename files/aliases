@@ -52,7 +52,7 @@ alias enable='srvenable'
 
 # pacman aliases
 alias pacman-install='sudo pacman -Syu'
-alias pacman-upgrade='sudo pacman-install'
+alias pacman-upgrade='pacman-install'
 alias pacman-remove='sudo pacman -R'
 alias pacman-autoremove='sudo pacman -Qdtq | sudo pacman -Rs -'
 
