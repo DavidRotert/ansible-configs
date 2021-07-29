@@ -518,8 +518,6 @@
         state: present
         name:
           - plank
-          - ulauncher
-          - fd
           - synapse
 
     - name: install lightdm
