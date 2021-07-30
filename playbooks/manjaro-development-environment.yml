@@ -277,6 +277,13 @@
           - maven
           - gradle
 
+    - name: install PHP
+      package:
+        state: present
+        name:
+          - composer
+          - php
+
     - name: install Node.js 14
       package:
         state: present
