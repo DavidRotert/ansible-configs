@@ -283,6 +283,7 @@
         name:
           - composer
           - php
+          - xdebug
 
     - name: install Node.js 14
       package:
