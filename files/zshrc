@@ -53,14 +53,16 @@ update-plugins() {
 # ZSH autocomplete
 zstyle ':autocomplete:*' min-delay 0.1
 zstyle ':autocomplete:*' add-ending no
+zstyle ':autocomplete:history-search:*' list-lines 50
+
+# Vi mode
+bindkey -v
+export KEYTIMEOUT=1
 
 # Keybindings
 bindkey $key[Home] beginning-of-line
 bindkey $key[End] end-of-line
 
-# Vi mode
-bindkey -v
-export KEYTIMEOUT=1
 
 # Edit line in vim with ctrl-e
 autoload edit-command-line
