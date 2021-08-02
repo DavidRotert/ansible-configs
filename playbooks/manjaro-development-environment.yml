@@ -330,6 +330,12 @@
         name: docker
         enabled: true
 
+    - name: add user to Docker
+      user:
+        name: "{{ config_user }}"
+        append: true
+        groups: docker
+
     - name: install Remmina
       package:
         state: present
