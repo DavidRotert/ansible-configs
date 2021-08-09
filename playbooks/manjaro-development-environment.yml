@@ -522,6 +522,28 @@
     - name: install Mojave GTK theme
       command: /tmp/Mojave-gtk-theme/install.sh
 
+    - name: clone Whitesur GTK theme
+      git:
+        repo: https://github.com/vinceliuice/WhiteSur-gtk-theme.git
+        dest: /tmp/WhiteSur-gtk-theme
+
+    - name: install Whitesur GTK theme
+      command: /tmp/WhiteSur-gtk-theme/install.sh --color light --color dark --theme all --panel 75 --black --monterey
+
+    - name: clone Whitesur Icon theme
+      git:
+        repo: https://github.com/vinceliuice/WhiteSur-icon-theme.git
+        dest: /tmp/WhiteSur-icon-theme
+
+    - name: install Whitesur Icon theme
+      command: /tmp/WhiteSur-icon-theme/install.sh --black
+
+    - name: patch Whitesur Icon theme
+      command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Light,hicolor/g" /usr/share/icons/WhiteSur/index.theme
+
+    - name: patch Whitesur Icon theme
+      command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Light,hicolor/g" /usr/share/icons/WhiteSur-dark/index.theme
+
     - name: install dockbars and launchers
       package:
         state: present
