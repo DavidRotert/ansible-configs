@@ -1,5 +1,5 @@
 favorites=
-recent=xfce4-taskmanager.desktop,gcolor2.desktop,kdesystemsettings.desktop,org.manjaro.pamac.manager.desktop,minecraft-launcher.desktop,xfce4-sensors.desktop,nbtexplorer.desktop,teams.desktop,xfce-display-settings.desktop,net.minetest.minetest.desktop
+recent=gcolor2.desktop,xfce-ui-settings.desktop,xfce4-taskmanager.desktop,org.manjaro.pamac.manager.desktop,xfce4-sensors.desktop,xfce-display-settings.desktop,net.minetest.minetest.desktop
 button-icon=distributor-logo-archlinux
 button-single-row=false
 show-button-title=false
@@ -23,7 +23,7 @@ stay-on-focus-out=false
 confirm-session-command=true
 menu-width=495
 menu-height=475
-menu-opacity=90
+menu-opacity=100
 command-settings=xfce4-settings-manager
 show-command-settings=true
 command-lockscreen=xflock4
