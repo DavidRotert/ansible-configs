@@ -632,6 +632,13 @@
         dest: ~/.config
       when: not copy_configs is undefined and copy_configs == "true"
 
+    - name: copy user configs
+      become_user: "{{ config_user }}"
+      copy:
+        src: ../files/theme-profiles/
+        dest: ~/.theme-profiles
+      when: not copy_configs is undefined and copy_configs == "true"
+
     - name: copy user xonshrc
       become_user: "{{ config_user }}"
       copy:
@@ -710,4 +717,9 @@
     - name: set cht.sh permissions
       file:
         path: /usr/local/bin/cht.sh
+        mode: "775"
+
+    - name: set fast-theme-switch.sh permissions
+      file:
+        path: /usr/local/bin/fast-theme-switch.sh
         mode: "775"
