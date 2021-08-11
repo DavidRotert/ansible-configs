@@ -506,11 +506,6 @@
           - audacity
           - vokoscreen
 
-    - name: clone Mojave GTK theme
-      git:
-        repo: https://github.com/vinceliuice/Mojave-gtk-theme.git
-        dest: /tmp/Mojave-gtk-theme
-
     - name: install theme dependencies
       package:
         state: present
@@ -518,6 +513,11 @@
           - sassc
           - optipng
           - inkscape
+
+    - name: clone Mojave GTK theme
+      git:
+        repo: https://github.com/vinceliuice/Mojave-gtk-theme.git
+        dest: /tmp/Mojave-gtk-theme
 
     - name: install Mojave GTK theme
       command: /tmp/Mojave-gtk-theme/install.sh
@@ -542,7 +542,17 @@
       command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Light,hicolor/g" /usr/share/icons/WhiteSur/index.theme
 
     - name: patch Whitesur Icon theme
-      command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Light,hicolor/g" /usr/share/icons/WhiteSur-dark/index.theme
+      command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Dark,hicolor/g" /usr/share/icons/WhiteSur-dark/index.theme
+
+    - name: install Plank themes
+      copy:
+        src: /usr/share/themes/Mojave-light/plank/
+        dest: /usr/share/plank/themes/OSX
+
+    - name: install Plank themes
+      copy:
+        src: /usr/share/themes/Mojave-dark/plank/
+        dest: /usr/share/plank/themes/OSX-dark
 
     - name: install dockbars and launchers
       package:
