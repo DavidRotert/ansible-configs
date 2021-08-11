@@ -26,7 +26,12 @@
         name:
           - shim
           - mtools
+          - gpart
+          - udftools
           - gnome-firmware
+
+    - name: prepare install exFAT progs
+      command: pamac install --no-confirm exfatprogs
 
     - name: install XFCE
       package:
