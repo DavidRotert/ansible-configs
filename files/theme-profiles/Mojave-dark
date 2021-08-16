@@ -5,4 +5,4 @@ Kvantum_Theme=McMojave
 Icon_Theme=Papirus-Dark
 QT_Icon_Theme=Papirus-Dark
 
-WM_Button_Layout="|HMC"
+WM_Button_Layout="OT|HMC"

@@ -5,4 +5,4 @@ Kvantum_Theme=WhiteSurDark
 Icon_Theme=WhiteSur-dark
 QT_Icon_Theme=WhiteSur-dark
 
-WM_Button_Layout="|HMC"
+WM_Button_Layout="OT|HMC"
