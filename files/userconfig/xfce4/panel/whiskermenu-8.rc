@@ -1,5 +1,5 @@
 favorites=
-recent=gcolor2.desktop,xfce-ui-settings.desktop,xfce4-taskmanager.desktop,org.manjaro.pamac.manager.desktop,xfce4-sensors.desktop,xfce-display-settings.desktop,net.minetest.minetest.desktop
+recent=xfce-keyboard-settings.desktop,xfce-wm-settings.desktop,xfce-ui-settings.desktop,ca.desrt.dconf-editor.desktop,qt5ct.desktop,cmake-gui.desktop,Alacritty.desktop,org.manjaro.pamac.manager.desktop,gparted.desktop,xfce-wmtweaks-settings.desktop
 button-icon=distributor-logo-archlinux
 button-single-row=false
 show-button-title=false

@@ -18,3 +18,14 @@ fi
 [[ -n "$QT_Icon_Theme" ]] && sed -i "s/icon_theme=[a-zA-Z_\-]*/icon_theme=$QT_Icon_Theme/g" ~/.config/qt5ct/qt5ct.conf
 
 [[ -n "$Kvantum_Theme" ]] && sed -i "s/theme=[a-zA-Z_\-]*/theme=$Kvantum_Theme/g" ~/.config/Kvantum/kvantum.kvconfig
+
+[[ -n "$Plank_Theme" ]] && dconf write "/net/launchpad/plank/docks/dock1/theme" "'$Plank_Theme'"
+
+if [[ -n "$Wallpaper" ]]
+then
+    for monitor in $(xfconf-query -c xfce4-desktop -p /backdrop -l | egrep -e "screen.*/monitor.*/last-image")
+    do
+        xfconf-query -c xfce4-desktop -p $monitor -s "$Wallpaper"
+    done
+fi
+

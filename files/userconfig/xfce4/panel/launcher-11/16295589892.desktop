@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Dark theme
+Comment=
+Exec=fast-theme-switch.sh MojaveWin-dark
+Icon=weather-clear-night
+Path=
+Terminal=false
+StartupNotify=false
