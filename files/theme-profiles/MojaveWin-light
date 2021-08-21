@@ -7,3 +7,5 @@ Icon_Theme=Papirus-Light
 QT_Icon_Theme=Papirus-Light
 
 WM_Button_Layout="|HMC"
+
+Wallpaper=~/.theme-profiles/wallpaper-day

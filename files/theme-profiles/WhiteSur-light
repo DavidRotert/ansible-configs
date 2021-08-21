@@ -7,3 +7,5 @@ Icon_Theme=WhiteSur
 QT_Icon_Theme=WhiteSur
 
 WM_Button_Layout="|HMC"
+
+Wallpaper=~/.theme-profiles/wallpaper-day

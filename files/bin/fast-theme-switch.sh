@@ -7,6 +7,14 @@ else
     source ~/.theme-profiles/$1
 fi
 
+if [[ -n "$Wallpaper" ]]
+then
+    for monitor in $(xfconf-query -c xfce4-desktop -p /backdrop -l | egrep -e "screen.*/monitor.*/last-image")
+    do
+        xfconf-query -c xfce4-desktop -p $monitor -s "$Wallpaper"
+    done
+fi
+
 # Change Xfce theme
 [[ -n "$GTK_Theme" ]] && xfconf-query -c xsettings -p /Net/ThemeName -s "$GTK_Theme"
 # Change icon theme 2 times because else it is not properly set
@@ -20,12 +28,3 @@ fi
 [[ -n "$Kvantum_Theme" ]] && sed -i "s/theme=[a-zA-Z_\-]*/theme=$Kvantum_Theme/g" ~/.config/Kvantum/kvantum.kvconfig
 
 [[ -n "$Plank_Theme" ]] && dconf write "/net/launchpad/plank/docks/dock1/theme" "'$Plank_Theme'"
-
-if [[ -n "$Wallpaper" ]]
-then
-    for monitor in $(xfconf-query -c xfce4-desktop -p /backdrop -l | egrep -e "screen.*/monitor.*/last-image")
-    do
-        xfconf-query -c xfce4-desktop -p $monitor -s "$Wallpaper"
-    done
-fi
-

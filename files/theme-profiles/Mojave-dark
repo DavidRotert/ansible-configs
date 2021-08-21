@@ -7,3 +7,5 @@ Icon_Theme=Papirus-Dark
 QT_Icon_Theme=Papirus-Dark
 
 WM_Button_Layout="|HMC"
+
+Wallpaper=~/.theme-profiles/wallpaper-night
