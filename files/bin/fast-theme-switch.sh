@@ -11,6 +11,8 @@ if [[ -n "$Wallpaper" ]]
 then
     for monitor in $(xfconf-query -c xfce4-desktop -p /backdrop -l | egrep -e "screen.*/monitor.*/last-image")
     do
+        xfconf-query -c xfce4-desktop -p $monitor -n -t string -s ""
+        xfconf-query -c xfce4-desktop -p $monitor -s ""
         xfconf-query -c xfce4-desktop -p $monitor -s "$Wallpaper"
     done
 fi
