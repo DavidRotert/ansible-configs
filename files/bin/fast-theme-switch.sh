@@ -1,6 +1,9 @@
 #!/bin/bash
 
-if [[ -e $1 ]]
+if [[ ! -n "$1" ]]
+then
+    source ~/.theme-profiles/$(yad --title="Select theme preset" --height=300 --separator=""  --list --column="" --no-headers $(ls ~/.theme-profiles/))
+elif [[ -e $1 ]]
 then
     source $1
 else
