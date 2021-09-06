@@ -60,14 +60,14 @@ bindkey -v
 export KEYTIMEOUT=1
 
 # Keybindings
-bindkey $key[Home] beginning-of-line
-bindkey $key[End] end-of-line
+bindkey "^a" vi-beginning-of-line
+bindkey "^e" vi-end-of-line
 
 
 # Edit line in vim with ctrl-e
 autoload edit-command-line
 zle -N edit-command-line
-bindkey '^e' edit-command-line
+bindkey "^l" edit-command-line
 
 # History file configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"

@@ -12,9 +12,8 @@ alias weather='curl https://wttr.in/'
 alias ports='ss -lntu'
 
 # sudo aliases
-alias s='echo -n "Press enter to run as sudo or Crtl-C to cancel ..."; read; sudo'
+alias s='sudo'
 alias doas='sudo'
-alias !='s'
 alias suo='sudo'
 
 # ls aliases
