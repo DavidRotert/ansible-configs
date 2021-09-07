@@ -6,6 +6,6 @@ Plank_Theme=OSX
 Icon_Theme=Papirus-Light
 QT_Icon_Theme=Papirus-Light
 
-WM_Button_Layout="|HMC"
+WM_Button_Layout="OT|HMC"
 
 Wallpaper=~/.theme-profiles/wallpaper-day
