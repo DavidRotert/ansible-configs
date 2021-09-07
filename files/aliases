@@ -12,13 +12,14 @@ alias weather='curl https://wttr.in/'
 alias ports='ss -lntu'
 
 # sudo aliases
-alias s='sudo'
 alias doas='sudo'
 alias suo='sudo'
+alias hey='sudo'
 
 # ls aliases
 alias ls='lsd'
 alias lsl='ls -l --group-dirs first'
+alias lss='lsl --total-size'
 alias ll='lsl'
 alias la='ll -a'
 
