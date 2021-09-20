@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Search
+Exec=synapse
+Icon=search
+Categories=GNOME;Utility;
