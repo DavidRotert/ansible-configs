@@ -635,6 +635,10 @@
           - gnome-weather
           - gnome-maps
           - gnome-characters
+          - dolphin
+          - kde-cli-tools
+          - kdegraphics-thumbnailer
+          - ffmpegthumbs
           
     - name: enable auto CPU frequence
       service:
