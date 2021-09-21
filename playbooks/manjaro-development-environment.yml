@@ -510,6 +510,7 @@
           - obs-studio
           - audacity
           - vokoscreen
+          - gnome-sound-recorder
 
     - name: install theme dependencies
       package:
