@@ -51,7 +51,7 @@ update-plugins() {
 }
 
 # ZSH autocomplete
-zstyle ':autocomplete:*' min-delay 0.1
+zstyle ':autocomplete:*' min-delay 0.4
 zstyle ':autocomplete:*' add-ending no
 zstyle ':autocomplete:history-search:*' list-lines 50
 

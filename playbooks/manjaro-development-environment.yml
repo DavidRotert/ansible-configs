@@ -637,7 +637,7 @@
           - gnome-characters
           - dolphin
           - kde-cli-tools
-          - kdegraphics-thumbnailer
+          - kdegraphics-thumbnailers
           - ffmpegthumbs
           
     - name: enable auto CPU frequence
