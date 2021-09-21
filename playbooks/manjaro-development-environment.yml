@@ -658,6 +658,7 @@
       copy:
         src: ../files/theme-profiles/
         dest: ~/.theme-profiles
+        force: false
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy user xonshrc
