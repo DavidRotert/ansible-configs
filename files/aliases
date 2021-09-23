@@ -51,8 +51,8 @@ alias srven='srvenable'
 alias enable='srvenable'
 
 # Docker aliases for sudo
-#alias docker='sudo docker'
-#alias docker-compose='sudo docker-compose'
+alias docker='sudo docker'
+alias docker-compose='sudo docker-compose'
 
 # pacman aliases
 alias pacman-install='sudo pacman -Syu'
