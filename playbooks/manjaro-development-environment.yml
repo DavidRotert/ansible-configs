@@ -558,7 +558,7 @@
         dest: /tmp/grub2-themes
 
     - name: Install Grub theme
-      command: /tmp/grub2-themes/install.sh -b -t tela -s 4k
+      command: /tmp/grub2-themes/install.sh -b -t tela
       ignore_errors: true
 
     - name: install dockbars and launchers

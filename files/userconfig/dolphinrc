@@ -1,0 +1,50 @@
+[CompactMode]
+FontWeight=50
+
+[DetailsMode]
+FontWeight=50
+
+[General]
+ModifiedStartupSettings=true
+RememberOpenedTabs=false
+Version=201
+ViewPropsTimestamp=2021,9,20,20,4,52.185
+
+[IconsMode]
+FontWeight=50
+
+[MainWindow]
+DP-1-2 eDP-1 Height 2560x1440=640
+DP-1-2 eDP-1 Width 2560x1440=760
+DP-1-2 eDP-1 XPosition 1920x1080=0
+DP-1-2 eDP-1 XPosition 2560x1440=2820
+DP-1-2 eDP-1 YPosition 1920x1080=0
+DP-1-2 eDP-1 YPosition 2560x1440=425
+DP1-2 eDP1 Height 2560x1440=541
+DP1-2 eDP1 Width 2560x1440=879
+DP1-2 eDP1 XPosition 1920x1080=2
+DP1-2 eDP1 XPosition 2560x1440=2826
+DP1-2 eDP1 YPosition 1920x1080=28
+DP1-2 eDP1 YPosition 2560x1440=549
+State=AAAA/wAAAAD9AAAAAwAAAAAAAAC0AAAB1/wCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAIA////+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAABQAAAB1wAAAFgA////AAAAAQAAAAAAAAAA/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAAD/////AAAAAgD///8AAAADAAAAAAAAAAD8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAA/////wAAAAIA////AAACgQAAAdcAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
+ToolBarsMovable=Disabled
+eDP-1 Height 1920x1080=537
+eDP-1 Width 1920x1080=787
+eDP-1 XPosition 1920x1080=573
+eDP-1 YPosition 1920x1080=273
+eDP1 Height 1920x1080=551
+eDP1 Width 1920x1080=828
+eDP1 XPosition 1920x1080=580
+eDP1 YPosition 1920x1080=334
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,windowsexethumbnail,imagethumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,marble_thumbnail_shp,exrthumbnail,marble_thumbnail_geojson,marble_thumbnail_gpx,jpegthumbnail,marble_thumbnail_kml,marble_thumbnail_kmz,kraorathumbnail,windowsimagethumbnail,mltpreview,opendocumentthumbnail,marble_thumbnail_osm,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs
+
+[Search]
+Location=Everywhere
+
+[SettingsDialog]
+DP1-2 eDP1 Height 2560x1440=395
+DP1-2 eDP1 Width 2560x1440=714
+eDP-1 Height 1920x1080=395
+eDP-1 Width 1920x1080=714
