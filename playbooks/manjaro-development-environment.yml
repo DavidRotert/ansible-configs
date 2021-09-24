@@ -165,7 +165,6 @@
         name:
           - intellij-idea-community-edition
           - pycharm-community-edition
-          - code
           - qtcreator
           - geany
           - geany-plugins
@@ -198,13 +197,12 @@
           - spyder
           - pip
 
+    - name: install VS Code
+      command: pamac install --no-confirm visual-studio-code-bin
+
     - name: install VS Code plugin Python
       become_user: "{{ config_user }}"
       command: /usr/bin/code --install-extension ms-python.python
-
-    - name: install VS Code plugin Anaconda Python
-      become_user: "{{ config_user }}"
-      command: /usr/bin/code --install-extension ms-python.anaconda-extension-pack
 
     - name: install VS Code plugin Pyrigt
       become_user: "{{ config_user }}"
@@ -634,6 +632,10 @@
           - kde-cli-tools
           - kdegraphics-thumbnailers
           - ffmpegthumbs
+
+    - name: Disable Baloo file index
+      become_user: "{{ config_user }}"
+      command: /usr/bin/balooctl disable
           
     - name: enable auto CPU frequence
       service:
