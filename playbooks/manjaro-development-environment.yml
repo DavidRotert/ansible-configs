@@ -552,6 +552,15 @@
         src: /usr/share/themes/Mojave-dark/plank/
         dest: /usr/share/plank/themes/OSX-dark
 
+    - name: clone Grub Theme
+      git:
+        repo: https://github.com/vinceliuice/grub2-themes.git
+        dest: /tmp/grub2-themes
+
+    - name: Install Grub theme
+      command: /tmp/grub2-themes/install.sh -b -t tela -s 4k
+      ignore_errors: true
+
     - name: install dockbars and launchers
       package:
         state: present
