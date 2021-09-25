@@ -599,6 +599,8 @@
           - gnome-disk-utility
           - etcher
           - filezilla
+          - hexchat
+          - pidgin
           - bleachbit
           - filelight
           - transmission-gtk
