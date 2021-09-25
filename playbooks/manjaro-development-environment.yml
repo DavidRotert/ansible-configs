@@ -200,57 +200,24 @@
     - name: install VS Code
       command: pamac install --no-confirm visual-studio-code-bin
 
-    - name: install VS Code plugin Python
+    - name: install VS Code plugin
       become_user: "{{ config_user }}"
-      command: /usr/bin/code --install-extension ms-python.python
-
-    - name: install VS Code plugin Pyrigt
-      become_user: "{{ config_user }}"
-      command: /usr/bin/code --install-extension ms-pyright.pyright
-
-    - name: install VS Code plugin Docker
-      become_user: "{{ config_user }}"
-      command: /usr/bin/code --install-extension ms-azuretools.vscode-docker
-
-    - name: install VS Code plugin K8s
-      become_user: "{{ config_user }}"
-      command: /usr/bin/code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
-
-    - name: install VS Code plugin Vetur (Vue.js)
-      become_user: "{{ config_user }}"
-      command: /usr/bin/code --install-extension octref.vetur
-
-    - name: install VS Code plugin ES-Lint
-      become_user: "{{ config_user }}"
-      command: /usr/bin/code --install-extension dbaeumer.vscode-eslint
-
-    - name: install VS Code plugin Chrome Debugger
-      become_user: "{{ config_user }}"
-      command: /usr/bin/code --install-extension msjsdiag.debugger-for-chrome
-
-    - name: install VS Code plugin Firefox Debugger
-      become_user: "{{ config_user }}"
-      command: /usr/bin/code --install-extension firefox-devtools.vscode-firefox-debug
-
-    - name: install VS Code plugin TODO
-      become_user: "{{ config_user }}"
-      command: /usr/bin/code --install-extension gruntfuggly.todo-tree
-
-    - name: install VS Code plugin Xonsh
-      become_user: "{{ config_user }}"
-      command: /usr/bin/code --install-extension jnoortheen.xonsh
-
-    - name: install VS Code plugin Rust
-      become_user: "{{ config_user }}"
-      command: /usr/bin/code --install-extension rust-lang.rust
-
-    - name: install VS Code plugin Go
-      become_user: "{{ config_user }}"
-      command: /usr/bin/code --install-extension golang.go
-
-    - name: install VS Code plugin Java
-      become_user: "{{ config_user }}"
-      command: /usr/bin/code --install-extension redhat.java
+      command: "/usr/bin/code --install-extension {{ item }}"
+      when: "config_user != 'root'"
+      loop:
+        - ms-python.python
+        - ms-pyright.pyright
+        - ms-azuretools.vscode-docker
+        - ms-kubernetes-tools.vscode-kubernetes-tools
+        - rust-lang.rust
+        - golang.go
+        - redhat.java
+        - octref.vetur
+        - dbaeumer.vscode-eslint
+        - msjsdiag.debugger-for-chrome
+        - firefox-devtools.vscode-firefox-debug
+        - gruntfuggly.todo-tree
+        - jnoortheen.xonsh
 
     - name: remove Java 8
       package:
@@ -493,7 +460,6 @@
         state: present
         name:
           - vlc
-          - clementine
           - lmms
           - kdenlive
           - pitivi
@@ -503,6 +469,19 @@
           - audacity
           - vokoscreen
           - gnome-sound-recorder
+          - ristretto
+          - parole
+          - xfburn
+          - cheese
+
+    - name: remove multimedia packages
+      package:
+        state: absent
+        name:
+          - viewnior
+          - mpv
+          - audacious
+          - clementine
 
     - name: install theme dependencies
       package:
@@ -737,17 +716,11 @@
         src: ../files/bin/
         dest: /usr/local/bin
 
-    - name: set gufw_icon.sh permissions
+    - name: set exec permissions
       file:
-        path: /usr/local/bin/gufw_icon.sh
+        path: "{{ item }}"
         mode: "775"
-
-    - name: set cht.sh permissions
-      file:
-        path: /usr/local/bin/cht.sh
-        mode: "775"
-
-    - name: set fast-theme-switch.sh permissions
-      file:
-        path: /usr/local/bin/fast-theme-switch.sh
-        mode: "775"
+      loop:
+        - /usr/local/bin/gufw_icon.sh
+        - /usr/local/bin/cht.sh
+        - /usr/local/bin/fast-theme-switch.sh
