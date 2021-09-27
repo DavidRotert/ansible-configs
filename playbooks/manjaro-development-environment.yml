@@ -20,10 +20,11 @@
           - traceroute
           - bind
 
-    - name: install system system tools
+    - name: install system tools
       package:
         state: present
         name:
+          - arch-install-scripts
           - shim
           - mtools
           - gpart
