@@ -37,14 +37,14 @@ UPDATABLE_CUSTOM_ZSH_PLUGINS=()
 update-plugins() {
     for plugin in $UPDATABLE_GLOBAL_ZSH_PLUGINS
     do
-        $pluginpath=$GLOBAL_ZSH_PLUGIN_PATH/$plugin
+        pluginpath="$GLOBAL_ZSH_PLUGIN_PATH/$plugin"
         echo "Updating $pluginpath ($plugin) ..."
         sudo git -C $pluginpath pull
     done
 
     for plugin in $UPDATABLE_CUSTOM_ZSH_PLUGINS
     do
-        $pluginpath=$CUSTOM_ZSH_PLUGIN_PATH/$plugin
+        pluginpath="$CUSTOM_ZSH_PLUGIN_PATH/$plugin"
         echo "Updating $pluginpath ($plugin) ..."
         sudo git -C $pluginpath pull
     done
