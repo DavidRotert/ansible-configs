@@ -160,6 +160,15 @@
         dest: /usr/bin/xonsh
         state: link
 
+    - name: install goto
+      get_url:
+        url: https://raw.githubusercontent.com/iridakos/goto/master/goto.sh
+        dest: /usr/share/zsh/plugins/goto.sh
+        owner: root
+        group: root
+        mode: 774
+        force: true
+
     - name: install IDEs
       package:
         state: present
@@ -191,7 +200,7 @@
           - eric-ide
           - pip
 
-    - name: install Eric IDE
+    - name: install Spyder IDE
       pip:
         virtualenv: /opt/spyder
         name:

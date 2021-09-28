@@ -22,6 +22,8 @@ do
     [[ -f $pluginfile ]] && source $pluginfile
 done
 
+source $GLOBAL_ZSH_PLUGIN_PATH/goto.sh
+
 export CUSTOM_ZSH_PLUGIN_PATH=~/.zsh/plugins
 export CUSTOM_ZSH_PLUGINS=()
 
