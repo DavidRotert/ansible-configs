@@ -484,15 +484,6 @@
           - xfburn
           - cheese
 
-    - name: remove multimedia packages
-      package:
-        state: absent
-        name:
-          - viewnior
-          - mpv
-          - audacious
-          - clementine
-
     - name: install theme dependencies
       package:
         state: present
@@ -632,6 +623,16 @@
           - kde-cli-tools
           - kdegraphics-thumbnailers
           - ffmpegthumbs
+
+    - name: remove packages
+      package:
+        state: absent
+        name:
+          - viewnior
+          - mpv
+          - audacious
+          - clementine
+          - galculator
 
     - name: Disable Baloo file index
       become_user: "{{ config_user }}"
