@@ -633,6 +633,7 @@
           - audacious
           - clementine
           - galculator
+          - galculator-gtk2
 
     - name: Disable Baloo file index
       become_user: "{{ config_user }}"
