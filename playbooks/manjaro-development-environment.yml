@@ -305,6 +305,12 @@
           - docker
           - docker-compose
 
+    - name: add user to Docker
+      user:
+        name: "{{ config_user }}"
+        append: true
+        groups: docker
+
     - name: enable Docker service
       service:
         name: docker
@@ -729,6 +735,11 @@
       copy:
         src: ../files/bin/
         dest: /usr/local/bin
+
+    - name: copy themes
+      copy:
+        src: ../files/themes/
+        dest: /usr/share/themes
 
     - name: set exec permissions
       file:
