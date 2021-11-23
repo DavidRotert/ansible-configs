@@ -115,7 +115,6 @@
           - alacritty
           - terminator
           - python-pygments
-          - konsole
 
     - name: link Dash in /bin
       file:
@@ -466,7 +465,6 @@
         state: present
         name:
           - vlc
-          - kdenlive
           - lmms
           - pitivi
           - openshot
@@ -610,7 +608,6 @@
           - minetest
           - ventoy
           - redshift
-          - ksysguard
           - gnome-weather
           - gnome-maps
           - gnome-characters
