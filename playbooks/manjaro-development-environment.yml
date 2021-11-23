@@ -71,13 +71,6 @@
           - xfce4-pulseaudio-plugin
           - pavucontrol
 
-    - name: install icewm
-      package:
-        state: present
-        name:
-          - nitrogen
-          - icewm
-
     - name: install base dev tools
       package:
         state: present
@@ -186,7 +179,6 @@
           - texlive-formatsextra
           - texlive-fontsextra
           - okteta
-          - kate
           - mysql-workbench
           - mariadb-clients
           - pgadmin4
@@ -421,9 +413,9 @@
           - rawtherapee
           - qt5-imageformats
           - digikam
-          - flameshot
           - spectacle
           - blender
+          - drawing
 
     - name: install backup tools
       package:
@@ -474,8 +466,8 @@
         state: present
         name:
           - vlc
-          - lmms
           - kdenlive
+          - lmms
           - pitivi
           - openshot
           - flowblade
@@ -595,7 +587,6 @@
       package:
         state: present
         name:
-          - systemdgenie
           - mate-calc
           - discord
           - onlyoffice-desktopeditors
@@ -623,9 +614,6 @@
           - gnome-weather
           - gnome-maps
           - gnome-characters
-          - dolphin
-          - kde-cli-tools
-          - kdegraphics-thumbnailers
           - ffmpegthumbs
 
     - name: remove packages
@@ -638,10 +626,6 @@
           - clementine
           - galculator
           - galculator-gtk2
-
-    - name: Disable Baloo file index
-      become_user: "{{ config_user }}"
-      command: /usr/bin/balooctl disable
           
     - name: enable auto CPU frequence
       service:
