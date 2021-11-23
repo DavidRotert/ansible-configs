@@ -612,6 +612,11 @@
           - gnome-maps
           - gnome-characters
           - ffmpegthumbs
+          - libreoffice-still
+          - pstoedit
+          - libmythes
+          - coin-or-mp
+          - beanshell
 
     - name: remove packages
       package:
