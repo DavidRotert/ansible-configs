@@ -2,7 +2,7 @@
 Type=Application
 Icon=git-gui
 Name=Git GUI
-Exec=git gui
+Exec=sh -c "LC_ALL=en_US.utf8 git gui"
 Terminal=false
 Hidden=false
 Categories=Development
