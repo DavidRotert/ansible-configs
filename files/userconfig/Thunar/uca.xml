@@ -10,24 +10,6 @@
 	<directories/>
 </action>
 <action>
-	<icon>terminator</icon>
-	<name>Terminal (Terminator)</name>
-	<unique-id>1625464470442568-2</unique-id>
-	<command>terminator --new-tab --working-directory=%f</command>
-	<description></description>
-	<patterns>*</patterns>
-	<directories/>
-</action>
-<action>
-	<icon>tilix</icon>
-	<name>Terminal (Tilix)</name>
-	<unique-id>1367866030392833-1</unique-id>
-	<command>tilix --action app-new-session --working-directory %f </command>
-	<description></description>
-	<patterns>*</patterns>
-	<directories/>
-</action>
-<action>
 	<icon>system-file-manager</icon>
 	<name>Thunar Root</name>
 	<unique-id>1367866030392883-2</unique-id>
@@ -54,5 +36,14 @@
 	<patterns>*</patterns>
 	<other-files/>
 	<text-files/>
+</action>
+<action>
+	<icon>run-build</icon>
+	<name>Run Script</name>
+	<unique-id>1638032880110598-1</unique-id>
+	<command>xfce4-terminal --working-directory=%d --command=&quot;sh -c &apos;./%n; read keypress&apos;&quot;</command>
+	<description>Run Script</description>
+	<patterns>*.sh</patterns>
+	<other-files/>
 </action>
 </actions>

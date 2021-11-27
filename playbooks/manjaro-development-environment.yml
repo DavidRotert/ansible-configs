@@ -111,8 +111,6 @@
           - shellcheck
           - lsd
           - neofetch
-          - tilix
-          - alacritty
           - terminator
           - python-pygments
 
