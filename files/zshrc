@@ -57,13 +57,14 @@ zstyle ':autocomplete:*' min-delay 0.4
 zstyle ':autocomplete:*' add-ending no
 zstyle ':autocomplete:history-search:*' list-lines 50
 
-# Vi mode
-bindkey -v
+# mode
+bindkey -e
+#bindkey -v
 export KEYTIMEOUT=1
 
 # Keybindings
-bindkey "^a" vi-beginning-of-line
-bindkey "^e" vi-end-of-line
+#bindkey "^a" vi-beginning-of-line
+#bindkey "^e" vi-end-of-line
 
 
 # Edit line in vim with ctrl-e
@@ -114,6 +115,9 @@ setopt pushdminus
 
 # Alias config
 [[ -f ~/.aliases ]] && . ~/.aliases
+
+# Custom conf
+[[ -f ~/.shell_conf ]] && . ~/.shell_conf
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
