@@ -498,7 +498,7 @@
         dest: /tmp/WhiteSur-gtk-theme
 
     - name: install Whitesur GTK theme
-      command: /tmp/WhiteSur-gtk-theme/install.sh --color light --color dark --theme all --panel-opacity 75 --black --monterey
+      command: /tmp/WhiteSur-gtk-theme/install.sh --color light --color dark --theme all --panel-opacity 75 --black
 
     - name: clone Whitesur Icon theme
       git:
