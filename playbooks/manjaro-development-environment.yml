@@ -584,6 +584,8 @@
         state: present
         name:
           - mate-calc
+          - simple-scan
+          - gnucash
           - discord
           - onlyoffice-desktopeditors
           - yad
