@@ -1,10 +1,9 @@
 [Desktop Entry]
 Name=Synapse
-Exec=sh -c "sleep 10; synapse --startup"
+Exec=albert
 Encoding=UTF-8
 Type=Application
-Icon=synapse
+Icon=albert
 Comment=
 RunHook=0
-Hidden=true
 

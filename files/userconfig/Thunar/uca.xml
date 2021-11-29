@@ -19,6 +19,15 @@
 	<directories/>
 </action>
 <action>
+	<icon>visual-studio-code</icon>
+	<name>Open in VS Code</name>
+	<unique-id>1367866030392883-3</unique-id>
+	<command>code %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
 	<icon>system-search</icon>
 	<name>Search</name>
 	<unique-id>1367866030392913-3</unique-id>

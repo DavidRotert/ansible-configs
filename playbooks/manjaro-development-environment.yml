@@ -4,6 +4,12 @@
   become: true
 
   tasks:
+    - name: copy Pamac config
+      copy:
+        src: ../files/pamac.conf
+        dest: /etc/
+      when: not copy_configs is undefined and copy_configs == "true"
+
     - name: install network utils
       package:
         state: present
@@ -28,8 +34,10 @@
           - shim
           - mtools
           - gpart
+          - gparted
           - udftools
           - gnome-firmware
+          - gnome-disk-utility
 
     - name: prepare install exFAT progs
       command: pamac install --no-confirm exfatprogs
@@ -476,6 +484,41 @@
           - xfburn
           - cheese
 
+    - name: install dockbars and launchers
+      package:
+        state: present
+        name:
+          - plank
+          - synapse
+
+    - name: install albert launcher
+      command: pamac install --no-confirm albert-bin
+
+    - name: install themes
+      package:
+        name:
+          - xfce-theme-greybird
+          - papirus-icon-theme
+          - kvantum-qt5
+
+    - name: install fonts
+      package:
+        state: present
+        name:
+          - noto-fonts-emoji
+          - ttf-font-awesome
+
+    - name: install nerd fonts
+      file:
+        path: /usr/local/share/fonts
+        state: directory
+
+    - name: install nerd fonts
+      unarchive:
+        remote_src: true
+        src: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DejaVuSansMono.zip
+        dest: /usr/local/share/fonts
+
     - name: install theme dependencies
       package:
         state: present
@@ -533,44 +576,12 @@
       command: /tmp/grub2-themes/install.sh -b -t tela
       ignore_errors: true
 
-    - name: install dockbars and launchers
-      package:
-        state: present
-        name:
-          - plank
-          - synapse
-
     - name: install lightdm
       package:
         state: present
         name:
           - lightdm-webkit2-greeter
           - lightdm-webkit-theme-litarvan
-
-    - name: install themes
-      package:
-        name:
-          - xfce-theme-greybird
-          - papirus-icon-theme
-          - kvantum-qt5
-
-    - name: install fonts
-      package:
-        state: present
-        name:
-          - noto-fonts-emoji
-          - ttf-font-awesome
-
-    - name: install nerd fonts
-      file:
-        path: /usr/local/share/fonts
-        state: directory
-
-    - name: install nerd fonts
-      unarchive:
-        remote_src: true
-        src: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DejaVuSansMono.zip
-        dest: /usr/local/share/fonts
 
     - name: install cloud tools
       package:
@@ -579,18 +590,30 @@
           - owncloud-client
           - nextcloud-client
 
+    - name: install office tools
+      package:
+        state: present
+        name:
+          - libreoffice-still
+          - pstoedit
+          - libmythes
+          - coin-or-mp
+          - beanshell
+          - onlyoffice-desktopeditors
+          - atril
+          - mate-calc
+          - simple-scan
+          - gnucash
+          - engrampa
+          - gnome-characters
+
     - name: install other packages
       package:
         state: present
         name:
-          - mate-calc
-          - simple-scan
-          - gnucash
           - discord
-          - onlyoffice-desktopeditors
           - yad
           - android-file-transfer
-          - gnome-disk-utility
           - etcher
           - filezilla
           - hexchat
@@ -600,8 +623,6 @@
           - transmission-gtk
           - ibus-typing-booster
           - gtkhash-thunar
-          - atril
-          - engrampa
           - variety
           - auto-cpufreq
           - kdeconnect
@@ -610,13 +631,7 @@
           - redshift
           - gnome-weather
           - gnome-maps
-          - gnome-characters
           - ffmpegthumbs
-          - libreoffice-still
-          - pstoedit
-          - libmythes
-          - coin-or-mp
-          - beanshell
 
     - name: remove packages
       package:
