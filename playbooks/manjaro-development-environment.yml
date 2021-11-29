@@ -212,19 +212,30 @@
       command: "/usr/bin/code --install-extension {{ item }}"
       when: "config_user != 'root'"
       loop:
-        - ms-python.python
-        - ms-pyright.pyright
         - ms-azuretools.vscode-docker
         - ms-kubernetes-tools.vscode-kubernetes-tools
+        - ms-vscode-remote.remote-containers
+        - mindaro.mindaro
+        - ms-vsliveshare.vsliveshare-pack
         - rust-lang.rust
         - golang.go
-        - redhat.java
+        - vscjava.vscode-java-pack
+        - ms-python.python
+        - ms-pyright.pyright
         - octref.vetur
         - dbaeumer.vscode-eslint
+        - jnoortheen.xonsh
+        - mtxr.sqltools
+        - redhat.ansible
+        - ms-vscode.cpptools-extension-pack
+        - thenouillet.symfony-vscode
+        - mblode.twig-language-2
         - msjsdiag.debugger-for-chrome
         - firefox-devtools.vscode-firefox-debug
         - gruntfuggly.todo-tree
-        - jnoortheen.xonsh
+        - christian-kohler.path-intellisense
+        - vscode-icons-team.vscode-icons
+        - oderwat.indent-rainbow
 
     - name: remove Java 8
       package:
