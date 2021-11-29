@@ -490,6 +490,7 @@
         name:
           - plank
           - synapse
+          - muparser
 
     - name: install albert launcher
       command: pamac install --no-confirm albert-bin
