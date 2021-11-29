@@ -18,7 +18,7 @@ fuzzy=true
 enabled=true
 filters=audio/*, video/*, image/*, image/vnd.adobe.photoshop, text/csv, image/x-xcf, image/x-compressed-xcf, inode/directory, application/vnd.oasis.opendocument.chart, application/vnd.oasis.opendocument.database, application/vnd.oasis.opendocument.formula, application/vnd.oasis.opendocument.graphics, application/vnd.oasis.opendocument.image, application/vnd.oasis.opendocument.presentation, application/vnd.oasis.opendocument.spreadsheet, application/vnd.oasis.opendocument.text, application/vnd.openxmlformats-officedocument.presentationml.presentation, application/vnd.openxmlformats-officedocument.presentationml.slide, application/vnd.openxmlformats-officedocument.presentationml.slideshow, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf
 fuzzy=true
-paths=/home/david/Bilder, /home/david/Dokumente, /home/david/Musik, /home/david/Sciebo, /home/david/Videos
+paths=
 scan_interval=60
 
 [org.albert.extension.firefoxbookmarks]
