@@ -236,19 +236,15 @@
         - christian-kohler.path-intellisense
         - vscode-icons-team.vscode-icons
         - oderwat.indent-rainbow
-
-    - name: remove Java 8
-      package:
-        state: absent
-        name:
-          - jdk8-openjdk
-          - jre8-openjdk
-          - jre8-openjdk-headless
+        - eamodio.gitlens
 
     - name: install Java SDK
       package:
         state: present
         name:
+          - jdk8-openjdk
+          - jre8-openjdk
+          - jre8-openjdk-headless
           - jdk11-openjdk
           - openjdk11-src
           - openjdk11-doc
