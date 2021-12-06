@@ -609,11 +609,17 @@
           - beanshell
           - onlyoffice-desktopeditors
           - atril
+          - okular
+          - khtml
+          - chmlib
+          - ebook-tools
+          - kdegraphics-mobipocket
           - mate-calc
           - simple-scan
           - gnucash
           - engrampa
           - gnome-characters
+          - xournalpp
 
     - name: install other packages
       package:
@@ -632,7 +638,6 @@
           - ibus-typing-booster
           - gtkhash-thunar
           - variety
-          - auto-cpufreq
           - kdeconnect
           - minetest
           - ventoy
@@ -651,6 +656,9 @@
           - clementine
           - galculator
           - galculator-gtk2
+
+    - name: install auto cpu frequence launcher
+      command: pamac install --no-confirm auto-cpufreq
           
     - name: enable auto CPU frequence
       service:
