@@ -502,6 +502,9 @@
     - name: install albert launcher
       command: pamac install --no-confirm albert-bin
 
+    - name: install albert launcher
+      command: pamac install --no-confirm xfdashboard
+
     - name: install themes
       package:
         name:

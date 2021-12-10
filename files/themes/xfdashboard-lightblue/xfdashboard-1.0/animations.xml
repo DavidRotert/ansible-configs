@@ -1,5 +1,5 @@
 <animations>
-	<trigger id="expand-workspace" sender="XfdashboardCollapseBox" signal="expand">
+	<!--<trigger id="expand-workspace" sender="XfdashboardCollapseBox" signal="expand">
 		<timeline delay="0" duration="500" mode="ease-out-cubic">
 			<apply>
 				<property name="collapse-progress" />
@@ -72,6 +72,6 @@
 				<property name="opacity" to="0" />
 			</apply>
 		</timeline>
-	</trigger>
+	</trigger>-->
 
 </animations>
