@@ -100,6 +100,7 @@
           - pypy3
           - cloc
           - gvim
+          - python-pip
           - python-virtualenv
 
     - name: install shells + terminals
