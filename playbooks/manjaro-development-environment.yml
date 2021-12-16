@@ -613,11 +613,6 @@
           - beanshell
           - onlyoffice-desktopeditors
           - atril
-          - okular
-          - khtml
-          - chmlib
-          - ebook-tools
-          - kdegraphics-mobipocket
           - mate-calc
           - simple-scan
           - gnucash
@@ -637,7 +632,7 @@
           - hexchat
           - pidgin
           - bleachbit
-          - filelight
+          - baobab
           - transmission-gtk
           - ibus-typing-booster
           - gtkhash-thunar
