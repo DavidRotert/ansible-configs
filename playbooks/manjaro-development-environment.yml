@@ -540,6 +540,17 @@
     - name: install Mojave GTK theme
       command: /tmp/Mojave-gtk-theme/install.sh
 
+    - name: clone Mojave KDE theme
+      git:
+        repo: https://github.com/vinceliuice/McMojave-kde.git
+        dest: /tmp/McMojave-kde
+
+    - name: copy McMojave KDE Kvantum theme
+      become_user: "{{ config_user }}"
+      copy:
+        src: /tmp/McMojave-kde/Kvantum
+        dest: ~/.config/
+
     - name: clone Whitesur GTK theme
       git:
         repo: https://github.com/vinceliuice/WhiteSur-gtk-theme.git
@@ -548,13 +559,35 @@
     - name: install Whitesur GTK theme
       command: /tmp/WhiteSur-gtk-theme/install.sh --color light --color dark --theme all --panel-opacity 75 --black
 
+    - name: clone WhiteSur KDE theme
+      git:
+        repo: https://github.com/vinceliuice/WhiteSur-kde.git
+        dest: /tmp/WhiteSur-kde
+
+    - name: copy WhiteSur KDE Kvantum theme
+      become_user: "{{ config_user }}"
+      copy:
+        src: /tmp/WhiteSur-kde/Kvantum
+        dest: ~/.config/
+
     - name: clone Fluent GTK theme
       git:
         repo: https://github.com/vinceliuice/Fluent-gtk-theme.git
         dest: /tmp/Fluent-gtk-theme
 
     - name: install Fluent GTK theme
-      command: /tmp/Fluent-gtk-theme/install.sh --theme all --tweaks square
+      command: /tmp/Fluent-gtk-theme/install.sh --theme all
+
+    - name: clone Fluent KDE theme
+      git:
+        repo: https://github.com/vinceliuice/Fluent-kde.git
+        dest: /tmp/Fluent-kde
+
+    - name: copy Fluent KDE Kvantum theme
+      become_user: "{{ config_user }}"
+      copy:
+        src: /tmp/Fluent-kde/Kvantum
+        dest: ~/.config/
 
     - name: clone Whitesur Icon theme
       git:
@@ -569,6 +602,20 @@
 
     - name: patch Whitesur Icon theme
       command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Dark,hicolor/g" /usr/share/icons/WhiteSur-dark/index.theme
+
+    - name: clone Fluent Icon theme
+      git:
+        repo: https://github.com/vinceliuice/Fluent-icon-theme.git
+        dest: /tmp/Fluent-icon-theme
+
+    - name: install Fluent Icon theme
+      command: /tmp/Fluent-icon-theme/install.sh --black
+
+    - name: patch Fluent Icon theme
+      command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Light,hicolor/g" /usr/share/icons/Fluent/index.theme
+
+    - name: patch Fluent Icon theme
+      command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Dark,hicolor/g" /usr/share/icons/Fluent-dark/index.theme
 
     - name: install Plank themes
       copy:
@@ -680,6 +727,7 @@
       copy:
         src: ../files/userconfig/
         dest: ~/.config
+        force: true
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy theme profiles
@@ -691,22 +739,27 @@
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: link default light theme
+      become_user: "{{ config_user }}"
       file:
-        src: "~/.theme-profiles/MojaveWin-light"
-        dest: "~/.theme-profiles/default-light-theme"
+        src: ~/.theme-profiles/MojaveWin-light
+        dest: ~/.theme-profiles/default-light-theme
         state: link
+        force: false
 
     - name: link default dark theme
+      become_user: "{{ config_user }}"
       file:
-        src: "~/.theme-profiles/MojaveWin-dark"
-        dest: "~/.theme-profiles/default-dark-theme"
+        src: ~/.theme-profiles/MojaveWin-dark
+        dest: ~/.theme-profiles/default-dark-theme
         state: link
+        force: false
 
     - name: copy user xonshrc
       become_user: "{{ config_user }}"
       copy:
         src: ../files/xonshrc
         dest: ~/.xonshrc
+        force: true
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy .bashrc
@@ -714,6 +767,7 @@
       copy:
         src: ../files/bashrc
         dest: ~/.bashrc
+        force: true
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy .zshrc
@@ -721,6 +775,7 @@
       copy:
         src: ../files/zshrc
         dest: ~/.zshrc
+        force: true
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy .p10k.zsh
@@ -728,6 +783,7 @@
       copy:
         src: ../files/p10k.zsh
         dest: ~/.p10k.zsh
+        force: true
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy .profile
@@ -735,6 +791,7 @@
       copy:
         src: ../files/profile
         dest: ~/.profile
+        force: true
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy .aliases
@@ -742,40 +799,47 @@
       copy:
         src: ../files/aliases
         dest: ~/.aliases
+        force: true
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy application launchers
       copy:
         src: ../files/applications/
         dest: /usr/local/share/applications
+        force: true
 
     - name: copy faillock.conf
       copy:
         src: ../files/faillock.conf
         dest: /etc/security/
+        force: true
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy logind.conf
       copy:
         src: ../files/logind.conf
         dest: /etc/systemd/
+        force: true
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy LightDM config
       copy:
         src: ../files/lightdm/
         dest: /etc/lightdm
+        force: true
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: copy bin
       copy:
         src: ../files/bin/
         dest: /usr/local/bin
+        force: true
 
     - name: copy themes
       copy:
         src: ../files/themes/
         dest: /usr/share/themes
+        force: true
 
     - name: set exec permissions
       file:
