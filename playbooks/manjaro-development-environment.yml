@@ -123,13 +123,6 @@
           - terminator
           - python-pygments
 
-    - name: link Dash in /bin
-      file:
-        src: /usr/bin/dash
-        dest: /bin/sh
-        state: link
-        force: true
-
     - name: install ZSH realtime auto complete
       git:
         repo: https://github.com/marlonrichert/zsh-autocomplete.git
@@ -165,7 +158,7 @@
         dest: /usr/share/zsh/plugins/goto.sh
         owner: root
         group: root
-        mode: 774
+        mode: 775
         force: true
 
     - name: install IDEs
@@ -653,6 +646,15 @@
           - gnome-maps
           - ffmpegthumbs
 
+    - name: install cheat.sh
+      get_url:
+        url: https://cht.sh/:cht.sh
+        dest: /usr/local/bin/cht.sh
+        owner: root
+        group: root
+        mode: 775
+        force: true
+
     - name: remove packages
       package:
         state: absent
@@ -664,7 +666,7 @@
           - galculator
           - galculator-gtk2
 
-    - name: install auto cpu frequence launcher
+    - name: install auto cpu frequence
       command: pamac install --no-confirm auto-cpufreq
           
     - name: enable auto CPU frequence
@@ -680,13 +682,25 @@
         dest: ~/.config
       when: not copy_configs is undefined and copy_configs == "true"
 
-    - name: copy user configs
+    - name: copy theme profiles
       become_user: "{{ config_user }}"
       copy:
         src: ../files/theme-profiles/
         dest: ~/.theme-profiles
-        force: false
+        force: true
       when: not copy_configs is undefined and copy_configs == "true"
+
+    - name: link default light theme
+      file:
+        src: "~/.theme-profiles/MojaveWin-light"
+        dest: "~/.theme-profiles/default-light-theme"
+        state: link
+
+    - name: link default dark theme
+      file:
+        src: "~/.theme-profiles/MojaveWin-dark"
+        dest: "~/.theme-profiles/default-dark-theme"
+        state: link
 
     - name: copy user xonshrc
       become_user: "{{ config_user }}"
@@ -769,5 +783,4 @@
         mode: "775"
       loop:
         - /usr/local/bin/gufw_icon.sh
-        - /usr/local/bin/cht.sh
         - /usr/local/bin/fast-theme-switch.sh

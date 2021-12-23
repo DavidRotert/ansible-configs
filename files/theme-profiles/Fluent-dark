@@ -1,0 +1,12 @@
+GTK_Theme=Fluent-dark
+WM_Theme=Fluent-dark
+Kvantum_Theme=McMojave
+Plank_Theme=OSX-dark
+Albert_Theme="Spotlight Dark"
+
+Icon_Theme=WhiteSur-dark
+QT_Icon_Theme=WhiteSur-dark
+
+WM_Button_Layout="|HMC"
+
+Wallpaper=~/.theme-profiles/wallpaper-night
