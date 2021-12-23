@@ -555,6 +555,14 @@
     - name: install Whitesur GTK theme
       command: /tmp/WhiteSur-gtk-theme/install.sh --color light --color dark --theme all --panel-opacity 75 --black
 
+    - name: clone Fluent GTK theme
+      git:
+        repo: https://github.com/vinceliuice/Fluent-gtk-theme.git
+        dest: /tmp/Fluent-gtk-theme
+
+    - name: install Fluent GTK theme
+      command: /tmp/Fluent-gtk-theme/install.sh --theme all --tweaks square
+
     - name: clone Whitesur Icon theme
       git:
         repo: https://github.com/vinceliuice/WhiteSur-icon-theme.git
