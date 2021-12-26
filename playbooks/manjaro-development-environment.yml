@@ -493,10 +493,10 @@
           - synapse
           - muparser
 
-    - name: install albert launcher
+    - name: install Albert launcher
       command: pamac install --no-confirm albert-bin
 
-    - name: install albert launcher
+    - name: install Xfdashboard launcher
       command: pamac install --no-confirm xfdashboard
 
     - name: install themes
@@ -588,6 +588,10 @@
       copy:
         src: /tmp/Fluent-kde/Kvantum
         dest: ~/.config/
+
+    - name: patch Kvantum themes
+      become_user: "{{ config_user }}"
+      command: /bin/bash -c 'sed -i "s/composite=true/composite=false/g" ~/.config/Kvantum/*/*.kvconfig'
 
     - name: clone Whitesur Icon theme
       git:
