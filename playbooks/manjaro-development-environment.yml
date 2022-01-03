@@ -504,7 +504,7 @@
         name:
           - xfce-theme-greybird
           - papirus-icon-theme
-          - kvantum-qt5
+          - kvantum
 
     - name: install fonts
       package:
