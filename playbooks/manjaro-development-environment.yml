@@ -134,6 +134,7 @@
     - name: install Xonsh
       pip:
         virtualenv: /opt/xonsh
+        state: latest
         name:
           - xonsh[full]
           - setproctitle
@@ -187,6 +188,7 @@
     - name: install Eric IDE
       pip:
         virtualenv: /opt/eric6
+        state: latest
         name:
           - eric-ide
           - pip
@@ -194,6 +196,7 @@
     - name: install Spyder IDE
       pip:
         virtualenv: /opt/spyder
+        state: latest
         name:
           - spyder
           - pip
