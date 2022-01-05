@@ -493,7 +493,6 @@
         state: present
         name:
           - plank
-          - synapse
           - muparser
 
     - name: install Albert launcher

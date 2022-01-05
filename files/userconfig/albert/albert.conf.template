@@ -1,6 +1,6 @@
 [General]
 frontendId=org.albert.frontend.widgetboxmodel
-hotkey=Alt+F1
+hotkey=Ctrl+Alt+F1
 showTray=true
 
 [org.albert.extension.applications]
