@@ -38,6 +38,11 @@
           - udftools
           - gnome-firmware
           - gnome-disk-utility
+          - gnome-system-logs
+          - gnome-logs
+          - bleachbit
+          - baobab
+
 
     - name: prepare install exFAT progs
       command: pamac install --no-confirm exfatprogs
@@ -673,7 +678,7 @@
           - engrampa
           - gnome-characters
           - xournalpp
-
+          
     - name: install other packages
       package:
         state: present
@@ -685,8 +690,6 @@
           - filezilla
           - hexchat
           - pidgin
-          - bleachbit
-          - baobab
           - transmission-gtk
           - ibus-typing-booster
           - gtkhash-thunar
