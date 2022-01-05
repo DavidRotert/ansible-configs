@@ -200,7 +200,7 @@
 
     - name: install Eric IDE
       pip:
-        virtualenv: /opt/eric6
+        virtualenv: /opt/eric
         state: latest
         name:
           - eric-ide
