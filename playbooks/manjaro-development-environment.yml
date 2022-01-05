@@ -866,3 +866,4 @@
       loop:
         - /usr/local/bin/gufw_icon.sh
         - /usr/local/bin/fast-theme-switch.sh
+        - /usr/local/bin/update-puthon-apps.sh
