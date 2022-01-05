@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Icon=bug-symbolic
+Name=GDB Gui (Browser)
+Exec=/opt/gdbgui/bin/gdbgui
+Terminal=true
+Hidden=false
+Keywords=GDB;Bug;Debugger;C++;C;Rust;Go
+Categories=Development

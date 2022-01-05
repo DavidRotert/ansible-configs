@@ -38,7 +38,7 @@
           - udftools
           - gnome-firmware
           - gnome-disk-utility
-          - gnome-system-logs
+          - gnome-system-log
           - gnome-logs
           - bleachbit
           - baobab
@@ -107,6 +107,14 @@
           - gvim
           - python-pip
           - python-virtualenv
+
+    - name: install Gdbgui
+      pip:
+        virtualenv: /opt/gdbgui
+        state: latest
+        name:
+          - gdbgui
+          - pip
 
     - name: install shells + terminals
       package:
@@ -188,7 +196,6 @@
           - mariadb-clients
           - pgadmin4
           - sqlitebrowser
-          - kexi
 
     - name: install Eric IDE
       pip:
