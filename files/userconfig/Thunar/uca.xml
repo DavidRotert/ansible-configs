@@ -50,7 +50,7 @@
 	<icon>run-build</icon>
 	<name>Run Script</name>
 	<unique-id>1638032880110598-1</unique-id>
-	<command>xfce4-terminal --working-directory=%d --command=&quot;sh -c &apos;./%n; read keypress&apos;&quot;</command>
+	<command>xfce4-terminal --working-directory=%d --command=&quot;sh -c &apos;./%n; echo -n Press enter to exit ...;read keypress&apos;&quot;</command>
 	<description>Run Script</description>
 	<patterns>*.sh</patterns>
 	<other-files/>

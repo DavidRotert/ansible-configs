@@ -1,13 +1,13 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Exec=/opt/eric6/bin/eric6
-TryExec=/opt/eric6/bin/eric6
+Exec=/opt/eric/bin/eric7
+TryExec=/opt/eric/bin/eric7
 MimeType=text/x-python;
 Icon=eric
 Terminal=false
-Name=eric6
-Name[de]=eric6
+Name=eric
+Name[de]=eric
 Comment=Integrated Development Environment for Python
 Comment[de]=Integrierte Entwicklungsumgebung für Python
 GenericName=IDE for Python

@@ -6,3 +6,5 @@ Exec=fast-theme-switch.sh
 Terminal=false
 Hidden=false
 OnlyShowIn=XFCE;
+Keywords=Theme Switcher;Themes;Profiles
+Categories=Settings; System; Utility

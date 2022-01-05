@@ -196,6 +196,7 @@
           - mariadb-clients
           - pgadmin4
           - sqlitebrowser
+          - ghidra
 
     - name: install Eric IDE
       pip:
@@ -358,6 +359,7 @@
         name:
           - chromium
           - firefox
+          - falkon
           - tor
           - torbrowser-launcher
 

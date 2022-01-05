@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Icon=ghidra
+Name=Ghidra
+Exec=ghidra
+Terminal=false
+Hidden=false
+Keywords=Reverse Engineering;Decompiler;ASM;Assembler;C;C++;Hacking
+Categories=Development
