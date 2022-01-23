@@ -38,7 +38,7 @@
 </action>
 <action>
 	<icon>accessories-text-editor</icon>
-	<name>Bearbeiten als Root</name>
+	<name>Edit as Root</name>
 	<unique-id>1577899023296129-1</unique-id>
 	<command>pkexec mousepad %f</command>
 	<description></description>
@@ -52,6 +52,15 @@
 	<unique-id>1638032880110598-1</unique-id>
 	<command>xfce4-terminal --working-directory=%d --command=&quot;sh -c &apos;./%n; echo -n Press enter to exit ...;read keypress&apos;&quot;</command>
 	<description>Run Script</description>
+	<patterns>*.sh</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>run-build</icon>
+	<name>Run Script</name>
+	<unique-id>1638032880110599-1</unique-id>
+	<command>xfce4-terminal --working-directory=%d --command=&quot;sudo sh -c &apos;./%n; echo -n Press enter to exit ...;read keypress&apos;&quot;</command>
+	<description>Run Script (Root)</description>
 	<patterns>*.sh</patterns>
 	<other-files/>
 </action>
