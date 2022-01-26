@@ -25,9 +25,9 @@
         <value type="int" value="4"/>
       </property>
       <property name="role" type="string" value="xfce4-panel-12965750720"/>
-      <property name="length-adjust" type="bool" value="true"/>
+      <property name="length-adjust" type="bool" value="false"/>
       <property name="background-style" type="uint" value="0"/>
-      <property name="size" type="uint" value="24"/>
+      <property name="size" type="uint" value="26"/>
       <property name="mode" type="uint" value="0"/>
       <property name="autohide-behavior" type="uint" value="0"/>
       <property name="disable-struts" type="bool" value="false"/>
@@ -107,6 +107,9 @@
         <value type="string" value="xfce4-power-manager"/>
       </property>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="variety"/>
+        <value type="string" value="portmaster-notifier_v0-2-3"/>
+        <value type="string" value="notizen"/>
         <value type="string" value="taskmanager"/>
         <value type="string" value="redshift-gtk"/>
         <value type="string" value="mattermost-desktop"/>
@@ -117,6 +120,9 @@
         <value type="string" value="netzwerk-manager-applet"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="zoom"/>
+        <value type="string" value="MSM Notifier"/>
+        <value type="string" value="systray"/>
         <value type="string" value="Mattermost1"/>
         <value type="string" value="variety"/>
         <value type="string" value="ownCloud"/>
@@ -132,10 +138,11 @@
       <property name="hide-new-items" type="bool" value="false"/>
       <property name="square-icons" type="bool" value="true"/>
       <property name="single-row" type="bool" value="true"/>
+      <property name="icon-size" type="int" value="0"/>
     </property>
     <property name="plugin-9" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value=""/>
+      <property name="mpris-players" type="string" value="firefox.instance44743"/>
     </property>
     <property name="plugin-8" type="string" value="whiskermenu"/>
     <property name="plugin-5" type="string" value="clock">
