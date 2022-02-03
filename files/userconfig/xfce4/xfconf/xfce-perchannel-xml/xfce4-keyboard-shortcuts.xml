@@ -54,7 +54,7 @@
       <property name="Tools" type="string" value="xfce4-settings-manager"/>
       <property name="Calculator" type="string" value="mate-calculator"/>
       <property name="Print" type="string" value="spectacle"/>
-      <property name="&lt;Primary&gt;Super_L" type="string" value="xfce4-popup-whiskermenu"/>
+      <property name="&lt;Primary&gt;Super_L" type="string" value="xfdashboard"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

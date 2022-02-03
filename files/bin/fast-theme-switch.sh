@@ -35,5 +35,8 @@ fi
 [[ -n "$Plank_Theme" ]] && dconf write "/net/launchpad/plank/docks/dock1/theme" "'$Plank_Theme'"
 
 [[ -n "$Albert_Theme" ]] && sed -i "s/theme=[a-zA-Z_ \-]*/theme=$Albert_Theme/g" ~/.config/albert/albert.conf
+
+sleep 2
 [[ -n "$Albert_Theme" ]] && killall albert
+sleep 2
 [[ -n "$Albert_Theme" ]] && albert &

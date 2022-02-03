@@ -521,7 +521,7 @@
     - name: install Albert launcher
       command: pamac install --no-confirm albert-bin
 
-    - name: install Xfdashboard launcher
+    - name: install Xfdashboard
       command: pamac install --no-confirm xfdashboard
 
     - name: install themes
