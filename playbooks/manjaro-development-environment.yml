@@ -292,7 +292,7 @@
       package:
         state: present
         name:
-          - go
+          - gcc-go
           - go-tools
 
     - name: install Rustup
@@ -301,6 +301,14 @@
         name:
           - rustup
           - lldb
+
+    - name: install D
+      package:
+        state: present
+        name:
+          - dmd
+          - gcc-d
+          - dtools
 
     - name: install simple tools
       package:
