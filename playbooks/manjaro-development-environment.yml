@@ -716,9 +716,10 @@
           - minetest
           - ventoy
           - redshift
+          - ffmpegthumbs
           - gnome-weather
           - gnome-maps
-          - ffmpegthumbs
+          - activity-log-manager
 
     - name: install cheat.sh
       get_url:
