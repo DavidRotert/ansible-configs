@@ -8,5 +8,5 @@ Exec=/etc/skel/.config/autostart/xfce-pbw.sh
 OnlyShowIn=XFCE;
 StartupNotify=false
 Terminal=false
-Hidden=false
+Hidden=true
 
