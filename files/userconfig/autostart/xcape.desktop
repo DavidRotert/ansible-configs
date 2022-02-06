@@ -2,10 +2,11 @@
 Encoding=UTF-8
 Version=0.9.4
 Type=Application
-Name=XFCE-Panel Workaround
+Name=xcape
 Comment=
-Exec=/etc/skel/.config/autostart/xfce-pbw.sh
+Exec=xcape -e 'Super_L=Alt_L|F1'
 OnlyShowIn=XFCE;
+RunHook=0
 StartupNotify=false
 Terminal=false
 Hidden=false

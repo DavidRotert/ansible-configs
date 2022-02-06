@@ -1,6 +1,6 @@
 [General]
 frontendId=org.albert.frontend.widgetboxmodel
-hotkey=Ctrl+Alt+F1
+hotkey=Alt+F1
 showTray=true
 
 [org.albert.extension.applications]
@@ -15,7 +15,7 @@ enabled=true
 fuzzy=true
 
 [org.albert.extension.files]
-enabled=true
+enabled=false
 filters=audio/*, video/*, image/*, image/vnd.adobe.photoshop, text/csv, image/x-xcf, image/x-compressed-xcf, inode/directory, application/vnd.oasis.opendocument.chart, application/vnd.oasis.opendocument.database, application/vnd.oasis.opendocument.formula, application/vnd.oasis.opendocument.graphics, application/vnd.oasis.opendocument.image, application/vnd.oasis.opendocument.presentation, application/vnd.oasis.opendocument.spreadsheet, application/vnd.oasis.opendocument.text, application/vnd.openxmlformats-officedocument.presentationml.presentation, application/vnd.openxmlformats-officedocument.presentationml.slide, application/vnd.openxmlformats-officedocument.presentationml.slideshow, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf
 fuzzy=true
 paths=
@@ -37,7 +37,7 @@ enabled=true
 
 [org.albert.extension.python]
 enabled=true
-enabled_modules=ip, locate
+enabled_modules=ip, locate, vpn, kill
 
 [org.albert.extension.snippets]
 enabled=true
