@@ -410,12 +410,12 @@
         append: true
         groups: libvirt
 
-    - name: install Qt5 configuration tool
+    - name: install Qt5/6 configuration tool
       package:
         state: present
         name:
           - qt5ct
-          - qt5-styleplugins
+          - qt5ct
 
     - name: install printing tools
       package:

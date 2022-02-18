@@ -1,12 +1,16 @@
+[themes]
 GTK_Theme=WhiteSur-dark-solid
 WM_Theme=WhiteSur-dark
-Kvantum_Theme=WhiteSurDark
+Kvantum_Theme=WhiteSur-dark
 Plank_Theme=OSX-dark
-Albert_Theme="Spotlight Dark"
+Albert_Theme=Spotlight Dark
 
+[icons]
 Icon_Theme=WhiteSur-dark
 QT_Icon_Theme=WhiteSur-dark
 
-WM_Button_Layout="|HMC"
+[xfwm]
+WM_Button_Layout=|HMC
 
+[wallpaper]
 Wallpaper=~/.theme-profiles/wallpaper-night

@@ -2,7 +2,7 @@
 Type=Application
 Icon=org.xfce.settings.appearance
 Name=Fast theme switch
-Exec=fast-theme-switch.sh
+Exec=fast-theme-switch.xsh
 Terminal=false
 Hidden=false
 OnlyShowIn=XFCE;

@@ -1,12 +1,15 @@
+[themes]
 GTK_Theme=Mojave-dark
 WM_Theme=Mojave-dark
 Kvantum_Theme=McMojave
 Plank_Theme=OSX-dark
-Albert_Theme="Spotlight Dark"
+Albert_Theme=Spotlight Dark
 
+[icons]
 Icon_Theme=WhiteSur-dark
 QT_Icon_Theme=WhiteSur-dark
 
-WM_Button_Layout="CHM|"
+[xfwm]
+WM_Button_Layout=CHM|
 
 Wallpaper=~/.theme-profiles/wallpaper-night
