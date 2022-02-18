@@ -83,6 +83,7 @@
           - xfce4-xkb-plugin
           - xfce4-pulseaudio-plugin
           - pavucontrol
+          - thunar-shares-plugin
 
     - name: install base dev tools
       package:
@@ -234,6 +235,7 @@
         - ms-pyright.pyright
         - octref.vetur
         - dbaeumer.vscode-eslint
+        - webfreak.code-d
         - jnoortheen.xonsh
         - mtxr.sqltools
         - redhat.ansible

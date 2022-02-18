@@ -107,6 +107,7 @@
         <value type="string" value="xfce4-power-manager"/>
       </property>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="portmaster-notifier_v0-2-4"/>
         <value type="string" value="variety"/>
         <value type="string" value="portmaster-notifier_v0-2-3"/>
         <value type="string" value="notizen"/>
@@ -171,7 +172,7 @@
       <property name="window-scrolling" type="bool" value="false"/>
       <property name="flat-buttons" type="bool" value="false"/>
       <property name="show-handle" type="bool" value="true"/>
-      <property name="grouping" type="uint" value="0"/>
+      <property name="grouping" type="uint" value="1"/>
     </property>
     <property name="plugin-3" type="string" value="launcher">
       <property name="items" type="array">
