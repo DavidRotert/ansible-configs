@@ -875,5 +875,5 @@
         mode: "775"
       loop:
         - /usr/local/bin/gufw_icon.sh
-        - /usr/local/bin/fast-theme-switch.sh
+        - /usr/local/bin/fast-theme-switch.xsh
         - /usr/local/bin/update-python-apps.sh
