@@ -465,10 +465,7 @@
           - grub-btrfs
 
     - name: install preload
-      package:
-        state: present
-        name:
-          - preload
+      command: pamac install --no-confirm preload
 
     - name: install earlyoom
       package:
