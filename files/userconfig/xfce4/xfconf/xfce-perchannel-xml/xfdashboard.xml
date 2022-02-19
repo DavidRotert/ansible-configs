@@ -14,4 +14,5 @@
       <property name="sort-mode" type="uint" value="0"/>
     </property>
   </property>
+  <property name="enable-animations" type="bool" value="false"/>
 </channel>
