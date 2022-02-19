@@ -749,14 +749,6 @@
         state: started
         enabled: true
 
-    - name: copy user configs
-      become_user: "{{ config_user }}"
-      copy:
-        src: ../files/userconfig/
-        dest: ~/.config
-        force: true
-      when: not copy_configs is undefined and copy_configs == "true"
-
     - name: copy theme profiles
       become_user: "{{ config_user }}"
       copy:
@@ -876,3 +868,11 @@
         - /usr/local/bin/gufw_icon.sh
         - /usr/local/bin/fast-theme-switch.xsh
         - /usr/local/bin/update-python-apps.sh
+
+    - name: copy user configs
+      become_user: "{{ config_user }}"
+      copy:
+        src: ../files/userconfig/
+        dest: ~/.config
+        force: true
+      when: not copy_configs is undefined and copy_configs == "true"
