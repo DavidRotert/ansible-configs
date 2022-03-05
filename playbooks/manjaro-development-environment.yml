@@ -228,6 +228,7 @@
         - ms-vscode-remote.remote-containers
         - mindaro.mindaro
         - ms-vsliveshare.vsliveshare-pack
+        - VisualStudioExptTeam.vscodeintellicode
         - rust-lang.rust
         - golang.go
         - vscjava.vscode-java-pack
@@ -245,6 +246,7 @@
         - msjsdiag.debugger-for-chrome
         - firefox-devtools.vscode-firefox-debug
         - xdebug.php-pack
+        - hbenl.vscode-test-explorer
         - gruntfuggly.todo-tree
         - christian-kohler.path-intellisense
         - vscode-icons-team.vscode-icons
@@ -283,11 +285,11 @@
           - php7
           - xdebug
 
-    - name: install Node.js 14
+    - name: install Node.js 16
       package:
         state: present
         name:
-          - nodejs-lts-fermium
+          - nodejs-lts-gallium
           - npm
 
     - name: install Go
@@ -329,6 +331,9 @@
           - kubectx
           - docker
           - docker-compose
+          
+    - name: install k3d
+      command: pamac install --no-confirm rancher-k3d-bin
 
     - name: add user to Docker
       user:
@@ -718,6 +723,7 @@
           - ffmpegthumbs
           - gnome-weather
           - gnome-maps
+          - gnome-calendar
           - activity-log-manager
 
     - name: install cheat.sh
@@ -748,6 +754,12 @@
         name: auto-cpufreq
         state: started
         enabled: true
+        
+    - name: copy /usr/local
+      copy:
+        src: ../files/local/
+        dest: /usr/local
+        force: true
 
     - name: copy theme profiles
       become_user: "{{ config_user }}"
@@ -821,12 +833,6 @@
         force: true
       when: not copy_configs is undefined and copy_configs == "true"
 
-    - name: copy application launchers
-      copy:
-        src: ../files/applications/
-        dest: /usr/local/share/applications
-        force: true
-
     - name: copy faillock.conf
       copy:
         src: ../files/faillock.conf
@@ -848,12 +854,6 @@
         force: true
       when: not copy_configs is undefined and copy_configs == "true"
 
-    - name: copy bin
-      copy:
-        src: ../files/bin/
-        dest: /usr/local/bin
-        force: true
-
     - name: copy themes
       copy:
         src: ../files/themes/
@@ -868,6 +868,9 @@
         - /usr/local/bin/gufw_icon.sh
         - /usr/local/bin/fast-theme-switch.xsh
         - /usr/local/bin/update-python-apps.sh
+        - /usr/local/bin/rancher-install
+        - /usr/local/bin/rancher-up
+        - /usr/local/bin/rancher-down
 
     - name: copy user configs
       become_user: "{{ config_user }}"

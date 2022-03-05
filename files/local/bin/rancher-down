@@ -1,0 +1,7 @@
+#!/bin/sh
+
+k3d cluster stop k3d
+docker stop rancher
+
+echo "Press enter to exit ..."
+read

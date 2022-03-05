@@ -1,0 +1,17 @@
+#!/bin/sh
+
+RANCHER_IMAGE=rancher/rancher:v2.6-head
+
+k3d cluster create k3d
+
+echo "Remove old rancher instance for upgrade ..."
+docker stop rancher
+docker rm rancher
+
+docker pull $RANCHER_IMAGE
+
+RANCHER_DATADIR="/opt/rancher/data"
+
+sudo mkdir -p $RANCHER_DATADIR/{kubelet,log,rancher,cni}
+
+docker run -v $RANCHER_DATADIR/kubelet:/var/lib/kubelet -v $RANCHER_DATADIR/rancher:/var/lib/rancher -v $RANCHER_DATADIR/log:/var/log -v $RANCHER_DATADIR/cni:/var/lib/cni -d --restart=unless-stopped --name rancher -p 7080:80 -p 7443:443 --privileged $RANCHER_IMAGE
