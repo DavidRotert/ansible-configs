@@ -12,18 +12,19 @@ Create and edit file `~/.shell_conf`.
 
 ## What this includes (short overview list)
 
-- different shells
+- A MacOS like theme!
+- Different shells
   - Dash
   - Bash
   - ZSH
   - Fish
   - Xonsh (= a real Python shell!)
 - Xfce4 desktop
-- network utilities
+- Network utilities
   - nslookup
   - filezilla
   - ipcalc etc.
-- compilers and build tools
+- Compilers and build tools
   - GCC/G++
   - Clang
   - D compilers
