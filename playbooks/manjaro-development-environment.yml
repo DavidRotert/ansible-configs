@@ -199,6 +199,9 @@
           - sqlitebrowser
           - ghidra
 
+    - name: install Insomnia REST client
+      command: pamac install --no-confirm insomnia-bin
+
     - name: install Spyder IDE
       pip:
         virtualenv: /opt/spyder
