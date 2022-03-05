@@ -28,6 +28,7 @@
           - ipcalc
           - curl
           - wget
+          - filezilla
 
     - name: install system tools
       package:
@@ -160,12 +161,6 @@
     - name: link Xonsh
       file:
         src: /opt/xonsh/bin/xonsh
-        dest: /usr/local/bin/xonsh
-        state: link
-
-    - name: link Xonsh in /usr/bin
-      file:
-        src: /usr/local/bin/xonsh
         dest: /usr/bin/xonsh
         state: link
 
@@ -321,6 +316,9 @@
           - podman
           - podman-compose
           - buildah
+
+    - name: install docker credential secretservice
+      command: pamac install --no-confirm docker-credential-secretservice-bin
           
     - name: install k3d
       command: pamac install --no-confirm rancher-k3d-bin
@@ -701,7 +699,6 @@
           - yad
           - android-file-transfer
           - etcher
-          - filezilla
           - hexchat
           - pidgin
           - transmission-gtk
