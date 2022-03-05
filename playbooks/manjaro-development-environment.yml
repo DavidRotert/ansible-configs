@@ -25,6 +25,9 @@
           - netstat-nat
           - traceroute
           - bind
+          - ipcalc
+          - curl
+          - wget
 
     - name: install system tools
       package:
@@ -42,7 +45,6 @@
           - gnome-logs
           - bleachbit
           - baobab
-
 
     - name: prepare install exFAT progs
       command: pamac install --no-confirm exfatprogs
@@ -183,8 +185,6 @@
           - intellij-idea-community-edition
           - pycharm-community-edition
           - qtcreator
-          - geany
-          - geany-plugins
           - texstudio
           - texlive-latexextra
           - texlive-langextra
@@ -198,14 +198,6 @@
           - pgadmin4
           - sqlitebrowser
           - ghidra
-
-    - name: install Eric IDE
-      pip:
-        virtualenv: /opt/eric
-        state: latest
-        name:
-          - eric-ide
-          - pip
 
     - name: install Spyder IDE
       pip:
@@ -314,14 +306,6 @@
           - gcc-d
           - dtools
 
-    - name: install simple tools
-      package:
-        state: present
-        name:
-          - ipcalc
-          - curl
-          - wget
-
     - name: install Docker and Kubernetes tools
       package:
         state: present
@@ -331,6 +315,9 @@
           - kubectx
           - docker
           - docker-compose
+          - podman
+          - podman-compose
+          - buildah
           
     - name: install k3d
       command: pamac install --no-confirm rancher-k3d-bin
@@ -514,6 +501,7 @@
           - parole
           - xfburn
           - cheese
+          - mpv
 
     - name: install dockbars and launchers
       package:
@@ -700,6 +688,7 @@
           - engrampa
           - gnome-characters
           - xournalpp
+          - thunderbird
           
     - name: install other packages
       package:
@@ -740,7 +729,6 @@
         state: absent
         name:
           - viewnior
-          - mpv
           - audacious
           - clementine
           - galculator

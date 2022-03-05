@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Icon=eric
-Name=Eric Regular Expressions
-Exec=/opt/eric/bin/eric7_re
-Terminal=false
-Hidden=false
-Categories=Development

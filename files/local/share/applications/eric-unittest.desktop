@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Icon=eric
-Name=Eric Unit Test
-Exec=/opt/eric/bin/eric7_unittest
-Terminal=false
-Hidden=false
-Categories=Development

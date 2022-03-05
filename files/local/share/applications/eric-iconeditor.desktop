@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Icon=eric
-Name=Eric Icon Editor
-Exec=/opt/eric/bin/eric7_iconeditor
-Terminal=false
-Hidden=false
-Categories=Development
