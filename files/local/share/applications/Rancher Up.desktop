@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Icon=/home/david/.local/share/icons/icon-k3s.svg
+Icon=icon-k3s.svg
 Name=Rancher Up
 Exec=rancher-up
 Terminal=true

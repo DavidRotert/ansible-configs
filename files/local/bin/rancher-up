@@ -1,6 +1,6 @@
 #!/bin/sh
 
-k3s cluster start k3d
+k3d cluster start k3d
 docker start rancher
 
 echo "Press enter to exit ..."
