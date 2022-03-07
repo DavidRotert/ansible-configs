@@ -55,7 +55,6 @@ update-plugins() {
 # ZSH autocomplete
 zstyle ':autocomplete:*' min-delay 0.4
 zstyle ':autocomplete:*' add-ending no
-zstyle ':autocomplete:history-search:*' list-lines 20
 
 # mode
 bindkey -e
@@ -74,10 +73,10 @@ bindkey "^l" edit-command-line
 autoload -Uz compinit
 compinit
 
-# History file configuration
-[ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
-[ "$HISTSIZE" -lt 10000 ] && HISTSIZE=10000
-[ "$SAVEHIST" -lt 10000 ] && SAVEHIST=10000
+# History configuration
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=1000
+export SAVEHIST=5000
 
 ## History command configuration
 setopt extended_history       # record timestamp of command in HISTFILE
