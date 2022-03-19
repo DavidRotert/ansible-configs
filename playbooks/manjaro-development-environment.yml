@@ -323,12 +323,6 @@
     - name: install k3d
       command: pamac install --no-confirm rancher-k3d-bin
 
-    - name: add user to Docker
-      user:
-        name: "{{ config_user }}"
-        append: true
-        groups: docker
-
     - name: enable Docker service
       service:
         name: docker

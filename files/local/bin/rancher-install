@@ -3,19 +3,19 @@
 RANCHER_IMAGE=rancher/rancher:v2.6-head
 CONTAINER_NAME=rancher
 
-k3d cluster create k3d
+sudo k3d cluster create k3d
 
 echo "Remove old rancher instance for upgrade ..."
-docker stop $CONTAINER_NAME
-docker rm $CONTAINER_NAME
+sudo docker stop $CONTAINER_NAME
+sudo docker rm $CONTAINER_NAME
 
-docker pull $RANCHER_IMAGE
+sudo docker pull $RANCHER_IMAGE
 
 RANCHER_DATADIR="/var/local/lib/rancher/rancher"
 
 sudo mkdir -p $RANCHER_DATADIR/{kubelet,log,rancher,cni}
 
-docker run --name $CONTAINER_NAME \
+sudo docker run --name $CONTAINER_NAME \
     -d --restart=unless-stopped --privileged \
     -v $RANCHER_DATADIR/kubelet:/var/lib/kubelet \
     -v $RANCHER_DATADIR/rancher:/var/lib/rancher \
