@@ -9,6 +9,13 @@ fi
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
+# ZSH autocomplete
+zstyle ':autocomplete:*' list-lines 30
+zstyle ':autocomplete:history-search:*' list-lines 30
+zstyle ':autocomplete:history-incremental-search-*:*' list-lines 30
+zstyle ':autocomplete:*' min-delay 0.5
+zstyle ':autocomplete:*' add-ending no
+
 export GLOBAL_ZSH_PLUGIN_PATH=/usr/share/zsh/plugins
 export GLOBAL_ZSH_PLUGINS=(zsh-autocomplete zsh-autosuggestions zsh-syntax-highlighting)
 
@@ -51,10 +58,6 @@ update-plugins() {
         sudo git -C $pluginpath pull
     done
 }
-
-# ZSH autocomplete
-zstyle ':autocomplete:*' min-delay 0.4
-zstyle ':autocomplete:*' add-ending no
 
 # mode
 bindkey -e
