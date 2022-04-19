@@ -42,15 +42,22 @@
           - udftools
           - gnome-firmware
           - gnome-disk-utility
-          - gnome-system-log
-          - gnome-logs
           - bleachbit
           - baobab
+          - xfce4-taskmanager
+
+    - name: install Gnome logs
+      when: "not desktop is undefined and desktop == 'xfce'"
+      package:
+        state: present
+        name:
+          - gnome-logs
 
     - name: prepare install exFAT progs
       command: pamac install --no-confirm exfatprogs
 
     - name: install XFCE
+      when: "not desktop is undefined and desktop == 'xfce'"
       package:
         state: present
         name:
@@ -76,7 +83,6 @@
           - xfce4-sensors-plugin
           - xfce4-smartbookmark-plugin
           - xfce4-systemload-plugin
-          - xfce4-taskmanager
           - xfce4-time-out-plugin
           - xfce4-timer-plugin
           - xfce4-verve-plugin
@@ -86,7 +92,15 @@
           - xfce4-xkb-plugin
           - xfce4-pulseaudio-plugin
           - pavucontrol
+
+    - name: install Thunar file manager
+      package:
+        state: present
+        name:
+          - thunar
           - thunar-shares-plugin
+          - thunar-volman
+          - thunar-archive-plugin
 
     - name: install base dev tools
       package:
@@ -138,6 +152,7 @@
           - lsd
           - neofetch
           - terminator
+          - xfce4-terminal
           - python-pygments
 
     - name: install ZSH realtime auto complete
@@ -223,7 +238,6 @@
         - golang.go
         - vscjava.vscode-java-pack
         - ms-python.python
-        - ms-pyright.pyright
         - octref.vetur
         - dbaeumer.vscode-eslint
         - webfreak.code-d
@@ -335,7 +349,6 @@
           - remmina
           - freerdp
           - libvncserver
-          - nxproxy
           - spice-gtk
           - telepathy-glib
           - xorg-server-xephyr
@@ -653,6 +666,7 @@
       ignore_errors: true
 
     - name: install lightdm
+      when: "not desktop is undefined and desktop == 'xfce'"
       package:
         state: present
         name:
@@ -684,6 +698,7 @@
           - gnome-characters
           - xournalpp
           - thunderbird
+          - mousepad
           
     - name: install other packages
       package:
