@@ -1,6 +1,6 @@
 #!/bin/sh
 COPY_CONFIGS=true
-DESKTOP=desktop
+DESKTOP=xfce
 CONFIG_USER=$(whoami)
 
 sudo pamac install ansible ansible-lint
