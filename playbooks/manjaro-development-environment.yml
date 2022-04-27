@@ -42,10 +42,12 @@
           - udftools
           - gnome-firmware
           - gnome-disk-utility
-          - gnome-logs
           - bleachbit
           - baobab
           - xfce4-taskmanager
+
+    - name: install Arronax
+      command: pamac install --no-confirm arronax
 
     - name: install Gnome logs
       when: "not desktop is undefined and desktop == 'xfce'"
@@ -155,6 +157,7 @@
           - terminator
           - xfce4-terminal
           - python-pygments
+          - alacritty
 
     - name: install ZSH realtime auto complete
       git:
@@ -440,7 +443,7 @@
           - dia
           - gimp
           - inkscape
-          - gcolor2
+          - gcolor3
           - krita
           - kseexpr
           - kimageformats
@@ -521,9 +524,6 @@
 
     - name: install Albert launcher
       command: pamac install --no-confirm albert-bin
-
-    - name: install Xfdashboard
-      command: pamac install --no-confirm xfdashboard
 
     - name: install themes
       package:
@@ -743,6 +743,7 @@
           - clementine
           - galculator
           - galculator-gtk2
+          - gcolor2
 
     - name: install auto cpu frequence
       command: pamac install --no-confirm auto-cpufreq
