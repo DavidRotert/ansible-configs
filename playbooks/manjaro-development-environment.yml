@@ -492,8 +492,8 @@
 
     - name: configure ZRAM
       copy:
-        src: ../files/swap.conf.d
-        dest: /etc/systemd
+        src: ../files/systemd/swap.conf
+        dest: /etc/systemd/
       when: not copy_configs is undefined and copy_configs == "true"
 
     - name: install multimedia packages
