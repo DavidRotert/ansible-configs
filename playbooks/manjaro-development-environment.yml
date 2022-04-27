@@ -42,6 +42,7 @@
           - udftools
           - gnome-firmware
           - gnome-disk-utility
+          - gnome-logs
           - bleachbit
           - baobab
           - xfce4-taskmanager
