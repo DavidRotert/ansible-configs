@@ -550,6 +550,12 @@
         src: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DejaVuSansMono.zip
         dest: /usr/local/share/fonts
 
+    - name: install MacOS cursor
+      unarchive:
+        remote_src: true
+        src: https://github.com/ful1e5/apple_cursor/releases/download/v1.2.3/macOSMonterey.tar.gz
+        dest: /usr/local/share/icons
+
     - name: install theme dependencies
       package:
         state: present
@@ -708,6 +714,7 @@
           - discord
           - yad
           - android-file-transfer
+          - scrcpy
           - etcher
           - hexchat
           - pidgin
@@ -724,6 +731,8 @@
           - gnome-maps
           - gnome-calendar
           - activity-log-manager
+
+    - 
 
     - name: install cheat.sh
       get_url:
