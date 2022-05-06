@@ -451,7 +451,7 @@
           - rawtherapee
           - qt5-imageformats
           - digikam
-          - spectacle
+          - flameshot
           - blender
           - drawing
 
@@ -731,8 +731,6 @@
           - gnome-maps
           - gnome-calendar
           - activity-log-manager
-
-    - 
 
     - name: install cheat.sh
       get_url:

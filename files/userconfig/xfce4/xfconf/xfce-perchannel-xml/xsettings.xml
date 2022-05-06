@@ -32,8 +32,8 @@
     <property name="MenuImages" type="bool" value="true"/>
     <property name="ButtonImages" type="bool" value="true"/>
     <property name="MenuBarAccel" type="string" value="F10"/>
-    <property name="CursorThemeName" type="string" value="WhiteSur-cursors"/>
-    <property name="CursorThemeSize" type="int" value="16"/>
+    <property name="CursorThemeName" type="string" value="macOSMonterey"/>
+    <property name="CursorThemeSize" type="int" value="25"/>
     <property name="DecorationLayout" type="empty"/>
     <property name="IMPreeditStyle" type="string" value=""/>
     <property name="IMStatusStyle" type="string" value=""/>
