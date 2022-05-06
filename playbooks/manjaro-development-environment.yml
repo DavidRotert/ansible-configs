@@ -421,7 +421,7 @@
         state: present
         name:
           - qt5ct
-          - qt5ct
+          - qt6ct
 
     - name: install printing tools
       package:
