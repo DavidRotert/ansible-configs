@@ -589,7 +589,7 @@
         dest: /tmp/WhiteSur-gtk-theme
 
     - name: install Whitesur GTK theme
-      command: /tmp/WhiteSur-gtk-theme/install.sh --color light --color dark --theme all --panel-opacity 75 --black
+      command: /tmp/WhiteSur-gtk-theme/install.sh --theme all --panel-opacity 75 --black
 
     - name: clone WhiteSur KDE theme
       git:
@@ -679,6 +679,11 @@
         name:
           - lightdm-webkit2-greeter
           - lightdm-webkit-theme-litarvan
+
+    - name: clone MacOS Lightdm WebKit theme
+      git:
+        repo: https://github.com/ZoomTen/lightdm-webkit-theme-macos.git
+        dest: /usr/share/lightdm-webkit/themes/macOS-lightdm
 
     - name: install cloud tools
       package:
