@@ -490,12 +490,6 @@
         name:
           - systemd-swap
 
-    - name: configure ZRAM
-      copy:
-        src: ../files/systemd/swap.conf
-        dest: /etc/systemd/
-      when: not copy_configs is undefined and copy_configs == "true"
-
     - name: install multimedia packages
       package:
         state: present
@@ -655,12 +649,12 @@
 
     - name: install Plank themes
       copy:
-        src: /usr/share/themes/Mojave-light/plank/
+        src: /usr/share/themes/Mojave-Light/plank/
         dest: /usr/share/plank/themes/OSX
 
     - name: install Plank themes
       copy:
-        src: /usr/share/themes/Mojave-dark/plank/
+        src: /usr/share/themes/Mojave-Dark/plank/
         dest: /usr/share/plank/themes/OSX-dark
 
     - name: clone Grub Theme
@@ -679,11 +673,6 @@
         name:
           - lightdm-webkit2-greeter
           - lightdm-webkit-theme-litarvan
-
-    - name: clone MacOS Lightdm WebKit theme
-      git:
-        repo: https://github.com/ZoomTen/lightdm-webkit-theme-macos.git
-        dest: /usr/share/lightdm-webkit/themes/macOS-lightdm
 
     - name: install cloud tools
       package:
@@ -853,8 +842,8 @@
 
     - name: copy logind.conf
       copy:
-        src: ../files/logind.conf
-        dest: /etc/systemd/
+        src: ../files/systemd
+        dest: /etc/
         force: true
       when: not copy_configs is undefined and copy_configs == "true"
 
