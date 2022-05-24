@@ -319,7 +319,6 @@
         state: present
         name:
           - dmd
-          - gcc-d
           - dtools
 
     - name: install Docker and Kubernetes tools
