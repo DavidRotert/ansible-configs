@@ -9,7 +9,13 @@ fi
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
-# ZSH autocomplete
+autoload -Uz compinit
+compinit
+
+# ZSH built in autocomplete
+zstyle ':completion:*' menu select
+
+# ZSH autocomplete plugin
 zstyle ':autocomplete:*' list-lines 30
 zstyle ':autocomplete:history-search:*' list-lines 30
 zstyle ':autocomplete:history-incremental-search-*:*' list-lines 30
@@ -17,7 +23,7 @@ zstyle ':autocomplete:*' min-delay 1.0
 zstyle ':autocomplete:*' add-ending no
 
 export GLOBAL_ZSH_PLUGIN_PATH=/usr/share/zsh/plugins
-export GLOBAL_ZSH_PLUGINS=(zsh-autocomplete zsh-autosuggestions zsh-syntax-highlighting)
+export GLOBAL_ZSH_PLUGINS=(zsh-autosuggestions zsh-syntax-highlighting)
 
 for plugin in $GLOBAL_ZSH_PLUGINS
 do
@@ -65,16 +71,13 @@ bindkey -e
 export KEYTIMEOUT=1
 
 # Keybindings
-#bindkey "^a" vi-beginning-of-line
-#bindkey "^e" vi-end-of-line
+bindkey "^a" vi-beginning-of-line
+bindkey "^e" vi-end-of-line
 
 # Edit line in vim with ctrl-e
 autoload edit-command-line
 zle -N edit-command-line
 bindkey "^l" edit-command-line
-
-autoload -Uz compinit
-compinit
 
 # History configuration
 export HISTFILE="$HOME/.zsh_history"
