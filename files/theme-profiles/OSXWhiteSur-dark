@@ -1,7 +1,7 @@
 [themes]
-GTK_Theme=WhiteSur-dark-solid
-WM_Theme=WhiteSur-dark
-Kvantum_Theme=WhiteSur-dark
+GTK_Theme=WhiteSur-Dark-solid
+WM_Theme=WhiteSur-Dark
+Kvantum_Theme=WhiteSur-Dark
 Plank_Theme=OSX-dark
 Albert_Theme="Spotlight Dark"
 
