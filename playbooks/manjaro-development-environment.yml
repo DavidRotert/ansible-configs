@@ -551,6 +551,14 @@
         remote_src: true
         src: https://github.com/ful1e5/apple_cursor/releases/download/v1.2.3/macOSMonterey.tar.gz
         dest: /usr/share/icons
+        
+    - name: Set default cursor
+      become_user: "{{ config_user }}"
+      copy:
+        src: ../files/cursor.theme
+        dest: /usr/share/icons/index.theme
+        force: true
+      when: not copy_configs is undefined and copy_configs == "true"
 
     - name: install theme dependencies
       package:
