@@ -238,11 +238,16 @@
         - mindaro.mindaro
         - ms-vsliveshare.vsliveshare-pack
         - VisualStudioExptTeam.vscodeintellicode
-        - rust-lang.rust
+        - jeff-hykin.better-cpp-syntax
+        - rust-lang.rust-analyzer
         - golang.go
         - vscjava.vscode-java-pack
         - ms-python.python
-        - octref.vetur
+        - runem.lit-plugin
+        - esbenp.prettier-vscode
+        - Vue.volar
+        - Vue.vscode-typescript-vue-plugin
+        - sdras.vue-vscode-snippets
         - dbaeumer.vscode-eslint
         - webfreak.code-d
         - jnoortheen.xonsh
@@ -251,7 +256,6 @@
         - ms-vscode.cpptools-extension-pack
         - thenouillet.symfony-vscode
         - mblode.twig-language-2
-        - msjsdiag.debugger-for-chrome
         - firefox-devtools.vscode-firefox-debug
         - xdebug.php-pack
         - hbenl.vscode-test-explorer
