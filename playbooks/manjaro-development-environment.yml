@@ -553,10 +553,9 @@
         dest: /usr/share/icons
         
     - name: Set default cursor
-      become_user: "{{ config_user }}"
       copy:
         src: ../files/cursor.theme
-        dest: /usr/share/icons/index.theme
+        dest: /usr/share/icons/default/index.theme
         force: true
       when: not copy_configs is undefined and copy_configs == "true"
 
