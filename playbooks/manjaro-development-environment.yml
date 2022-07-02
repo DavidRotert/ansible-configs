@@ -714,6 +714,7 @@
       package:
         state: present
         name:
+          - webapp-manager
           - discord
           - yad
           - android-file-transfer
