@@ -714,7 +714,7 @@
       package:
         state: present
         name:
-          - webapp-manager
+          - webapp-manager-manjaro
           - discord
           - yad
           - android-file-transfer
@@ -872,15 +872,9 @@
 
     - name: set exec permissions
       file:
-        path: "{{ item }}"
+        path: /usr/local/bin
         mode: "775"
-      loop:
-        - /usr/local/bin/gufw_icon.sh
-        - /usr/local/bin/fast-theme-switch.xsh
-        - /usr/local/bin/update-python-apps.sh
-        - /usr/local/bin/rancher-install
-        - /usr/local/bin/rancher-up
-        - /usr/local/bin/rancher-down
+        recurse: true
 
     - name: copy user configs
       become_user: "{{ config_user }}"

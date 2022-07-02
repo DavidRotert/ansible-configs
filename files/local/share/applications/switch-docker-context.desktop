@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Icon=docker-desktop
+Name=Switch Docker Context
+Exec=/usr/local/bin/switch-docker-context.sh
+Terminal=false
+Hidden=false
+Categories=Development; Utility

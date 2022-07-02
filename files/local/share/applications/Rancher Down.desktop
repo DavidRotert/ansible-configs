@@ -2,6 +2,6 @@
 Type=Application
 Icon=icon-k3s.svg
 Name=Rancher Down
-Exec=rancher-down
+Exec=rancher-down.sh
 Terminal=true
 Hidden=false

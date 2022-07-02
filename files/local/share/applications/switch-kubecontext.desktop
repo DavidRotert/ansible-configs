@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Icon=/usr/local/share/icons/kubelogo.svg
+Name=Switch Kube Context
+Exec=/usr/local/bin/switch-kubecontext.sh
+Terminal=false
+Hidden=false
+Categories=Development; Utility
