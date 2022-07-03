@@ -5,3 +5,4 @@ Name=Rancher Down
 Exec=rancher-down.sh
 Terminal=true
 Hidden=false
+Categories=Development; Utility

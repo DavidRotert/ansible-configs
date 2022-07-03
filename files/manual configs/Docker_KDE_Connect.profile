@@ -35,21 +35,6 @@ routed =
 logging = 
 
 [Rule2]
-ufw_rule = 172.17.0.1 ALLOW IN 192.168.0.0/16
-description = Docker
-command = /usr/sbin/ufw allow in from 192.168.0.0/16 to 172.17.0.1
-policy = allow
-direction = in
-protocol = 
-from_ip = 192.168.0.0/16
-from_port = 
-to_ip = 172.17.0.1
-to_port = 
-iface = 
-routed = 
-logging = 
-
-[Rule3]
 ufw_rule = 172.17.0.1 ALLOW IN 172.0.0.0/8 (log-all)
 description = Docker
 command = /usr/sbin/ufw allow in log-all from 172.0.0.0/8 to 172.17.0.1
@@ -57,6 +42,21 @@ policy = allow
 direction = in
 protocol = 
 from_ip = 172.0.0.0/8
+from_port = 
+to_ip = 172.17.0.1
+to_port = 
+iface = 
+routed = 
+logging = log-all
+
+[Rule3]
+ufw_rule = 172.17.0.1 ALLOW IN 192.168.0.0/16 (log-all)
+description = Docker
+command = /usr/sbin/ufw allow in log-all from 192.168.0.0/16 to 172.17.0.1
+policy = allow
+direction = in
+protocol = 
+from_ip = 192.168.0.0/16
 from_port = 
 to_ip = 172.17.0.1
 to_port = 

@@ -56,7 +56,7 @@ alias enable='srvenable'
 alias docker-stopall='docker stop $(docker ps -a -q)'
 alias docker-rmall='docker rm $(docker ps -a -q)'
 
-alias k3d="sudo k3d"
+alias k3d="k3d"
 
 # pacman aliases
 alias pacman-install='sudo pacman -Syu'
