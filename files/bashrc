@@ -8,6 +8,8 @@
 
 source /usr/share/git/completion/git-prompt.sh
 
+source /usr/share/zsh/plugins/goto.sh
+
 colors() {
 	local fgc bgc vals seq0
 
@@ -120,3 +122,5 @@ shopt -s histappend
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
+
+[[ -f ~/.bashrc_custom ]] && . ~/.bashrc_custom
