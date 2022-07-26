@@ -1,0 +1,196 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: install themes
+      ansible.builtin.package:
+        name:
+          - xfce-theme-greybird
+          - papirus-icon-theme
+          - kvantum
+
+    - name: install Qt5/6 configuration tool
+      ansible.builtin.package:
+        state: present
+        name:
+          - qt5ct
+          - qt6ct
+          
+    - name: install fonts
+      ansible.builtin.package:
+        state: present
+        name:
+          - noto-fonts-emoji
+          - ttf-font-awesome
+
+    - name: install nerd fonts
+      ansible.builtin.file:
+        path: /usr/local/share/fonts
+        state: directory
+
+    - name: install nerd fonts
+      ansible.builtin.unarchive:
+        remote_src: true
+        src: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DejaVuSansMono.zip
+        dest: /usr/local/share/fonts
+
+    - name: install MacOS cursor
+      ansible.builtin.unarchive:
+        remote_src: true
+        src: https://github.com/ful1e5/apple_cursor/releases/download/v1.2.3/macOSMonterey.tar.gz
+        dest: /usr/share/icons
+        
+    - name: Set default cursor
+      ansible.builtin.copy:
+        src: ../files/cursor.theme
+        dest: /usr/share/icons/default/index.theme
+        force: true
+      when: not copy_configs is undefined and copy_configs == "true"
+
+    - name: install theme dependencies
+      ansible.builtin.package:
+        state: present
+        name:
+          - sassc
+          - optipng
+          - inkscape
+
+    - name: clone Mojave GTK theme
+      ansible.builtin.git:
+        repo: https://github.com/vinceliuice/Mojave-gtk-theme.git
+        dest: /tmp/Mojave-gtk-theme
+
+    - name: install Mojave GTK theme
+      ansible.builtin.command: /tmp/Mojave-gtk-theme/install.sh
+
+    - name: clone Mojave KDE theme
+      ansible.builtin.git:
+        repo: https://github.com/vinceliuice/McMojave-kde.git
+        dest: /tmp/McMojave-kde
+
+    - name: copy McMojave KDE Kvantum theme
+      become_user: "{{ config_user }}"
+      ansible.builtin.copy:
+        src: /tmp/McMojave-kde/Kvantum
+        dest: ~/.config/
+
+    - name: clone Whitesur GTK theme
+      ansible.builtin.git:
+        repo: https://github.com/vinceliuice/WhiteSur-gtk-theme.git
+        dest: /tmp/WhiteSur-gtk-theme
+
+    - name: install Whitesur GTK theme
+      ansible.builtin.command: /tmp/WhiteSur-gtk-theme/install.sh --theme all --panel-opacity 75 --black
+
+    - name: clone WhiteSur KDE theme
+      ansible.builtin.git:
+        repo: https://github.com/vinceliuice/WhiteSur-kde.git
+        dest: /tmp/WhiteSur-kde
+
+    - name: copy WhiteSur KDE Kvantum theme
+      become_user: "{{ config_user }}"
+      ansible.builtin.copy:
+        src: /tmp/WhiteSur-kde/Kvantum
+        dest: ~/.config/
+
+    - name: clone Fluent GTK theme
+      ansible.builtin.git:
+        repo: https://github.com/vinceliuice/Fluent-gtk-theme.git
+        dest: /tmp/Fluent-gtk-theme
+
+    - name: install Fluent GTK theme
+      ansible.builtin.command: /tmp/Fluent-gtk-theme/install.sh --theme all
+
+    - name: clone Fluent KDE theme
+      ansible.builtin.git:
+        repo: https://github.com/vinceliuice/Fluent-kde.git
+        dest: /tmp/Fluent-kde
+
+    - name: copy Fluent KDE Kvantum theme
+      become_user: "{{ config_user }}"
+      ansible.builtin.copy:
+        src: /tmp/Fluent-kde/Kvantum
+        dest: ~/.config/
+
+    - name: patch Kvantum themes
+      become_user: "{{ config_user }}"
+      ansible.builtin.command: /bin/bash -c 'sed -i "s/composite=true/composite=false/g" ~/.config/Kvantum/*/*.kvconfig'
+
+    - name: clone Whitesur Icon theme
+      ansible.builtin.git:
+        repo: https://github.com/vinceliuice/WhiteSur-icon-theme.git
+        dest: /tmp/WhiteSur-icon-theme
+
+    - name: install Whitesur Icon theme
+      ansible.builtin.command: /tmp/WhiteSur-icon-theme/install.sh --black
+
+    - name: patch Whitesur Icon theme
+      ansible.builtin.command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Light,hicolor/g" /usr/share/icons/WhiteSur/index.theme
+
+    - name: patch Whitesur Icon theme
+      ansible.builtin.command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Dark,hicolor/g" /usr/share/icons/WhiteSur-dark/index.theme
+
+    - name: clone Fluent Icon theme
+      ansible.builtin.git:
+        repo: https://github.com/vinceliuice/Fluent-icon-theme.git
+        dest: /tmp/Fluent-icon-theme
+
+    - name: install Fluent Icon theme
+      ansible.builtin.command: /tmp/Fluent-icon-theme/install.sh --black
+
+    - name: patch Fluent Icon theme
+      ansible.builtin.command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Light,hicolor/g" /usr/share/icons/Fluent/index.theme
+
+    - name: patch Fluent Icon theme
+      ansible.builtin.command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Dark,hicolor/g" /usr/share/icons/Fluent-dark/index.theme
+
+    - name: install Plank themes
+      ansible.builtin.copy:
+        src: /usr/share/themes/Mojave-Light/plank/
+        dest: /usr/share/plank/themes/OSX
+
+    - name: install Plank themes
+      ansible.builtin.copy:
+        src: /usr/share/themes/Mojave-Dark/plank/
+        dest: /usr/share/plank/themes/OSX-dark
+
+    - name: clone Grub Theme
+      ansible.builtin.git:
+        repo: https://github.com/vinceliuice/grub2-themes.git
+        dest: /tmp/grub2-themes
+
+    - name: Install Grub theme
+      ansible.builtin.command: /tmp/grub2-themes/install.sh -b -t tela
+      ignore_errors: true
+
+    - name: copy theme profiles
+      become_user: "{{ config_user }}"
+      ansible.builtin.copy:
+        src: ../files/theme-profiles/
+        dest: ~/.theme-profiles
+        force: true
+      when: not copy_configs is undefined and copy_configs == "true"
+
+    - name: link default light theme
+      become_user: "{{ config_user }}"
+      ansible.builtin.file:
+        src: ~/.theme-profiles/MojaveWin-light
+        dest: ~/.theme-profiles/default-light-theme
+        state: link
+        force: false
+
+    - name: link default dark theme
+      become_user: "{{ config_user }}"
+      ansible.builtin.file:
+        src: ~/.theme-profiles/MojaveWin-dark
+        dest: ~/.theme-profiles/default-dark-theme
+        state: link
+        force: false
+
+    - name: copy themes
+      ansible.builtin.copy:
+        src: ../files/themes/
+        dest: /usr/share/themes
+        force: true

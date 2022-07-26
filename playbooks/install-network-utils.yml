@@ -1,0 +1,25 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: install network utils
+      ansible.builtin.package:
+        state: present
+        name:
+          - avahi
+          - networkmanager
+          - networkmanager-openconnect
+          - networkmanager-openvpn
+          - networkmanager-pptp
+          - networkmanager-vpnc
+          - mosh
+          - sshfs
+          - netstat-nat
+          - traceroute
+          - bind
+          - ipcalc
+          - curl
+          - wget
+          - filezilla

@@ -1,0 +1,66 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: install Java SDK
+      ansible.builtin.package:
+        state: present
+        name:
+          - jdk8-openjdk
+          - jre8-openjdk
+          - jre8-openjdk-headless
+          - jdk11-openjdk
+          - openjdk11-src
+          - openjdk11-doc
+          - java11-openjfx
+          - java11-openjfx-doc
+          - java11-openjfx-src
+          - jdk-openjdk
+          - openjdk-src
+          - openjdk-doc
+          - java-openjfx
+          - java-openjfx-doc
+          - java-openjfx-src
+          - ant
+          - maven
+          - gradle
+
+    - name: install PHP
+      package:
+        state: present
+        name:
+          - composer
+          - php
+          - php7
+          - xdebug
+
+    - name: install Node.js 16
+      package:
+        state: present
+        name:
+          - nodejs-lts-gallium
+          - npm
+          - yarn
+
+    - name: install Go
+      package:
+        state: present
+        name:
+          - gcc-go
+          - go-tools
+
+    - name: install Rustup
+      package:
+        state: present
+        name:
+          - rustup
+          - lldb
+
+    - name: install D
+      package:
+        state: present
+        name:
+          - dmd
+          - dtools

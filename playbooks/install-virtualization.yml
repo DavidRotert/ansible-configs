@@ -1,0 +1,42 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: prepare install virtualization
+      ansible.builtin.command: pamac install --no-confirm iptables-nft
+
+    - name: install virtualization
+      ansible.builtin.package:
+        state: present
+        name:
+          - dkms
+          - virtualbox
+          - virtualbox-guest-iso
+          - libvirt
+          - qemu
+          - qemu-arch-extra
+          - qemu-block-iscsi
+          - qemu-block-rbd
+          - libvirt-storage-iscsi-direct
+          - libvirt-storage-rbd
+          - radvd
+          - ebtables
+          - open-iscsi
+          - virt-manager
+          - edk2-ovmf
+          - lxd
+          - lxc
+
+    - name: enable libvirt service
+      ansible.builtin.service:
+        name: libvirtd
+        enabled: true
+        state: started
+
+    - name: add user to libvirt
+      ansible.builtin.user:
+        name: "{{ config_user }}"
+        append: true
+        groups: libvirt

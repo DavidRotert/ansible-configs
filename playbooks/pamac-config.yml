@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: copy Pamac config
+      ansible.builtin.copy:
+        src: ../files/pamac.conf
+        dest: /etc/
+      when: not copy_configs is undefined and copy_configs == "true"

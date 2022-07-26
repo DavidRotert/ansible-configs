@@ -1,0 +1,66 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: install system tools
+      ansible.builtin.package:
+        state: present
+        name:
+          - arch-install-scripts
+          - shim
+          - mtools
+          - gpart
+          - gparted
+          - udftools
+          - gnome-firmware
+          - gnome-disk-utility
+          - bleachbit
+          - baobab
+          - xfce4-taskmanager
+
+    - name: install Arronax
+      ansible.builtin.command: pamac install --no-confirm arronax
+
+    - name: install Gnome logs
+      when: "not desktop is undefined and desktop == 'xfce'"
+      ansible.builtin.package:
+        state: present
+        name:
+          - gnome-logs
+
+    - name: prepare install exFAT progs
+      ansible.builtin.command: pamac install --no-confirm exfatprogs
+
+    - name: install preload
+      ansible.builtin.command: pamac install --no-confirm preload
+
+    - name: install earlyoom
+      ansible.builtin.package:
+        state: present
+        name:
+          - earlyoom
+          - systembus-notify
+
+    - name: enable earlyoom service
+      ansible.builtin.service:
+        name: earlyoom
+        enabled: true
+        state: started
+
+    - name: install Systemd swap
+      ansible.builtin.package:
+        state: present
+        name:
+          - systemd-swap
+
+    - name: install auto cpu frequence
+      ansible.builtin.command: pamac install --no-confirm auto-cpufreq
+          
+    - name: enable auto CPU frequence
+      ansible.builtin.service:
+        name: auto-cpufreq
+        state: started
+        enabled: true
+

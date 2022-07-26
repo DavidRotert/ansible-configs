@@ -1,0 +1,72 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: install base dev tools
+      ansible.builtin.package:
+        state: present
+        name:
+          - base-devel
+          - clang
+          - llvm
+          - lld
+          - lldb
+          - gdb
+          - cmake
+          - ninja
+          - samurai
+          - gitg
+          - git-lfs
+          - git
+          - tk
+          - python3
+          - pypy3
+          - cloc
+          - gvim
+          - python-pip
+          - python-virtualenv
+
+    - name: install Gdbgui
+      ansible.builtin.pip:
+        virtualenv: /opt/gdbgui
+        state: latest
+        name:
+          - gdbgui
+          - pip
+
+    - name: install IDEs
+      ansible.builtin.package:
+        state: present
+        name:
+          - intellij-idea-community-edition
+          - pycharm-community-edition
+          - qtcreator
+          - texstudio
+          - texlive-latexextra
+          - texlive-langextra
+          - texlive-humanities
+          - texlive-games
+          - texlive-formatsextra
+          - texlive-fontsextra
+          - okteta
+          - mysql-workbench
+          - mariadb-clients
+          - pgadmin4
+          - sqlitebrowser
+          - ghidra
+
+    - name: install Insomnia REST client
+      ansible.builtin.command: pamac install --no-confirm insomnia-bin
+
+    - name: install Spyder IDE
+      ansible.builtin.pip:
+        virtualenv: /opt/spyder
+        state: latest
+        name:
+          - spyder
+          - pip
+
+    - name: install VS Code
+      ansible.builtin.command: pamac install --no-confirm visual-studio-code-bin

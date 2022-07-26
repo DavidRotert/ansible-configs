@@ -71,8 +71,10 @@ bindkey -e
 export KEYTIMEOUT=1
 
 # Keybindings
-bindkey "^a" vi-beginning-of-line
-bindkey "^e" vi-end-of-line
+bindkey "^a" beginning-of-line
+bindkey "^e" end-of-line
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
 
 # Edit line in vim with ctrl-e
 autoload edit-command-line

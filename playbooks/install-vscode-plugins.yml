@@ -1,0 +1,44 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: install VS Code plugin
+      become_user: "{{ config_user }}"
+      ansible.builtin.command: "/usr/bin/code --install-extension {{ item }}"
+      when: "config_user != 'root'"
+      loop:
+        - ms-vscode.hexeditor
+        - ms-azuretools.vscode-docker
+        - ms-kubernetes-tools.vscode-kubernetes-tools
+        - ms-vscode-remote.remote-containers
+        - mindaro.mindaro
+        - ms-vsliveshare.vsliveshare-pack
+        - VisualStudioExptTeam.vscodeintellicode
+        - rust-lang.rust-analyzer
+        - golang.go
+        - vscjava.vscode-java-pack
+        - ms-python.python
+        - runem.lit-plugin
+        - esbenp.prettier-vscode
+        - Vue.volar
+        - Vue.vscode-typescript-vue-plugin
+        - sdras.vue-vscode-snippets
+        - dbaeumer.vscode-eslint
+        - webfreak.code-d
+        - jnoortheen.xonsh
+        - mtxr.sqltools
+        - redhat.ansible
+        - ms-vscode.cpptools-extension-pack
+        - jeff-hykin.better-cpp-syntax
+        - thenouillet.symfony-vscode
+        - mblode.twig-language-2
+        - firefox-devtools.vscode-firefox-debug
+        - xdebug.php-pack
+        - hbenl.vscode-test-explorer
+        - gruntfuggly.todo-tree
+        - christian-kohler.path-intellisense
+        - vscode-icons-team.vscode-icons
+        - oderwat.indent-rainbow
+        - eamodio.gitlens

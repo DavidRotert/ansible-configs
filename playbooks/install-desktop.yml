@@ -1,0 +1,172 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: install Remmina
+      ansible.builtin.package:
+        state: present
+        name:
+          - remmina
+          - freerdp
+          - libvncserver
+          - spice-gtk
+          - telepathy-glib
+          - xorg-server-xephyr
+
+    - name: install crypto tools
+      ansible.builtin.package:
+        state: present
+        name:
+          - xca
+          - keepassxc
+          - xclip
+          - wl-clipboard
+          - seahorse
+          - veracrypt
+
+    - name: install browsers
+      ansible.builtin.package:
+        state: present
+        name:
+          - chromium
+          - firefox
+          - falkon
+          - tor
+          - torbrowser-launcher
+
+    - name: install printing tools
+      ansible.builtin.package:
+        state: present
+        name:
+          - print-manager
+          - system-config-printer
+
+    - name: enable CUPS service
+      ansible.builtin.service:
+        name: cups
+        enabled: true
+        state: started
+
+    - name: install graphics tools
+      ansible.builtin.package:
+        state: present
+        name:
+          - dia
+          - gimp
+          - inkscape
+          - gcolor3
+          - krita
+          - kseexpr
+          - kimageformats
+          - darktable
+          - rawtherapee
+          - qt5-imageformats
+          - digikam
+          - flameshot
+          - blender
+          - drawing
+
+    - name: install backup tools
+      ansible.builtin.package:
+        state: present
+        name:
+          - snapper
+          - snapper-gui
+          - backintime
+          - kompare
+          - meld
+          - python-keyring
+          - timeshift
+          - grub-btrfs
+
+    - name: install multimedia packages
+      ansible.builtin.package:
+        state: present
+        name:
+          - vlc
+          - lmms
+          - pitivi
+          - openshot
+          - flowblade
+          - obs-studio
+          - audacity
+          - vokoscreen
+          - gnome-sound-recorder
+          - ristretto
+          - parole
+          - xfburn
+          - cheese
+          - mpv
+
+    - name: install dockbars and launchers
+      ansible.builtin.package:
+        state: present
+        name:
+          - plank
+          - muparser
+
+    - name: install Albert launcher
+      ansible.builtin.command: pamac install --no-confirm albert-bin
+
+    - name: install lightdm
+      when: "not desktop is undefined and desktop == 'xfce'"
+      ansible.builtin.package:
+        state: present
+        name:
+          - lightdm-webkit2-greeter
+          - lightdm-webkit-theme-litarvan
+
+    - name: install cloud tools
+      ansible.builtin.package:
+        state: present
+        name:
+          - owncloud-client
+          - nextcloud-client
+
+    - name: install office tools
+      ansible.builtin.package:
+        state: present
+        name:
+          - libreoffice-still
+          - pstoedit
+          - libmythes
+          - coin-or-mp
+          - beanshell
+          - onlyoffice-desktopeditors
+          - atril
+          - mate-calc
+          - simple-scan
+          - gnucash
+          - engrampa
+          - gnome-characters
+          - xournalpp
+          - thunderbird
+          - mousepad
+          
+    - name: install other packages
+      ansible.builtin.package:
+        state: present
+        name:
+          - webapp-manager-manjaro
+          - discord
+          - yad
+          - android-file-transfer
+          - scrcpy
+          - etcher
+          - hexchat
+          - pidgin
+          - transmission-gtk
+          - ibus-typing-booster
+          - gtkhash-thunar
+          - variety
+          - kdeconnect
+          - minetest
+          - ventoy
+          - redshift
+          - ffmpegthumbs
+          - gnome-weather
+          - gnome-maps
+          - gnome-calendar
+          - activity-log-manager

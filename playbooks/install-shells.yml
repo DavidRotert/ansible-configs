@@ -1,0 +1,108 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: install shells + terminals
+      ansible.builtin.package:
+        state: present
+        name:
+          - zsh
+          - zsh-autosuggestions
+          - zsh-completions
+          - zsh-doc
+          - zsh-syntax-highlighting
+          - zsh-history-substring-search
+          - zsh-theme-powerlevel10k
+          - zshdb
+          - fish
+          - dash
+          - shellcheck
+          - lsd
+          - neofetch
+          - terminator
+          - python-pygments
+          - alacritty
+
+    - name: install ZSH realtime auto complete
+      ansible.builtin.git:
+        repo: https://github.com/marlonrichert/zsh-autocomplete.git
+        dest: /usr/share/zsh/plugins/zsh-autocomplete
+
+    - name: install PyPy 3 pip
+      ansible.builtin.command: /opt/pypy3/bin/pypy3 -m ensurepip
+
+    - name: install Xonsh
+      ansible.builtin.pip:
+        virtualenv: /opt/xonsh
+        state: latest
+        name:
+          - xonsh[full]
+          - setproctitle
+          - jedi
+          - pip
+
+    - name: link Xonsh
+      ansible.builtin.file:
+        src: /opt/xonsh/bin/xonsh
+        dest: /usr/bin/xonsh
+        state: link
+
+    - name: install goto
+      ansible.builtin.get_url:
+        url: https://raw.githubusercontent.com/iridakos/goto/master/goto.sh
+        dest: /usr/share/zsh/plugins/goto.sh
+        owner: root
+        group: root
+        mode: 775
+        force: true
+
+    - name: install cheat.sh
+      ansible.builtin.get_url:
+        url: https://cht.sh/:cht.sh
+        dest: /usr/local/bin/cht.sh
+        owner: root
+        group: root
+        mode: 775
+        force: true
+
+    - name: copy .aliases
+      become_user: "{{ config_user }}"
+      ansible.builtin.copy:
+        src: ../files/aliases
+        dest: ~/.aliases
+        force: true
+      when: not copy_configs is undefined and copy_configs == "true"
+
+    - name: copy user xonshrc
+      become_user: "{{ config_user }}"
+      ansible.builtin.copy:
+        src: ../files/xonshrc
+        dest: ~/.xonshrc
+        force: true
+      when: not copy_configs is undefined and copy_configs == "true"
+
+    - name: copy .bashrc
+      become_user: "{{ config_user }}"
+      ansible.builtin.copy:
+        src: ../files/bashrc
+        dest: ~/.bashrc
+        force: true
+      when: not copy_configs is undefined and copy_configs == "true"
+
+    - name: copy .zshrc
+      become_user: "{{ config_user }}"
+      ansible.builtin.copy:
+        src: ../files/zshrc
+        dest: ~/.zshrc
+        force: true
+      when: not copy_configs is undefined and copy_configs == "true"
+
+    - name: copy .p10k.zsh
+      become_user: "{{ config_user }}"
+      ansible.builtin.copy:
+        src: ../files/p10k.zsh
+        dest: ~/.p10k.zsh
+        force: true
+      when: not copy_configs is undefined and copy_configs == "true"

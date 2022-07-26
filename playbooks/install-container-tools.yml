@@ -1,0 +1,29 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: install Docker and Kubernetes tools
+      ansible.builtin.package:
+        state: present
+        name:
+          - helm
+          - kubectl
+          - kubectx
+          - docker
+          - docker-compose
+          - podman
+          - podman-compose
+          - buildah
+
+    - name: install docker credential secretservice
+      ansible.builtin.command: pamac install --no-confirm docker-credential-secretservice-bin
+          
+    - name: install k3d
+      ansible.builtin.command: pamac install --no-confirm rancher-k3d-bin
+
+    - name: enable Docker service
+      ansible.builtin.service:
+        name: docker
+        enabled: true

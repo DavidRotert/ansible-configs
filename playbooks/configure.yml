@@ -1,0 +1,54 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: copy /usr/local
+      ansible.builtin.copy:
+        src: ../files/local/
+        dest: /usr/local
+        force: true
+
+    - name: copy .profile
+      become_user: "{{ config_user }}"
+      ansible.builtin.copy:
+        src: ../files/profile
+        dest: ~/.profile
+        force: true
+      when: not copy_configs is undefined and copy_configs == "true"
+
+    - name: copy faillock.conf
+      ansible.builtin.copy:
+        src: ../files/faillock.conf
+        dest: /etc/security/
+        force: true
+      when: not copy_configs is undefined and copy_configs == "true"
+
+    - name: copy logind.conf
+      ansible.builtin.copy:
+        src: ../files/systemd
+        dest: /etc/
+        force: true
+      when: not copy_configs is undefined and copy_configs == "true"
+
+    - name: copy LightDM config
+      ansible.builtin.copy:
+        src: ../files/lightdm/
+        dest: /etc/lightdm
+        force: true
+      when: not copy_configs is undefined and copy_configs == "true"
+
+    - name: set exec permissions
+      ansible.builtin.file:
+        path: /usr/local/bin
+        mode: "775"
+        recurse: true
+
+    - name: copy user configs
+      become_user: "{{ config_user }}"
+      ansible.builtin.copy:
+        src: ../files/userconfig/
+        dest: ~/.config
+        force: true
+      when: not copy_configs is undefined and copy_configs == "true"
