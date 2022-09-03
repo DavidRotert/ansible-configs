@@ -17,7 +17,7 @@
     <property name="DPI" type="int" value="96"/>
     <property name="Antialias" type="int" value="1"/>
     <property name="Hinting" type="int" value="1"/>
-    <property name="HintStyle" type="string" value="hintslight"/>
+    <property name="HintStyle" type="string" value="hintfull"/>
     <property name="RGBA" type="string" value="none"/>
   </property>
   <property name="Gtk" type="empty">
@@ -34,7 +34,9 @@
     <property name="MenuBarAccel" type="string" value="F10"/>
     <property name="CursorThemeName" type="string" value="macOSMonterey"/>
     <property name="CursorThemeSize" type="int" value="25"/>
-    <property name="DecorationLayout" type="empty"/>
+    <property name="DecorationLayout" type="string" value=":minimize,maximize,close"/>
+    <property name="DialogsUseHeader" type="empty"/>
+    <property name="TitlebarMiddleClick" type="empty"/>
     <property name="IMPreeditStyle" type="string" value=""/>
     <property name="IMStatusStyle" type="string" value=""/>
     <property name="IMModule" type="string" value=""/>
