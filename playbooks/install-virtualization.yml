@@ -20,7 +20,6 @@
           - qemu-block-iscsi
           - qemu-block-rbd
           - libvirt-storage-iscsi-direct
-          - libvirt-storage-rbd
           - radvd
           - ebtables
           - open-iscsi
