@@ -123,4 +123,6 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
+# Custom conf
+[[ -f ~/.shells_custom ]] && . ~/.shells_custom
 [[ -f ~/.bashrc_custom ]] && . ~/.bashrc_custom
