@@ -47,6 +47,6 @@
         state: present
         name:
           - thunar
-          - thunar-shares-plugin
+          - thunar-shares-plugin-gtk3
           - thunar-volman
           - thunar-archive-plugin

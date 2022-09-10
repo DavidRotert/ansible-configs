@@ -16,9 +16,15 @@
           - virtualbox-guest-iso
           - libvirt
           - qemu
+          - qemu-ui-curses
+          - qemu-ui-opengl
+          - qemu-ui-spice-app
+          - qemu-ui-sdl
+          - qemu-ui-gtk
           - qemu-arch-extra
           - qemu-block-iscsi
           - qemu-block-rbd
+          - qemu-block-gluster
           - libvirt-storage-iscsi-direct
           - radvd
           - ebtables
