@@ -53,7 +53,6 @@
       ansible.builtin.package:
         state: present
         name:
-          - dia
           - gimp
           - inkscape
           - gcolor3
@@ -108,7 +107,7 @@
           - muparser
 
     - name: install Albert launcher
-      ansible.builtin.command: pamac install --no-confirm albert-bin
+      ansible.builtin.command: pamac install --no-confirm albert
 
     - name: install lightdm
       when: "not desktop is undefined and desktop == 'xfce'"
@@ -149,12 +148,11 @@
       ansible.builtin.package:
         state: present
         name:
-          - webapp-manager-manjaro
+          - webapp-manager
           - discord
           - yad
           - android-file-transfer
           - scrcpy
-          - etcher
           - hexchat
           - pidgin
           - transmission-gtk
@@ -170,3 +168,7 @@
           - gnome-maps
           - gnome-calendar
           - activity-log-manager
+
+    - name: install Etcher
+      ansible.builtin.command: pamac install --no-confirm etcher-bin
+
