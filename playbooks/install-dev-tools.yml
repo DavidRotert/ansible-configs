@@ -51,6 +51,9 @@
           - texlive-formatsextra
           - texlive-fontsextra
           - okteta
+          - dbeaver
+          - dbeaver-plugin-office
+          - dbeaver-plugin-svg-format
           - mysql-workbench
           - mariadb-clients
           - pgadmin4
