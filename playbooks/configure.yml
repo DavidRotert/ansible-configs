@@ -25,6 +25,13 @@
         force: true
       when: not copy_configs is undefined and copy_configs == "true"
 
+    - name: copy polkit config
+      ansible.builtin.copy:
+        src: ../files/polkit-1
+        dest: /usr/share/polkit-1
+        force: true
+      when: not copy_configs is undefined and copy_configs == "true"
+
     - name: copy logind.conf
       ansible.builtin.copy:
         src: ../files/systemd

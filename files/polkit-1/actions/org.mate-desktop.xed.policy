@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "https://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+<policyconfig>
+
+  
+
+ <vendor>Xed</vendor>
+ <vendor_url>https://mate-desktop.org/</vendor_url>
+ <icon_name>org.mate-desktop.xes</icon_name>
+
+
+ <action id="org.mate-desktop.xed">
+ 
+ <description>Run Xed as root</description>
+ <defaults>
+ <allow_any>no</allow_any>
+ <allow_inactive>auth_admin</allow_inactive>
+ <allow_active>auth_admin</allow_active>
+ </defaults>
+ <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/xes</annotate>
+ <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+ </action>
+
+</policyconfig>
