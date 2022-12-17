@@ -19,6 +19,7 @@
       ansible.builtin.package:
         state: present
         name:
+          - gnome-keyring
           - xca
           - keepassxc
           - xclip
@@ -73,8 +74,7 @@
         name:
           - snapper
           - snapper-gui
-          - backintime
-          - backintime-qt
+          - timeshift
           - kompare
           - meld
           - python-keyring
@@ -133,7 +133,6 @@
           - libmythes
           - coin-or-mp
           - beanshell
-          - onlyoffice-desktopeditors
           - atril
           - mate-calc
           - simple-scan
@@ -142,7 +141,7 @@
           - gnome-characters
           - xournalpp
           - thunderbird
-          - mousepad
+          - xed
           
     - name: install other packages
       ansible.builtin.package:
@@ -157,7 +156,7 @@
           - pidgin
           - transmission-gtk
           - ibus-typing-booster
-          - gtkhash-thunar
+          - gtkhash
           - variety
           - minetest
           - ventoy

@@ -22,9 +22,12 @@
       package:
         state: absent
         name:
+          - xterm
+          - uxterm
           - viewnior
           - audacious
           - clementine
           - galculator
           - galculator-gtk2
           - gcolor2
+          - mousepad

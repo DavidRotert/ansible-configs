@@ -3,54 +3,66 @@
 <action>
 	<icon>utilities-terminal</icon>
 	<name>Terminal</name>
+	<submenu></submenu>
 	<unique-id>1625463474161391-1</unique-id>
 	<command>xfce4-terminal --working-directory=%f</command>
 	<description>Open terminal here</description>
+	<range></range>
 	<patterns>*</patterns>
 	<directories/>
 </action>
 <action>
 	<icon>system-file-manager</icon>
 	<name>Thunar Root</name>
+	<submenu></submenu>
 	<unique-id>1367866030392883-2</unique-id>
 	<command>pkexec thunar %f</command>
 	<description>Open in Thunar as root</description>
+	<range></range>
 	<patterns>*</patterns>
 	<directories/>
 </action>
 <action>
 	<icon>visual-studio-code</icon>
 	<name>Open in VS Code</name>
+	<submenu></submenu>
 	<unique-id>1367866030392883-3</unique-id>
 	<command>code %f</command>
 	<description>Open folder in VS Code</description>
+	<range></range>
 	<patterns>*</patterns>
 	<directories/>
 </action>
 <action>
 	<icon>git</icon>
 	<name>Git GUI</name>
+	<submenu></submenu>
 	<unique-id>1671274155139573-1</unique-id>
 	<command>git gui</command>
 	<description>Open with Git GUI</description>
+	<range></range>
 	<patterns>*</patterns>
 	<directories/>
 </action>
 <action>
 	<icon>system-search</icon>
 	<name>Search</name>
+	<submenu></submenu>
 	<unique-id>1367866030392913-3</unique-id>
 	<command>catfish %f</command>
 	<description>find files and folders</description>
+	<range></range>
 	<patterns>*</patterns>
 	<directories/>
 </action>
 <action>
 	<icon>accessories-text-editor</icon>
 	<name>Edit as Root</name>
+	<submenu></submenu>
 	<unique-id>1577899023296129-1</unique-id>
-	<command>pkexec mousepad %f</command>
+	<command>pkexec xed %f</command>
 	<description>Edit file as root</description>
+	<range></range>
 	<patterns>*</patterns>
 	<other-files/>
 	<text-files/>
@@ -58,18 +70,22 @@
 <action>
 	<icon>run-build</icon>
 	<name>Run Script</name>
+	<submenu></submenu>
 	<unique-id>1638032880110598-1</unique-id>
 	<command>xfce4-terminal --working-directory=%d --command=&quot;sh -c &apos;./%n; echo -n Press enter to exit ...;read keypress&apos;&quot;</command>
-	<description>Run script</description>
+	<description>Run script in terminal</description>
+	<range></range>
 	<patterns>*.sh</patterns>
 	<other-files/>
 </action>
 <action>
 	<icon>run-build</icon>
 	<name>Run Script (Root)</name>
+	<submenu></submenu>
 	<unique-id>1638032880110599-1</unique-id>
 	<command>xfce4-terminal --working-directory=%d --command=&quot;sudo sh -c &apos;./%n; echo -n Press enter to exit ...;read keypress&apos;&quot;</command>
-	<description>Run script as root</description>
+	<description>Run script as root in terminal</description>
+	<range></range>
 	<patterns>*.sh</patterns>
 	<other-files/>
 </action>
