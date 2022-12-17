@@ -6,20 +6,20 @@
 
   
 
- <vendor>Xed</vendor>
+ <vendor>xed</vendor>
  <vendor_url>https://mate-desktop.org/</vendor_url>
- <icon_name>org.mate-desktop.xes</icon_name>
+ <icon_name>org.mate-desktop.xed</icon_name>
 
 
  <action id="org.mate-desktop.xed">
  
- <description>Run Xed as root</description>
+ <description>Run xed as root</description>
  <defaults>
  <allow_any>no</allow_any>
  <allow_inactive>auth_admin</allow_inactive>
  <allow_active>auth_admin</allow_active>
  </defaults>
- <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/xes</annotate>
+ <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/xed</annotate>
  <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
  </action>
 
