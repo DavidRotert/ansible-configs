@@ -5,7 +5,7 @@
 	<name>Terminal</name>
 	<unique-id>1625463474161391-1</unique-id>
 	<command>xfce4-terminal --working-directory=%f</command>
-	<description></description>
+	<description>Open terminal here</description>
 	<patterns>*</patterns>
 	<directories/>
 </action>
@@ -14,7 +14,7 @@
 	<name>Thunar Root</name>
 	<unique-id>1367866030392883-2</unique-id>
 	<command>pkexec thunar %f</command>
-	<description>Thunar Root</description>
+	<description>Open in Thunar as root</description>
 	<patterns>*</patterns>
 	<directories/>
 </action>
@@ -23,7 +23,16 @@
 	<name>Open in VS Code</name>
 	<unique-id>1367866030392883-3</unique-id>
 	<command>code %f</command>
-	<description></description>
+	<description>Open folder in VS Code</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>git</icon>
+	<name>Git GUI</name>
+	<unique-id>1671274155139573-1</unique-id>
+	<command>git gui</command>
+	<description>Open with Git GUI</description>
 	<patterns>*</patterns>
 	<directories/>
 </action>
@@ -41,7 +50,7 @@
 	<name>Edit as Root</name>
 	<unique-id>1577899023296129-1</unique-id>
 	<command>pkexec mousepad %f</command>
-	<description></description>
+	<description>Edit file as root</description>
 	<patterns>*</patterns>
 	<other-files/>
 	<text-files/>
@@ -51,7 +60,7 @@
 	<name>Run Script</name>
 	<unique-id>1638032880110598-1</unique-id>
 	<command>xfce4-terminal --working-directory=%d --command=&quot;sh -c &apos;./%n; echo -n Press enter to exit ...;read keypress&apos;&quot;</command>
-	<description>Run Script</description>
+	<description>Run script</description>
 	<patterns>*.sh</patterns>
 	<other-files/>
 </action>
@@ -60,7 +69,7 @@
 	<name>Run Script (Root)</name>
 	<unique-id>1638032880110599-1</unique-id>
 	<command>xfce4-terminal --working-directory=%d --command=&quot;sudo sh -c &apos;./%n; echo -n Press enter to exit ...;read keypress&apos;&quot;</command>
-	<description>Run Script (Root)</description>
+	<description>Run script as root</description>
 	<patterns>*.sh</patterns>
 	<other-files/>
 </action>

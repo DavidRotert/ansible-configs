@@ -23,7 +23,6 @@
           - neofetch
           - terminator
           - python-pygments
-          - alacritty
 
     - name: install ZSH realtime auto complete
       ansible.builtin.git:

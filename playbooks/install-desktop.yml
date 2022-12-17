@@ -74,10 +74,10 @@
           - snapper
           - snapper-gui
           - backintime
+          - backintime-qt
           - kompare
           - meld
           - python-keyring
-          - timeshift
           - grub-btrfs
 
     - name: install multimedia packages
@@ -159,7 +159,6 @@
           - ibus-typing-booster
           - gtkhash-thunar
           - variety
-          - kdeconnect
           - minetest
           - ventoy
           - redshift
