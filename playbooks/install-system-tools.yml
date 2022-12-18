@@ -55,6 +55,12 @@
         name:
           - systemd-swap
 
+    - name: enable systemd-swap service
+      ansible.builtin.service:
+        name: systemd-swap
+        enabled: true
+        state: started
+
     - name: install auto cpu frequence
       ansible.builtin.command: pamac install --no-confirm auto-cpufreq
           
