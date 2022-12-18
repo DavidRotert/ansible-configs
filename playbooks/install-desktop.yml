@@ -116,6 +116,7 @@
         name:
           - lightdm-webkit2-greeter
           - lightdm-webkit-theme-litarvan
+          - lightdm-gtk-greeter
 
     - name: install cloud tools
       ansible.builtin.package:
