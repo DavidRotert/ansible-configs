@@ -12,6 +12,17 @@
 	<directories/>
 </action>
 <action>
+	<icon>terminal</icon>
+	<name>Terminal (Pop Up)</name>
+	<submenu></submenu>
+	<unique-id>1671306955654858-1</unique-id>
+	<command>xfce4-terminal --tab --drop-down --title=%f --working-directory=%f</command>
+	<description>Open folder in pop up terminal</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
 	<icon>system-file-manager</icon>
 	<name>Thunar Root</name>
 	<submenu></submenu>
