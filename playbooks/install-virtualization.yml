@@ -21,7 +21,6 @@
           - qemu-ui-spice-app
           - qemu-ui-sdl
           - qemu-ui-gtk
-          - qemu-arch-extra
           - qemu-block-iscsi
           - qemu-block-gluster
           - libvirt-storage-iscsi-direct
