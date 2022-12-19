@@ -55,8 +55,7 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="xfce4-terminal"/>
       <property name="Print" type="string" value="flameshot"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Delete" type="string" value="xflock4"/>
-      <property name="Super_L" type="string" value="albert toggle"/>
-      <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;t" type="string" value="xfce4-terminal --drop-down"/>
+      <property name="&lt;Alt&gt;F1" type="string" value="xfce4-appfinder"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

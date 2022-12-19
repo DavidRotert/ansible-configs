@@ -23,3 +23,5 @@
           - curl
           - wget
           - filezilla
+          - tcpdump
+          - wireshark

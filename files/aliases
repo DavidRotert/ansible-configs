@@ -1,15 +1,15 @@
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
+alias cp="cp -i" # confirm before overwriting something
+alias df='df -h' # human-readable sizes
+alias free='free -m' # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more='less'
 alias cheat='cht.sh'
 alias count-lines-of-code='cloc'
 alias add-cacert='sudo trust anchor --store'
 alias add-java-cacert='sudo keytool -importcert -storepass changeit -noprompt -cacerts -file'
-alias copy='cp -av'
+alias clone='cp -av'
 alias weather='curl https://wttr.in/'
-alias ports='ss -lntu'
+alias show-ports='ss -lntu'
 
 # sudo aliases
 alias doas='sudo'
@@ -60,7 +60,7 @@ alias k3d="k3d"
 
 # pacman aliases
 alias pacman-install='sudo pacman -Syu'
-alias pacman-upgrade='pacman-install'
+alias pacman-upgrade='sudo pacman -S'
 alias pacman-remove='sudo pacman -R'
 alias pacman-autoremove='sudo pacman -Qdtq | sudo pacman -Rs -'
 

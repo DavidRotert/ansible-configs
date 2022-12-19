@@ -40,6 +40,9 @@
           - xfce4-xkb-plugin
           - xfce4-pulseaudio-plugin
           - pavucontrol
+          - ristretto
+          - parole
+          - catfish
 
     - name: install Thunar file manager
       ansible.builtin.package:
@@ -48,3 +51,6 @@
           - thunar
           - thunar-volman
           - thunar-archive-plugin
+
+    - name: install Thunar GtkHash 
+      ansible.builtin.command: pamac install --no-confirm gtkhash-thunar

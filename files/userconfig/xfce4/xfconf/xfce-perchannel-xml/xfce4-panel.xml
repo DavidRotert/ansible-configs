@@ -20,7 +20,9 @@
         <value type="int" value="10"/>
         <value type="int" value="9"/>
         <value type="int" value="19"/>
-        <value type="int" value="5"/>
+        <value type="int" value="18"/>
+        <value type="int" value="21"/>
+        <value type="int" value="20"/>
         <value type="int" value="16"/>
         <value type="int" value="7"/>
         <value type="int" value="15"/>
@@ -36,10 +38,10 @@
       <property name="icon-size" type="uint" value="0"/>
       <property name="output-name" type="string" value="Primary"/>
       <property name="background-rgba" type="array">
-        <value type="double" value="1.000000"/>
-        <value type="double" value="1.000000"/>
-        <value type="double" value="1.000000"/>
-        <value type="double" value="0.549645"/>
+        <value type="double" value="1"/>
+        <value type="double" value="1"/>
+        <value type="double" value="1"/>
+        <value type="double" value="0.54964500000000005"/>
       </property>
       <property name="enter-opacity" type="uint" value="100"/>
       <property name="leave-opacity" type="uint" value="100"/>
@@ -109,6 +111,10 @@
         <value type="string" value="xfce4-power-manager"/>
       </property>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="xfce-terminal"/>
+        <value type="string" value="electron"/>
+        <value type="string" value="ethernet-netzverbindung »kabelgebundene verbindung 1« ist aktiv vpn-verbindung ist aktiv"/>
+        <value type="string" value="blueberry-tray.py"/>
         <value type="string" value="funknetzwerkverbindung mit »fritz!box 2,4ghz« ist aktiv: fritz!box 2,4ghz (66%)"/>
         <value type="string" value="ethernet-netzverbindung »kabelgebundene verbindung 1« ist aktiv"/>
         <value type="string" value="portmaster-notifier_v0-2-4"/>
@@ -125,6 +131,8 @@
         <value type="string" value="netzwerk-manager-applet"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="toolbox"/>
+        <value type="string" value="1"/>
         <value type="string" value="Rancher Desktop1"/>
         <value type="string" value="Back In Time"/>
         <value type="string" value="flameshot"/>
@@ -153,9 +161,6 @@
       <property name="mpris-players" type="string" value="firefox.instance44743;firefox.instance62316;jak-cli.instance78928"/>
     </property>
     <property name="plugin-8" type="string" value="whiskermenu"/>
-    <property name="plugin-5" type="string" value="clock">
-      <property name="timezone" type="string" value="Europe/Berlin"/>
-    </property>
     <property name="plugin-1" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
       <property name="expand" type="bool" value="true"/>
@@ -221,6 +226,11 @@
       <property name="items" type="array">
         <value type="string" value="16567874324.desktop"/>
       </property>
+    </property>
+    <property name="plugin-18" type="string" value="datetime"/>
+    <property name="plugin-20" type="string" value="datetime"/>
+    <property name="plugin-21" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
     </property>
   </property>
   <property name="configver" type="int" value="2"/>
