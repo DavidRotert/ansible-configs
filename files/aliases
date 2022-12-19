@@ -59,8 +59,8 @@ alias docker-rmall='docker rm $(docker ps -a -q)'
 alias k3d="k3d"
 
 # pacman aliases
-alias pacman-install='sudo pacman -Syu'
-alias pacman-upgrade='sudo pacman -S'
+alias pacman-install='sudo pacman -S'
+alias pacman-upgrade='sudo pacman -Syu'
 alias pacman-remove='sudo pacman -R'
 alias pacman-autoremove='sudo pacman -Qdtq | sudo pacman -Rs -'
 
