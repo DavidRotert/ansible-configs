@@ -51,6 +51,3 @@
           - thunar
           - thunar-volman
           - thunar-archive-plugin
-
-    - name: install Thunar GtkHash 
-      ansible.builtin.command: pamac install --no-confirm gtkhash-thunar
