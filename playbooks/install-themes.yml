@@ -27,6 +27,9 @@
           - noto-fonts-emoji
           - ttf-font-awesome
 
+    - name: install Nerd Fonts JetBrains Mono
+      ansible.builtin.command: pamac install --no-confirm nerd-fonts-jetbrains-mono
+
     - name: install nerd fonts
       ansible.builtin.file:
         path: /usr/local/share/fonts
