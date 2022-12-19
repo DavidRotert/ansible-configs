@@ -95,3 +95,5 @@ extract ()
 help() {
     $1 --help
 }
+
+[[ -f ~/.aliases_custom ]] && . ~/.aliases_custom

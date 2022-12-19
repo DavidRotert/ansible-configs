@@ -6,7 +6,6 @@
 
 # Environment
 [[ -f ~/.profile ]] && . ~/.profile
-[[ -f ~/.profile_custom ]] && . ~/.profile_custom
 
 source /usr/share/git/completion/git-prompt.sh
 
@@ -100,7 +99,6 @@ unset use_color safe_term match_lhs sh
 
 # Aliases
 [[ -f ~/.aliases ]] && . ~/.aliases
-[[ -f ~/.aliases_custom ]] && . ~/.aliases_custom
 
 
 xhost +local:root > /dev/null 2>&1
