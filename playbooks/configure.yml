@@ -28,7 +28,7 @@
     - name: copy polkit config
       ansible.builtin.copy:
         src: ../files/polkit-1
-        dest: /usr/share/polkit-1
+        dest: /usr/share/
         force: true
       when: not copy_configs is undefined and copy_configs == "true"
 
@@ -59,3 +59,4 @@
         dest: ~/.config
         force: true
       when: not copy_configs is undefined and copy_configs == "true"
+
