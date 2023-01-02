@@ -20,6 +20,7 @@
         - golang.go
         - vscjava.vscode-java-pack
         - ms-python.python
+        - ms-dotnettools.csharp
         - runem.lit-plugin
         - esbenp.prettier-vscode
         - Vue.volar
@@ -34,7 +35,7 @@
         - jeff-hykin.better-cpp-syntax
         - thenouillet.symfony-vscode
         - mblode.twig-language-2
-        - firefox-devtools.vscode-firefox-debug
+        - firefox-devtools.vscode-firefox-dfebug
         - xdebug.php-pack
         - hbenl.vscode-test-explorer
         - gruntfuggly.todo-tree
@@ -42,3 +43,8 @@
         - vscode-icons-team.vscode-icons
         - oderwat.indent-rainbow
         - eamodio.gitlens
+        - ms-vscode-remote.vscode-remote-extensionpack
+        - vscjava.vscode-gradle
+        - Pivotal.vscode-boot-dev-pack
+        - ms-toolsai.jupyter
+        - redhat.fabric8-analytics
