@@ -50,3 +50,4 @@
         - redhat.fabric8-analytics
         - shengchen.vscode-checkstyle
         - SonarSource.sonarlint-vscode
+        - ms-dotnettools.blazorwasm-companion
