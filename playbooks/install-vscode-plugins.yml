@@ -48,3 +48,5 @@
         - Pivotal.vscode-boot-dev-pack
         - ms-toolsai.jupyter
         - redhat.fabric8-analytics
+        - shengchen.vscode-checkstyle
+        - SonarSource.sonarlint-vscode
