@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=Search (Albert)
-Exec=albert show
+Exec=albertctl toogle
 Icon=search
-Categories=GNOME;Utility;
+Categories=Utility;

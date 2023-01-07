@@ -82,4 +82,3 @@
         name: auto-cpufreq
         state: started
         enabled: true
-
