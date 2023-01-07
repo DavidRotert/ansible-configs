@@ -66,6 +66,7 @@
       ansible.builtin.git:
         repo: https://github.com/vinceliuice/Mojave-gtk-theme.git
         dest: /tmp/Mojave-gtk-theme
+        version: 2022-10-21
 
     - name: install Mojave GTK theme
       ansible.builtin.command: /tmp/Mojave-gtk-theme/install.sh
