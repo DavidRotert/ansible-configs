@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=Search (Albert)
-Exec=albertctl toogle
+Exec=albertctl toggle
 Icon=search
 Categories=Utility;
