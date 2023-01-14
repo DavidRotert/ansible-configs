@@ -83,6 +83,10 @@
         src: /tmp/McMojave-kde/Kvantum
         dest: ~/.config/
 
+    - name: patch Kvantum themes
+      become_user: "{{ config_user }}"
+      ansible.builtin.command: /bin/bash -c 'sed -i "s/composite=true/composite=false/g" ~/.config/Kvantum/*/*.kvconfig'
+
     - name: clone Whitesur Icon theme
       ansible.builtin.git:
         repo: https://github.com/vinceliuice/WhiteSur-icon-theme.git
@@ -90,6 +94,12 @@
 
     - name: install Whitesur Icon theme
       ansible.builtin.command: /tmp/WhiteSur-icon-theme/install.sh --black
+
+    - name: patch Whitesur Icon theme
+      ansible.builtin.command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Light,hicolor/g" /usr/share/icons/WhiteSur/index.theme
+
+    - name: patch Whitesur Icon theme
+      ansible.builtin.command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Dark,hicolor/g" /usr/share/icons/WhiteSur-dark/index.theme
 
     - name: install Plank themes
       ansible.builtin.copy:
@@ -133,9 +143,3 @@
         dest: ~/.theme-profiles/default-dark-theme
         state: link
         force: false
-
-    - name: copy themes
-      ansible.builtin.copy:
-        src: ../files/themes/
-        dest: /usr/share/themes
-        force: true

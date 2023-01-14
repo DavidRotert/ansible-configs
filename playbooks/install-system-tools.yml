@@ -22,7 +22,6 @@
           - xcape
           - apparmor
           - python-notify2
-          - gufw
 
     - name: install Firewall (Portmaster)
       ansible.builtin.command: pamac install --no-confirm portmaster-stub-bin
