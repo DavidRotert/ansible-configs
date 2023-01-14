@@ -111,6 +111,8 @@
         <value type="string" value="xfce4-power-manager"/>
       </property>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="funknetzwerkverbindung mit »rotert 2,4ghz« ist aktiv: rotert 2,4ghz (63%)"/>
+        <value type="string" value="funknetzwerkverbindung mit »rotert 2,4ghz« ist aktiv: rotert 2,4ghz (67%)"/>
         <value type="string" value="xfce-terminal"/>
         <value type="string" value="electron"/>
         <value type="string" value="ethernet-netzverbindung »kabelgebundene verbindung 1« ist aktiv vpn-verbindung ist aktiv"/>
@@ -184,7 +186,9 @@
       <property name="window-scrolling" type="bool" value="false"/>
       <property name="flat-buttons" type="bool" value="false"/>
       <property name="show-handle" type="bool" value="true"/>
-      <property name="grouping" type="uint" value="0"/>
+      <property name="grouping" type="bool" value="true"/>
+      <property name="show-only-minimized" type="bool" value="false"/>
+      <property name="include-all-workspaces" type="bool" value="false"/>
     </property>
     <property name="plugin-3" type="string" value="launcher">
       <property name="items" type="array">
