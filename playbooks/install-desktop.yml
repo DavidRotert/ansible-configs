@@ -112,9 +112,8 @@
       ansible.builtin.package:
         state: present
         name:
-          - lightdm-webkit2-greeter
-          - lightdm-webkit-theme-litarvan
           - lightdm-gtk-greeter
+          - lightdm-gtk-greeter-settings
 
     - name: install cloud tools
       ansible.builtin.package:
@@ -168,4 +167,3 @@
 
     - name: install Etcher
       ansible.builtin.command: pamac install --no-confirm etcher-bin
-

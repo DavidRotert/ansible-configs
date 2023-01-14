@@ -4,10 +4,9 @@ Version=0.9.4
 Type=Application
 Name=Plank
 Comment=
-Exec=sh -c "killall -SIGKILL plank; sleep 5; plank"
+Exec=sh -c "sleep 4; killall -SIGKILL plank; plank"
 OnlyShowIn=XFCE;
 RunHook=0
 StartupNotify=false
 Terminal=false
 Hidden=false
-

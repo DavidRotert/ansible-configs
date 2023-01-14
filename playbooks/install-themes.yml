@@ -8,6 +8,7 @@
       ansible.builtin.package:
         name:
           - papirus-icon-theme
+          - gnome-backgrounds
           - kvantum
 
     - name: install Greybird theme
