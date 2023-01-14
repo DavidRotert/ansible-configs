@@ -83,50 +83,6 @@
         src: /tmp/McMojave-kde/Kvantum
         dest: ~/.config/
 
-    - name: clone Whitesur GTK theme
-      ansible.builtin.git:
-        repo: https://github.com/vinceliuice/WhiteSur-gtk-theme.git
-        dest: /tmp/WhiteSur-gtk-theme
-        version: 2022-10-27
-
-    - name: install Whitesur GTK theme
-      ansible.builtin.command: /tmp/WhiteSur-gtk-theme/install.sh --theme all --panel-opacity 75 --black
-
-    - name: clone WhiteSur KDE theme
-      ansible.builtin.git:
-        repo: https://github.com/vinceliuice/WhiteSur-kde.git
-        dest: /tmp/WhiteSur-kde
-
-    - name: copy WhiteSur KDE Kvantum theme
-      become_user: "{{ config_user }}"
-      ansible.builtin.copy:
-        src: /tmp/WhiteSur-kde/Kvantum
-        dest: ~/.config/
-
-    - name: clone Fluent GTK theme
-      ansible.builtin.git:
-        repo: https://github.com/vinceliuice/Fluent-gtk-theme.git
-        dest: /tmp/Fluent-gtk-theme
-        version: 2022-12-15
-
-    - name: install Fluent GTK theme
-      ansible.builtin.command: /tmp/Fluent-gtk-theme/install.sh --theme all
-
-    - name: clone Fluent KDE theme
-      ansible.builtin.git:
-        repo: https://github.com/vinceliuice/Fluent-kde.git
-        dest: /tmp/Fluent-kde
-
-    - name: copy Fluent KDE Kvantum theme
-      become_user: "{{ config_user }}"
-      ansible.builtin.copy:
-        src: /tmp/Fluent-kde/Kvantum
-        dest: ~/.config/
-
-    - name: patch Kvantum themes
-      become_user: "{{ config_user }}"
-      ansible.builtin.command: /bin/bash -c 'sed -i "s/composite=true/composite=false/g" ~/.config/Kvantum/*/*.kvconfig'
-
     - name: clone Whitesur Icon theme
       ansible.builtin.git:
         repo: https://github.com/vinceliuice/WhiteSur-icon-theme.git
@@ -134,26 +90,6 @@
 
     - name: install Whitesur Icon theme
       ansible.builtin.command: /tmp/WhiteSur-icon-theme/install.sh --black
-
-    - name: patch Whitesur Icon theme
-      ansible.builtin.command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Light,hicolor/g" /usr/share/icons/WhiteSur/index.theme
-
-    - name: patch Whitesur Icon theme
-      ansible.builtin.command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Dark,hicolor/g" /usr/share/icons/WhiteSur-dark/index.theme
-
-    - name: clone Fluent Icon theme
-      ansible.builtin.git:
-        repo: https://github.com/vinceliuice/Fluent-icon-theme.git
-        dest: /tmp/Fluent-icon-theme
-
-    - name: install Fluent Icon theme
-      ansible.builtin.command: /tmp/Fluent-icon-theme/install.sh --black
-
-    - name: patch Fluent Icon theme
-      ansible.builtin.command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Light,hicolor/g" /usr/share/icons/Fluent/index.theme
-
-    - name: patch Fluent Icon theme
-      ansible.builtin.command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Dark,hicolor/g" /usr/share/icons/Fluent-dark/index.theme
 
     - name: install Plank themes
       ansible.builtin.copy:
