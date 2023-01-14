@@ -35,7 +35,7 @@ def apply_themes(styles):
         $[dconf write "/net/launchpad/plank/docks/dock1/theme" @("'" + styles["Plank_Theme"] + "'")]
 
     if "Albert_Theme" in styles:
-        sed_inifile("theme", styles["Albert_Theme"], f"{$HOME}/.config/albert/albert.conf")
+        sed_inifile("theme", styles["Albert_Theme"], f"{$HOME}/.config/albert.conf")
 
 
 def apply_wm(wm):
@@ -57,12 +57,14 @@ def apply_wallpaper(wallpaper):
         image = replace_tilde(wallpaper["Wallpaper"])
 
         if image == "variety":
+            sed_inifile("Hidden", "false", f"{$HOME}/.config/autostart/variety.desktop")
             $[variety --next]
         else:
             for monitor in $(xfconf-query -c xfce4-desktop -p /backdrop -l | egrep -e "screen.*/monitor.*/last-image").rstrip().split("\n"):
                 $[xfconf-query -c xfce4-desktop -p @(monitor) -n -t string -s ""]
                 $[xfconf-query -c xfce4-desktop -p @(monitor) -s ""]
                 set_xfconf("xfce4-desktop", monitor, image)
+            sed_inifile("Hidden", "true", f"{$HOME}/.config/autostart/variety.desktop")
 
 
 def apply_theme_profile(theme_profile):
