@@ -13,7 +13,7 @@
         - ms-azuretools.vscode-docker
         - ms-kubernetes-tools.vscode-kubernetes-tools
         - mindaro.mindaro
-        - ms-vsliveshare.vsliveshare-pack
+        - MS-vsliveshare.vsliveshare
         - VisualStudioExptTeam.vscodeintellicode
         - rust-lang.rust-analyzer
         - golang.go

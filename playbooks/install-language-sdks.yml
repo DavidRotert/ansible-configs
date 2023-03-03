@@ -33,14 +33,13 @@
         name:
           - composer
           - php
-          - php7
           - xdebug
 
     - name: install Node.js 16
       package:
         state: present
         name:
-          - nodejs-lts-gallium
+          - nodejs
           - npm
           - yarn
 

@@ -18,7 +18,7 @@ def set_xfconf(section, setting, value):
     $[xfconf-query -c @(section) -p @(setting) -s @(value)]
 
 def sed_inifile(key, value, file):
-    $[sed -i @(f"s/{key}=[ a-zA-Z_\-]*/{key}={value}/g") @(file)]
+    $[sed -i @(f"s/{key}=[ a-zA-Z_\\-]*/{key}={value}/g") @(file)]
 
 
 def apply_themes(styles):

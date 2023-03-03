@@ -10,6 +10,7 @@ alias add-java-cacert='sudo keytool -importcert -storepass changeit -noprompt -c
 alias clone='cp -av'
 alias weather='curl https://wttr.in/'
 alias show-all-ports='sudo ss -lntup'
+alias gradle-clear-cache='rm -r ~/.gradle/cache/'
 
 # sudo aliases
 alias doas='sudo'
