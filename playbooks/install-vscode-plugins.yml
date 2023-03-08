@@ -45,9 +45,8 @@
         - ms-vscode.remote-server
         - ms-vscode-remote.remote-ssh-edit
         - vscjava.vscode-gradle
-        - Pivotal.vscode-boot-dev-pack
+        - vmware.vscode-boot-dev-pack
         - ms-toolsai.jupyter
         - redhat.fabric8-analytics
         - shengchen.vscode-checkstyle
         - SonarSource.sonarlint-vscode
-        - Pivotal.vscode-boot-dev-pack
