@@ -34,15 +34,27 @@
 	<directories/>
 </action>
 <action>
+	<icon>accessories-text-editor</icon>
+	<name>Edit</name>
+	<submenu></submenu>
+	<unique-id>1678530037076775-1</unique-id>
+	<command>xed %f</command>
+	<description>Edit file</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<text-files/>
+</action>
+<action>
 	<icon>visual-studio-code</icon>
 	<name>Open in VS Code</name>
 	<submenu></submenu>
 	<unique-id>1367866030392883-3</unique-id>
 	<command>code %f</command>
-	<description>Open folder in VS Code</description>
+	<description>Open folder or file in VS Code</description>
 	<range></range>
 	<patterns>*</patterns>
 	<directories/>
+	<text-files/>
 </action>
 <action>
 	<icon>git</icon>
