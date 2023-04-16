@@ -66,7 +66,7 @@ alias pacman-dbupdate='sudo pacman -Sy'
 alias pacman-force-dbupdate='sudo pacman -Syy'
 alias pacman-remove='sudo pacman -R'
 alias pacman-autoremove='sudo pacman -Qdtq | sudo pacman -Rs -'
-alias pacman-refresh-all-keys='sudo pacman -Sy archlinux-keyring; sudo pacman-key --refresh-keys; sudo pacman -Syu'
+alias pacman-refresh-all-keys='sudo pacman -Sy archlinux-keyring; sudo pacman-key --refresh-keys;'
 
 pacman-fix-keys ()
 {
@@ -74,7 +74,6 @@ pacman-fix-keys ()
     sudo rm -rf /etc/pacman.d/gnupg/*
     sudo pacman-key --init
     sudo pacman-key --populate
-    sudo pacman -Syu
 }
 
 # yay aliases
