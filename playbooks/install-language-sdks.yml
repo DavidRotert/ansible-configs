@@ -9,20 +9,21 @@
         state: present
         name:
           - jdk8-openjdk
-          - jre8-openjdk
-          - jre8-openjdk-headless
+          - openjdk8-src
+          - openjdk8-doc
+          
           - jdk11-openjdk
           - openjdk11-src
           - openjdk11-doc
-          - java11-openjfx
-          - java11-openjfx-doc
-          - java11-openjfx-src
+          
+          - jdk17-openjdk
+          - openjdk17-src
+          - openjdk17-doc
+          
           - jdk-openjdk
           - openjdk-src
           - openjdk-doc
-          - java-openjfx
-          - java-openjfx-doc
-          - java-openjfx-src
+          
           - ant
           - maven
           - gradle
