@@ -40,7 +40,7 @@
           - xonsh[full]
           - setproctitle
           - jedi
-          - pip
+      ignore_errors: true
 
     - name: link Xonsh
       ansible.builtin.file:

@@ -4,6 +4,12 @@
   become: true
 
   tasks:
+    - name: Link /media to /run/media
+      ansible.builtin.file:
+        src: /run/media
+        dest: /media
+        state: link
+  
     - name: copy /usr/local
       ansible.builtin.copy:
         src: ../files/local/

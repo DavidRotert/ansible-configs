@@ -52,12 +52,8 @@ alias srven='srvenable'
 alias enable='srvenable'
 
 # Docker aliases for sudo
-#alias docker='sudo docker'
-#alias docker-compose='sudo docker-compose'
 alias docker-stopall='docker stop $(docker ps -a -q)'
 alias docker-rmall='docker rm $(docker ps -a -q)'
-
-#alias k3d="k3d"
 
 # pacman aliases
 alias pacman-install='sudo pacman -S'
@@ -66,11 +62,19 @@ alias pacman-dbupdate='sudo pacman -Sy'
 alias pacman-force-dbupdate='sudo pacman -Syy'
 alias pacman-remove='sudo pacman -R'
 alias pacman-autoremove='sudo pacman -Qdtq | sudo pacman -Rs -'
-alias pacman-refresh-all-keys='sudo pacman -Sy archlinux-keyring; sudo pacman-key --refresh-keys;'
 
-pacman-fix-keys ()
+pacman-update-keyrings () {
+    if [ "$(lsb_release -i -s)" = "EndeavourOS" ]
+    then
+        sudo pacman -Sy archlinux-keyring endeavouros-keyring
+    else
+        sudo pacman -Sy archlinux-keyring
+    fi
+    sudo pacman -Su
+}
+
+pacman-force-reset-all-keys ()
 {
-    sudo rm /var/lib/pacman/sync/*
     sudo rm -rf /etc/pacman.d/gnupg/*
     sudo pacman-key --init
     sudo pacman-key --populate

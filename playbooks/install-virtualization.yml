@@ -15,6 +15,7 @@
           - virtualbox
           - virtualbox-guest-iso
           - libvirt
+          - qemu-base
           - qemu-emulators-full
           - qemu-ui-curses
           - qemu-ui-opengl

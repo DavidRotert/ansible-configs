@@ -34,7 +34,7 @@
         state: latest
         name:
           - gdbgui
-          - pip
+      ignore_errors: true
 
     - name: install IDEs
       ansible.builtin.package:
@@ -66,7 +66,7 @@
         state: latest
         name:
           - spyder
-          - pip
+      ignore_errors: true
 
     - name: install VS Code
       ansible.builtin.command: pamac install --no-confirm visual-studio-code-bin
