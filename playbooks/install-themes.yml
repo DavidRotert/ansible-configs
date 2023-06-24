@@ -104,6 +104,11 @@
         src: /usr/share/themes/Mojave-Light/plank/
         dest: /usr/share/plank/themes/OSX
 
+    - name: copy themes
+      ansible.builtin.copy:
+        src: ../files/themes/
+        dest: /usr/share/themes/
+
     - name: install Plank themes
       ansible.builtin.copy:
         src: /usr/share/themes/Mojave-Dark/plank/

@@ -51,3 +51,6 @@
           - thunar
           - thunar-volman
           - thunar-archive-plugin
+
+    - name: install Xfdashboard
+      ansible.builtin.command: pamac install --no-confirm xfdashboard

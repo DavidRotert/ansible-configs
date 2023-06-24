@@ -18,6 +18,11 @@
           - podman-compose
           - buildah
 
+    - name: install Docker Daemon config
+      ansible.builtin.copy:
+        src: ../files/docker/daemon.json
+        dest: /etc/docker/
+
     - name: install docker credential secretservice
       ansible.builtin.command: pamac install --no-confirm docker-credential-secretservice-bin
 

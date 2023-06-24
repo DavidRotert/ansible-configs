@@ -16,4 +16,4 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-[ -f ~/.profile_custom ] && . ~/.profile_custom
+[ -f "$HOME/.profile_custom" ] && . "$HOME/.profile_custom"

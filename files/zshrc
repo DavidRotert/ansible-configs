@@ -76,7 +76,7 @@ bindkey "^e" end-of-line
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
-# Edit line in vim with ctrl-e
+# Edit line in vim with ctrl-l
 autoload edit-command-line
 zle -N edit-command-line
 bindkey "^l" edit-command-line

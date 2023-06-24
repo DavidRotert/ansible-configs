@@ -164,6 +164,7 @@
           - gnome-maps
           - gnome-calendar
           - activity-log-manager
+          - copyq
 
     - name: install Etcher
       ansible.builtin.command: pamac install --no-confirm etcher-bin
