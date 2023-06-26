@@ -89,6 +89,7 @@
       ansible.builtin.git:
         repo: https://github.com/vinceliuice/WhiteSur-icon-theme.git
         dest: /tmp/WhiteSur-icon-theme
+        version: 2023-01-08
 
     - name: install Whitesur Icon theme
       ansible.builtin.command: /tmp/WhiteSur-icon-theme/install.sh --black
