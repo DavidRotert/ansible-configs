@@ -171,7 +171,20 @@
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="mpris-players" type="string" value="firefox.instance44743;firefox.instance5735;firefox.instance62316;firefox.instance7743;jak-cli.instance78928;vlc"/>
     </property>
-    <property name="plugin-8" type="string" value="whiskermenu"/>
+    <property name="plugin-8" type="string" value="whiskermenu">
+      <property name="button-icon" type="string" value="distributor-logo-archlinux"/>
+      <property name="favorites-in-recent" type="bool" value="true"/>
+      <property name="position-search-alternate" type="bool" value="false"/>
+      <property name="position-categories-alternate" type="bool" value="true"/>
+      <property name="menu-width" type="int" value="495"/>
+      <property name="menu-height" type="int" value="475"/>
+      <property name="command-switchuser" type="string" value="gdmflexiserver"/>
+      <property name="favorites" type="array">
+      </property>
+      <property name="recent" type="array">
+      </property>
+      <property name="position-profile-alternate" type="bool" value="true"/>
+    </property>
     <property name="plugin-1" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
       <property name="expand" type="bool" value="true"/>
