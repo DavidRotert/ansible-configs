@@ -65,10 +65,12 @@
       ansible.builtin.git:
         repo: https://github.com/vinceliuice/Mojave-gtk-theme.git
         dest: /tmp/Mojave-gtk-theme
-        version: 2022-10-21
+        version: 2023-08-04
 
     - name: install Mojave GTK theme
-      ansible.builtin.command: /tmp/Mojave-gtk-theme/install.sh
+      ansible.builtin.command: 
+        cmd: ./install.sh
+        chdir: /tmp/Mojave-gtk-theme
 
     - name: clone Mojave KDE theme
       ansible.builtin.git:
@@ -92,7 +94,9 @@
         version: 2023-01-08
 
     - name: install Whitesur Icon theme
-      ansible.builtin.command: /tmp/WhiteSur-icon-theme/install.sh --black
+      ansible.builtin.command:
+        cmd: ./install.sh --black
+        chdir: /tmp/WhiteSur-icon-theme
 
     - name: patch Whitesur Icon theme
       ansible.builtin.command: sed -i "s/Inherits=hicolor/Inherits=Papirus-Light,hicolor/g" /usr/share/icons/WhiteSur/index.theme

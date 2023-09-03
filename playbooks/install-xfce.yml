@@ -4,7 +4,7 @@
   become: true
 
   tasks:
-    - name: install XFCE
+    - name: Install XFCE
       when: "not desktop is undefined and desktop == 'xfce'"
       ansible.builtin.package:
         state: present
@@ -44,7 +44,15 @@
           - parole
           - catfish
 
-    - name: install Thunar file manager
+    - name: Install xfdashboard
+      when: "not desktop is undefined and desktop == 'xfce'"
+      ansible.builtin.package:
+        state: present
+        name:
+          - xfdashboard
+
+    - name: Install Thunar file manager
+      when: "not desktop is undefined and desktop == 'xfce'"
       ansible.builtin.package:
         state: present
         name:
