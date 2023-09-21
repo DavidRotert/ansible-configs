@@ -60,7 +60,7 @@ def apply_wallpaper(wallpaper):
             sed_inifile("Hidden", "false", f"{$HOME}/.config/autostart/variety.desktop")
             $[variety --next]
         else:
-            for monitor in $(xfconf-query -c xfce4-desktop -p /backdrop -l | egrep -e "screen.*/monitor.*/last-image").rstrip().split("\n"):
+            for monitor in $(xfconf-query -c xfce4-desktop -p /backdrop -l | grep -E "screen.*/monitor.*/last-image").rstrip().split("\n"):
                 $[xfconf-query -c xfce4-desktop -p @(monitor) -n -t string -s ""]
                 $[xfconf-query -c xfce4-desktop -p @(monitor) -s ""]
                 set_xfconf("xfce4-desktop", monitor, image)
@@ -80,9 +80,8 @@ def apply_theme_profile(theme_profile):
     if "wallpaper" in theme_profile:
         apply_wallpaper(theme_profile["wallpaper"])
 
-    $[killall albert]
     $[sleep 2]
-    $[albert &]
+    $[albert restart &]
 
 
 def apply_theme_profile_file(profile_file):

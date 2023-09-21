@@ -65,4 +65,3 @@
         dest: ~/.config
         force: true
       when: not copy_configs is undefined and copy_configs == "true"
-

@@ -5,20 +5,9 @@
 	<name>Terminal</name>
 	<submenu></submenu>
 	<unique-id>1625463474161391-1</unique-id>
-	<command>xfce4-terminal --working-directory=%f</command>
+	<command>exo-open --launch TerminalEmulator --working-directory=%f</command>
 	<description>Open terminal here</description>
 	<range></range>
-	<patterns>*</patterns>
-	<directories/>
-</action>
-<action>
-	<icon>terminal</icon>
-	<name>Terminal (Pop Up)</name>
-	<submenu></submenu>
-	<unique-id>1671306955654858-1</unique-id>
-	<command>xfce4-terminal --tab --drop-down --title=%f --working-directory=%f</command>
-	<description>Open folder in pop up terminal</description>
-	<range>*</range>
 	<patterns>*</patterns>
 	<directories/>
 </action>
@@ -95,7 +84,7 @@
 	<name>Run Script</name>
 	<submenu></submenu>
 	<unique-id>1638032880110598-1</unique-id>
-	<command>xfce4-terminal --working-directory=%d --command=&quot;sh -c &apos;./%n; echo -n Press enter to exit ...;read keypress&apos;&quot;</command>
+	<command>exo-open --launch TerminalEmulator --working-directory=%d --execute sh -c &apos;echo -n &quot;&quot;; ./%n; echo -n Press enter to exit ...; read keypress&apos;</command>
 	<description>Run script in terminal</description>
 	<range></range>
 	<patterns>*.sh</patterns>
@@ -106,7 +95,7 @@
 	<name>Run Script (Root)</name>
 	<submenu></submenu>
 	<unique-id>1638032880110599-1</unique-id>
-	<command>xfce4-terminal --working-directory=%d --command=&quot;sudo sh -c &apos;./%n; echo -n Press enter to exit ...;read keypress&apos;&quot;</command>
+	<command>exo-open --launch TerminalEmulator --working-directory=%d --execute sh -c &apos;echo -n &quot;&quot;; sudo ./%n; echo -n Press enter to exit ...; read keypress&apos;</command>
 	<description>Run script as root in terminal</description>
 	<range></range>
 	<patterns>*.sh</patterns>

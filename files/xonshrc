@@ -1,4 +1,3 @@
-# XONSH WEBCONFIG START
 import sys
 
 def getPrompt():
@@ -6,7 +5,7 @@ def getPrompt():
         return "# >"
     else:
         return "$ >"
-        
+
 def print_cheat():
     print("""===== Cheatsheat =====
 ALIASES
@@ -18,16 +17,16 @@ XONSH
     subprocess with print and object return: ![]
     Python evaluation: @()""")
 
+
+# XONSH WEBCONFIG START
+xontrib load jedi
 $PROMPT_FIELDS['prompt_type'] = getPrompt()
 $PROMPT = '{env_name}{BOLD_GREEN}[ {user} @  {hostname}]\n{BOLD_#0083FF} {cwd} [ {gitstatus}{BOLD_#0083FF}] {prompt_type}{RESET} '
 $XONSH_COLOR_STYLE = 'monokai'
-xontrib load jedi
 # XONSH WEBCONFIG END
 
 $LS_COLORS='rs=0:di=01;36:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:'
 
-aliases["cheat"] = print_cheat
-
 $SSH_AUTH_SOCK = "/run/user/" + $(id -u).strip() + "/keyring/ssh"
 
-print_cheat()
+aliases["cheat"] = print_cheat
