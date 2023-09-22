@@ -50,6 +50,8 @@ def apply_icon_themes(icons):
 
     if "QT_Icon_Theme" in icons:
         sed_inifile("icon_theme", icons["QT_Icon_Theme"], f"{$HOME}/.config/qt5ct/qt5ct.conf")
+    if "QT_Icon_Theme" in icons:
+        sed_inifile("icon_theme", icons["QT_Icon_Theme"], f"{$HOME}/.config/qt6ct/qt6ct.conf")
 
 
 def apply_wallpaper(wallpaper):
@@ -77,11 +79,17 @@ def apply_theme_profile(theme_profile):
     if "icons" in theme_profile:
         apply_icon_themes(theme_profile["icons"])
 
+    $[albert &]
+    $[sleep 1]
+    $[killall albert]
+    $[sleep 1]
+    $[albert &]
+
+    $[killall copyq]
+    $[copyq --start-server]
+
     if "wallpaper" in theme_profile:
         apply_wallpaper(theme_profile["wallpaper"])
-
-    $[sleep 2]
-    $[albert restart &]
 
 
 def apply_theme_profile_file(profile_file):
