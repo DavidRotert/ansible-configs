@@ -11,9 +11,6 @@
           - gnome-backgrounds
           - kvantum
 
-    - name: install Greybird theme
-      ansible.builtin.command: pamac install --no-confirm xfce-theme-greybird
-
     - name: install Qt5/6 configuration tool
       ansible.builtin.package:
         state: present
