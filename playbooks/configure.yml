@@ -55,7 +55,7 @@
     - name: set exec permissions
       ansible.builtin.file:
         path: /usr/local/bin
-        mode: "775"
+        mode: "755"
         recurse: true
 
     - name: copy user configs
