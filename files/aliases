@@ -63,22 +63,32 @@ alias pacman-force-dbupdate='sudo pacman -Syy'
 alias pacman-remove='sudo pacman -R'
 alias pacman-autoremove='sudo pacman -Qdtq | sudo pacman -Rs -'
 
-pacman-update-keyrings () {
-    if [ "$(lsb_release -i -s)" = "EndeavourOS" ]
-    then
-        sudo pacman -Sy archlinux-keyring endeavouros-keyring
-    else
-        sudo pacman -Sy archlinux-keyring
-    fi
+pacman_update_keyrings () {
+    keyring_packages=""
+
+    # Find keyring packages
+    for package in \
+        "archlinux-keyring" \
+        "endeavouros-keyring" \
+        "chaotic-keyring"
+    do
+        if [ "$(pacman -Qq $package)" = "$package" ]
+        then
+            keyring_packages="$keyring_packages '$package'"
+        fi
+    done
+    
+    eval "sudo pacman -Sy $keyring_packages"
     sudo pacman -Su
 }
+alias pacman-update-keyrings=pacman_update_keyrings
 
-pacman-force-reset-all-keys ()
-{
+pacman_force_reset_all_keys () {
     sudo rm -rf /etc/pacman.d/gnupg/*
     sudo pacman-key --init
     sudo pacman-key --populate
 }
+alias pacman-force-reset-all-keys=pacman_force_reset_all_keys
 
 # yay aliases
 alias yay-install='yay -S'
@@ -120,4 +130,4 @@ help() {
     $1 --help
 }
 
-[[ -f ~/.aliases_custom ]] && . ~/.aliases_custom
+[ -f "$HOME/.aliases_custom" ] && . "$HOME/.aliases_custom"
